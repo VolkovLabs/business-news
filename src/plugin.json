@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
+  "dependencies": {
+    "grafanaDependency": ">=8.0.0",
+    "plugins": []
+  },
+  "id": "volkovlabs-abc-datasource",
+  "info": {
+    "author": {
+      "name": "Volkov Labs",
+      "url": "https://volkovlabs.com"
+    },
+    "description": "Template to create a new Grafana datasource plugin",
+    "keywords": ["template"],
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://volkovlabs.com"
+      }
+    ],
+    "logos": {
+      "large": "img/logo.svg",
+      "small": "img/logo.svg"
+    },
+    "screenshots": [],
+    "updated": "%TODAY%",
+    "version": "%VERSION%"
+  },
+  "metrics": true,
+  "name": "Abc",
+  "type": "datasource"
+}
