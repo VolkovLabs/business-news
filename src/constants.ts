@@ -54,6 +54,7 @@ export enum ItemKeys {
   LINK = 'link',
   CONTENT = 'content',
   META = 'meta',
+  GUID = 'guid',
   CONTENT_ENCODED = 'content:encoded',
   CONTENT_H4 = 'content:h4',
   CONTENT_IMG = 'content:img',

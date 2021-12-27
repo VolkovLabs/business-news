@@ -97,6 +97,13 @@ export class Api {
           }
 
           /**
+           * Parse Guid
+           */
+          if (key === ItemKeys.GUID && value['#text']) {
+            value = value['#text'];
+          }
+
+          /**
            * Parse Encoded content for H4 and first Image
            */
           if (key === ItemKeys.CONTENT_ENCODED) {
