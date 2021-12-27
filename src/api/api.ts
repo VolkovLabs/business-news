@@ -104,7 +104,15 @@ export class Api {
             const figure = value.match(/<figure>(.*?)<\/figure>/);
 
             setItem(items, ItemKeys.CONTENT_H4, h4?.length ? h4[1] : '');
-            setItem(items, ItemKeys.CONTENT_IMG, figure?.length ? figure[1] : '');
+
+            /**
+             * Extract image and source
+             */
+            if (figure?.length) {
+              setItem(items, ItemKeys.CONTENT_IMG, figure[1]);
+              const img = figure[1].match(/<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/);
+              setItem(items, ItemKeys.CONTENT_IMG_SRC, img?.length ? img[1] : '');
+            }
           }
 
           setItem(items, key, value);
