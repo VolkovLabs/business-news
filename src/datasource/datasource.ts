@@ -64,7 +64,7 @@ export class DataSource extends DataSourceApi<Query, DataSourceOptions> {
       feedType: FeedTypeValue.ALL,
     });
 
-    const isStatusOk = frames?.length ? true : false;
+    const isStatusOk = frames.length ? true : false;
 
     /**
      * Return

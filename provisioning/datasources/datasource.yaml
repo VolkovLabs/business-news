@@ -26,3 +26,11 @@ datasources:
     editable: true
     jsonData:
       feed: https://grafana.com/blog/news.xml
+  - name: Redis Labs RSS
+    type: volkovlabs-rss-datasource
+    access: proxy
+    orgId: 1
+    version: 1
+    editable: true
+    jsonData:
+      feed: https://status.redis.com/history.atom

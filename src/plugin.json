@@ -11,8 +11,8 @@
       "name": "Volkov Labs",
       "url": "https://volkovlabs.com"
     },
-    "description": "Template to create a new Grafana datasource plugin",
-    "keywords": ["template"],
+    "description": "RSS/Atom datasource plugin for Grafana",
+    "keywords": ["rss", "atom", "news"],
     "links": [
       {
         "name": "Website",
@@ -27,13 +27,17 @@
       {
         "name": "Dashboard",
         "path": "img/dashboard.png"
+      },
+      {
+        "name": "Panel",
+        "path": "img/panel.png"
       }
     ],
     "updated": "%TODAY%",
     "version": "%VERSION%"
   },
   "metrics": true,
-  "name": "RSS",
+  "name": "RSS/Atom",
   "routes": [
     {
       "method": "GET",

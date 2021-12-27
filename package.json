@@ -1,6 +1,6 @@
 {
   "author": "Volkov Labs",
-  "description": "RSS datasource plugin for Grafana",
+  "description": "RSS/Atom datasource plugin for Grafana",
   "devDependencies": {
     "@grafana/data": "8.3.0",
     "@grafana/runtime": "8.3.0",
