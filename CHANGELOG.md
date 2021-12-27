@@ -4,4 +4,6 @@
 
 ### Features / Enhancements
 
-- Initial release based on the Volkov Labs Abc Data source template
+- Supports RSS 2.0 and Atom.
+- Works great with Dynamic Text panel by Marcus Olsson (marcusolsson-dynamictext-panel).
+- Initial release based on the Volkov Labs Abc Data source template.

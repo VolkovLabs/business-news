@@ -1,6 +1,6 @@
 {
   "author": "Volkov Labs",
-  "description": "RSS/Atom datasource plugin for Grafana",
+  "description": "RSS/Atom data source plugin for Grafana",
   "devDependencies": {
     "@grafana/data": "8.3.0",
     "@grafana/runtime": "8.3.0",
@@ -20,7 +20,7 @@
     "build": "grafana-toolkit plugin:build --coverage",
     "dev": "grafana-toolkit plugin:dev",
     "format": "prettier --write \"**\"",
-    "sign": "grafana-toolkit plugin:sign --rootUrls http://localhost:3000/",
+    "sign": "grafana-toolkit plugin:sign --rootUrls http://localhost:3000/ https://demo.volkovlabs.io",
     "start": "docker-compose pull && docker-compose up",
     "stop": "docker-compose down",
     "test": "grafana-toolkit plugin:test",
