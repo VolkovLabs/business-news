@@ -1,5 +1,6 @@
 import { shallow, ShallowWrapper } from 'enzyme';
 import React from 'react';
+import { FeedType, FeedTypeValue } from '../../constants';
 import { defaultQuery, Query } from '../../types';
 import { QueryEditor } from './QueryEditor';
 
@@ -14,7 +15,7 @@ type ShallowComponent = ShallowWrapper<QueryEditor['props'], QueryEditor['state'
  * @param overrideQuery
  */
 export const getQuery = (overrideQuery = {}): Query => ({
-  queryText: defaultQuery.queryText,
+  feedType: defaultQuery.feedType,
   refId: 'A',
   ...overrideQuery,
 });
@@ -32,31 +33,31 @@ describe('QueryEditor', () => {
   });
 
   /**
-   * Query Text
+   * Feed Type
    */
-  describe('QueryText', () => {
+  describe('FeedType', () => {
     const getComponent = (wrapper: ShallowComponent) =>
       wrapper.findWhere((node) => {
-        return node.prop('onChange') === wrapper.instance().onQueryTextChange;
+        return node.prop('onChange') === wrapper.instance().onFeedTypeChange;
       });
 
-    it('Should apply queryText value and change', () => {
+    it('Should apply feedType value and change', () => {
       const query = getQuery();
       const wrapper = shallow<QueryEditor>(
         <QueryEditor datasource={[] as any} query={query} onRunQuery={onRunQuery} onChange={onChange} />
       );
 
       const testedComponent = getComponent(wrapper);
-      expect(testedComponent.prop('value')).toEqual(defaultQuery.queryText);
+      expect(testedComponent.prop('value')).toEqual(FeedType.find((type) => type.value === query.feedType));
 
       /**
        * OnChange
        */
-      const newValue = 'new';
-      testedComponent.simulate('change', { target: { value: newValue } });
+      const newValue = FeedType.find((type) => type.value === FeedTypeValue.ITEMS);
+      testedComponent.simulate('change', newValue);
       expect(onChange).toHaveBeenCalledWith({
         ...query,
-        queryText: newValue,
+        feedType: newValue?.value,
       });
     });
   });

@@ -1,7 +1,9 @@
 import { defaults } from 'lodash';
-import React, { ChangeEvent, PureComponent } from 'react';
-import { QueryEditorProps } from '@grafana/data';
-import { InlineField, InlineFieldRow, Input } from '@grafana/ui';
+import React, { PureComponent } from 'react';
+import { css } from '@emotion/css';
+import { QueryEditorProps, SelectableValue } from '@grafana/data';
+import { InlineFieldRow, InlineFormLabel, Select } from '@grafana/ui';
+import { FeedType, FeedTypeValue } from '../../constants';
 import { DataSource } from '../../datasource';
 import { DataSourceOptions, defaultQuery, Query } from '../../types';
 
@@ -15,11 +17,12 @@ type Props = QueryEditorProps<DataSource, Query, DataSourceOptions>;
  */
 export class QueryEditor extends PureComponent<Props> {
   /**
-   * Query Text change
+   * Feed Type change
    */
-  onQueryTextChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { onChange, query } = this.props;
-    onChange({ ...query, queryText: event.target.value });
+  onFeedTypeChange = async (item: SelectableValue<FeedTypeValue>) => {
+    const { onChange, onRunQuery, query } = this.props;
+    onChange({ ...query, feedType: item.value! });
+    onRunQuery();
   };
 
   /**
@@ -29,11 +32,20 @@ export class QueryEditor extends PureComponent<Props> {
     const query = defaults(this.props.query, defaultQuery);
 
     return (
-      <InlineFieldRow>
-        <InlineField label="Query Text" labelWidth={14} grow>
-          <Input type="text" value={query.queryText} onChange={this.onQueryTextChange} />
-        </InlineField>
-      </InlineFieldRow>
+      <>
+        <InlineFieldRow>
+          <InlineFormLabel width={8}>Return</InlineFormLabel>
+          <Select
+            className={css`
+              margin-right: 5px;
+            `}
+            width={40}
+            options={FeedType}
+            value={FeedType.find((type) => type.value === query.feedType)}
+            onChange={this.onFeedTypeChange}
+          />
+        </InlineFieldRow>
+      </>
     );
   }
 }
