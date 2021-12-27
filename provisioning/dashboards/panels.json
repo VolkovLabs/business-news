@@ -26,14 +26,14 @@
   "panels": [
     {
       "gridPos": {
-        "h": 11,
-        "w": 24,
+        "h": 17,
+        "w": 13,
         "x": 0,
         "y": 0
       },
       "id": 2,
       "options": {
-        "content": "# {{pubDate}} <a target=\"_blank\" style=\"color: blue\" href=\"{{link}}\">{{title}}</a>\n\n{{{content:h4}}}",
+        "content": "<table width=100% style='border:0'>\n<tr>\n<td style='border:0'><h3><a target=\"_blank\" style=\"color: blue\" href=\"{{link}}\">{{title}}</a></h3>\n{{{content:h4}}}</td>\n<td rowspan=2 style='border:0' width=200px>\n<div style='max-width: 100%; display: inline; height: auto '><img width=200px height=100% src=\"{{content:img-src}}\"></div></td>\n</tr>\n<tr>\n<td style='border:0'><b>{{date pubDate 'MMM, DD YYYY'}} by {{dc:creator}}</b></td>\n</table>",
         "defaultContent": "The query didn't return any results."
       },
       "pluginVersion": "8.3.3",
@@ -49,36 +49,21 @@
         }
       ],
       "title": "Volkov Labs",
-      "type": "marcusolsson-dynamictext-panel"
-    },
-    {
-      "datasource": {
-        "type": "volkovlabs-rss-datasource",
-        "uid": "P18E95235D4DEADAE"
-      },
-      "gridPos": {
-        "h": 11,
-        "w": 24,
-        "x": 0,
-        "y": 11
-      },
-      "id": 3,
-      "options": {
-        "content": "# {{pubDate}} <a target=\"_blank\" style=\"color: blue\" href=\"{{link}}\">{{title}}</a>\n{{description}}",
-        "defaultContent": "The query didn't return any results."
-      },
-      "pluginVersion": "8.3.3",
-      "targets": [
+      "transformations": [
         {
-          "datasource": {
-            "type": "volkovlabs-rss-datasource",
-            "uid": "P18E95235D4DEADAE"
-          },
-          "feedType": "items",
-          "refId": "A"
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "dateFormat": "ddd, DD MMM YYYY HH:mm:ss ZZ",
+                "destinationType": "time",
+                "targetField": "pubDate"
+              }
+            ],
+            "fields": {}
+          }
         }
       ],
-      "title": "Amazon CloudFront Service Status",
       "type": "marcusolsson-dynamictext-panel"
     },
     {
@@ -87,14 +72,14 @@
         "uid": "P2C48277B5CA0E41B"
       },
       "gridPos": {
-        "h": 11,
-        "w": 24,
-        "x": 0,
-        "y": 22
+        "h": 17,
+        "w": 11,
+        "x": 13,
+        "y": 0
       },
       "id": 4,
       "options": {
-        "content": "## {{pubDate}}  <a style='color:blue' target=\"_blank\" href=\"{{link}}\">{{title}}</a>\n<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n<tr>\n<td><img height=100 src=\"{{og:image}}\"></td>\n<td> {{description}}\n</td>\n</tr>\n</table>",
+        "content": "<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style='border:0px !important'>\n<tr style='border:0px'>\n<td style='border:0px'><img height=100 src=\"{{og:image}}\"></td>\n<td style='border:0px'><b>{{date pubDate 'MMM DD'}}</b><h3><a style='color:blue' target=\"_blank\" href=\"{{link}}\">{{title}}</a></h3>{{description}}\n</td>\n</tr>\n</table>",
         "defaultContent": "The query didn't return any results."
       },
       "pluginVersion": "8.3.3",
@@ -109,6 +94,66 @@
         }
       ],
       "title": "Grafana Blog",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "dateFormat": "ddd, DD MMM YYYY HH:mm:ss ZZ",
+                "destinationType": "time",
+                "targetField": "pubDate"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "volkovlabs-rss-datasource",
+        "uid": "P18E95235D4DEADAE"
+      },
+      "gridPos": {
+        "h": 17,
+        "w": 13,
+        "x": 0,
+        "y": 17
+      },
+      "id": 3,
+      "options": {
+        "content": "# {{date pubDate 'LLL'}} <a target=\"_blank\" style=\"color: blue\" href=\"{{link}}\">{{title}}</a>\n{{description}}\n\n<a href='{{guid}}' style='color:gray'>{{guid}}</a>",
+        "defaultContent": "The query didn't return any results."
+      },
+      "pluginVersion": "8.3.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "volkovlabs-rss-datasource",
+            "uid": "P18E95235D4DEADAE"
+          },
+          "feedType": "items",
+          "refId": "A"
+        }
+      ],
+      "title": "Amazon CloudFront Service Status",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "dateFormat": "ddd, DD MMM YYYY HH:mm:ss ZZ",
+                "destinationType": "time",
+                "targetField": "pubDate"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
       "type": "marcusolsson-dynamictext-panel"
     },
     {
@@ -117,14 +162,14 @@
         "uid": "PC2BC760787550059"
       },
       "gridPos": {
-        "h": 8,
-        "w": 24,
-        "x": 0,
-        "y": 33
+        "h": 17,
+        "w": 11,
+        "x": 13,
+        "y": 17
       },
       "id": 6,
       "options": {
-        "content": "# {{updated}} <a target=\"_blank\" style=\"color:blue\" href='{{link}}'>{{title}}</a>\n{{{content}}}",
+        "content": "# {{date updated 'LLL'}} <a target=\"_blank\" style=\"color:blue\" href='{{link}}'>{{title}}</a>\n{{{content}}}",
         "defaultContent": "The query didn't return any results."
       },
       "pluginVersion": "8.3.3",
@@ -139,6 +184,21 @@
         }
       ],
       "title": "Redis Status",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "dateFormat": "",
+                "destinationType": "time",
+                "targetField": "updated"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
       "type": "marcusolsson-dynamictext-panel"
     }
   ],
@@ -157,6 +217,6 @@
   "timezone": "",
   "title": "Panels",
   "uid": "O4tc_E6Gz",
-  "version": 2,
+  "version": 8,
   "weekStart": ""
 }
