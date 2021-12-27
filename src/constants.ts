@@ -51,6 +51,8 @@ export enum MetaProperties {
  * Item Keys
  */
 export enum ItemKeys {
+  LINK = 'link',
+  CONTENT = 'content',
   META = 'meta',
   CONTENT_ENCODED = 'content:encoded',
   CONTENT_H4 = 'content:h4',

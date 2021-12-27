@@ -9,7 +9,11 @@
 
 ## Introduction
 
-The RSS Datasource plugin for Grafana.
+The RSS/Atom Datasource is a plugin for Grafana that retrieves RSS/Atom feeds and allows to visualize them using Dynamic Text and other panels.
+
+### Demo
+
+Demo is available on [demo.volkovlabs.io](https://demo.volkovlabs.io).
 
 ### Requirements
 
@@ -17,38 +21,20 @@ Grafana 8.0 is required.
 
 ## Getting Started
 
-1. Install packages
+Use the `grafana-cli` tool to install from the command line:
 
 ```bash
-yarn install
-```
-
-2. Build the plugin
-
-```bash
-yarn build
-```
-
-3. Sign the plugins
-
-```
-export GRAFANA_API_KEY=erXXXX==
-yarn sign
-```
-
-4. Start Docker container
-
-```bash
-yarn run start
+grafana-cli plugins install volkovlabs-rss-datasource
 ```
 
 ## Features
 
-- Supports RSS 2.0.
-- Returns Channel data, Items or both as separate data frames.
-- Extract Image from Meta.
-- Extract H4 and Image from Encoded content.
-- Works great with Dynamic Text panel bu Marcus Olsson (marcusolsson-dynamictext-panel)
+- Supports RSS 2.0 and Atom.
+- Works great with Dynamic Text panel by Marcus Olsson (marcusolsson-dynamictext-panel).
+- Returns Channel (Feed) data, Items (Entries) or both as separate data frames.
+- Extract and parse as additional fields:
+  - Image from Meta.
+  - H4 and Image from the Encoded content.
 
 ## Feedback
 

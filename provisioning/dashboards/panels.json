@@ -110,6 +110,36 @@
       ],
       "title": "Grafana Blog",
       "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "volkovlabs-rss-datasource",
+        "uid": "PC2BC760787550059"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 33
+      },
+      "id": 6,
+      "options": {
+        "content": "# {{updated}} <a target=\"_blank\" style=\"color:blue\" href='{{link}}'>{{title}}</a>\n{{{content}}}",
+        "defaultContent": "The query didn't return any results."
+      },
+      "pluginVersion": "8.3.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "volkovlabs-rss-datasource",
+            "uid": "PC2BC760787550059"
+          },
+          "feedType": "items",
+          "refId": "A"
+        }
+      ],
+      "title": "Redis Status",
+      "type": "marcusolsson-dynamictext-panel"
     }
   ],
   "refresh": "",
@@ -127,6 +157,6 @@
   "timezone": "",
   "title": "Panels",
   "uid": "O4tc_E6Gz",
-  "version": 6,
+  "version": 2,
   "weekStart": ""
 }
