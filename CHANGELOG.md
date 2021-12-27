@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.1.0 (2021-12-27)
+
+### Features / Enhancements
+
+- Extract <img src="X"> from the <figure> (#5)
+- Extract Guid's text from the <guid> (#5)
+- Update dashboards layout
+
 ## 1.0.0 (2021-12-26)
 
 ### Features / Enhancements
