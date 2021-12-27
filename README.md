@@ -1,13 +1,15 @@
-# Template to create a new Grafana datasource plugin
+# RSS datasource plugin for Grafana
+
+![Dashboard](https://raw.githubusercontent.com/VolkovLabs/volkovlabs-rss-datasource/main/src/img/dashboard.png)
 
 [![Grafana 8](https://img.shields.io/badge/Grafana-8-orange)](https://www.grafana.com)
-![CI](https://github.com/volkovlabs/volkovlabs-abc-datasource/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-abc-datasource/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-abc-datasource)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/VolkovLabs/volkovlabs-abc-datasource.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/VolkovLabs/volkovlabs-abc-datasource/context:javascript)
+![CI](https://github.com/volkovlabs/volkovlabs-rss-datasource/workflows/CI/badge.svg)
+[![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-rss-datasource/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-rss-datasource)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/VolkovLabs/volkovlabs-rss-datasource.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/VolkovLabs/volkovlabs-rss-datasource/context:javascript)
 
 ## Introduction
 
-The ABC Datasource is a template to create a new datasource plugin for Grafana.
+The RSS Datasource plugin for Grafana.
 
 ### Requirements
 
@@ -42,16 +44,17 @@ yarn run start
 
 ## Features
 
-- Use `docker-compose` to start development environment with provisioned panels and dashboard.
-- Provides unit test configuration.
-- Based on the latest version of Grafana.
-- Includes GitHub Actions for CI and Release.
+- Supports RSS 2.0.
+- Returns Channel data, Items or both as separate data frames.
+- Extract Image from Meta.
+- Extract H4 and Image from Encoded content.
+- Works great with Dynamic Text panel bu Marcus Olsson (marcusolsson-dynamictext-panel)
 
 ## Feedback
 
 We love to hear from users, developers, and the whole community interested in this plugin. These are various ways to get in touch with us:
 
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-abc-datasource/issues/new/choose).
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-rss-datasource/issues/new/choose).
 - Star the repository to show your support.
 
 ## Contributing
@@ -62,4 +65,4 @@ We love to hear from users, developers, and the whole community interested in th
 
 ## License
 
-- Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/volkovlabs-abc-datasource/blob/main/LICENSE).
+- Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/volkovlabs-rss-datasource/blob/main/LICENSE).

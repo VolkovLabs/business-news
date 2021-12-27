@@ -1,6 +1,12 @@
-import { DataQueryRequest, DataQueryResponse, DataSourceApi, DataSourceInstanceSettings } from '@grafana/data';
+import {
+  DataFrame,
+  DataQueryRequest,
+  DataQueryResponse,
+  DataSourceApi,
+  DataSourceInstanceSettings,
+} from '@grafana/data';
 import { Api } from '../api';
-import { DataSourceTestStatus } from '../constants';
+import { DataSourceTestStatus, FeedTypeValue } from '../constants';
 import { DataSourceOptions, Query } from '../types';
 
 /**
@@ -26,12 +32,19 @@ export class DataSource extends DataSourceApi<Query, DataSourceOptions> {
    * Query
    */
   async query(options: DataQueryRequest<Query>): Promise<DataQueryResponse> {
-    const { range } = options;
+    const data: DataFrame[] = [];
 
     /**
      * Process targets
      */
-    const data = options.targets.map((target) => this.api.getData(target, range));
+    await Promise.all(
+      options.targets.map(async (target) => {
+        const frames = await this.api.getFeed(target);
+        if (frames && frames.length) {
+          data.push(...frames);
+        }
+      })
+    );
 
     /**
      * Return data
@@ -43,7 +56,15 @@ export class DataSource extends DataSourceApi<Query, DataSourceOptions> {
    * Health Check
    */
   async testDatasource() {
-    const isStatusOk = true;
+    /**
+     * Get RSS Feed
+     */
+    const frames = await this.api.getFeed({
+      refId: 'A',
+      feedType: FeedTypeValue.ALL,
+    });
+
+    const isStatusOk = frames?.length ? true : false;
 
     /**
      * Return

@@ -1,22 +1,23 @@
 import { DataQuery, DataSourceJsonData } from '@grafana/data';
+import { FeedTypeValue } from './constants';
 
 /**
  * Query
  */
 export interface Query extends DataQuery {
   /**
-   * Query Text
+   * Feed Type
    *
    * @type {string}
    */
-  queryText?: string;
+  feedType?: string;
 }
 
 /**
  * Defaults for Query
  */
 export const defaultQuery: Partial<Query> = {
-  queryText: 'test',
+  feedType: FeedTypeValue.ALL,
 };
 
 /**
@@ -24,21 +25,9 @@ export const defaultQuery: Partial<Query> = {
  */
 export interface DataSourceOptions extends DataSourceJsonData {
   /**
-   * Path
+   * URL to access RSS Feed
    *
    * @type {string}
    */
-  path?: string;
-}
-
-/**
- * Secure JSON Data
- */
-export interface SecureJsonData {
-  /**
-   * API Key
-   *
-   * @type {string}
-   */
-  apiKey?: string;
+  feed: string;
 }

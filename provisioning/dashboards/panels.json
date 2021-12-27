@@ -1,35 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_ABC",
-      "label": "Abc",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "volkovlabs-abc-datasource",
-      "pluginName": "Abc"
-    }
-  ],
-  "__elements": [],
-  "__requires": [
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "8.3.2"
-    },
-    {
-      "type": "panel",
-      "id": "table",
-      "name": "Table",
-      "version": ""
-    },
-    {
-      "type": "datasource",
-      "id": "volkovlabs-abc-datasource",
-      "name": "Abc",
-      "version": "1.0.0"
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -52,82 +21,112 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": null,
   "links": [],
   "liveNow": false,
   "panels": [
     {
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "align": "auto",
-            "displayMode": "auto"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 11,
+        "w": 24,
         "x": 0,
         "y": 0
       },
       "id": 2,
       "options": {
-        "footer": {
-          "fields": "",
-          "reducer": ["sum"],
-          "show": false
-        },
-        "showHeader": true
+        "content": "# {{pubDate}} <a target=\"_blank\" style=\"color: blue\" href=\"{{link}}\">{{title}}</a>\n\n{{{content:h4}}}",
+        "defaultContent": "The query didn't return any results."
       },
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.3",
       "targets": [
         {
           "datasource": {
             "type": "volkovlabs-abc-datasource",
             "uid": "${DS_ABC}"
           },
+          "feedType": "items",
           "queryText": "test",
           "refId": "A"
         }
       ],
-      "title": "Test",
-      "type": "table"
+      "title": "Volkov Labs",
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "volkovlabs-rss-datasource",
+        "uid": "P18E95235D4DEADAE"
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 24,
+        "x": 0,
+        "y": 11
+      },
+      "id": 3,
+      "options": {
+        "content": "# {{pubDate}} <a target=\"_blank\" style=\"color: blue\" href=\"{{link}}\">{{title}}</a>\n{{description}}",
+        "defaultContent": "The query didn't return any results."
+      },
+      "pluginVersion": "8.3.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "volkovlabs-rss-datasource",
+            "uid": "P18E95235D4DEADAE"
+          },
+          "feedType": "items",
+          "refId": "A"
+        }
+      ],
+      "title": "Amazon CloudFront Service Status",
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "volkovlabs-rss-datasource",
+        "uid": "P2C48277B5CA0E41B"
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 24,
+        "x": 0,
+        "y": 22
+      },
+      "id": 4,
+      "options": {
+        "content": "## {{pubDate}}  <a style='color:blue' target=\"_blank\" href=\"{{link}}\">{{title}}</a>\n<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n<tr>\n<td><img height=100 src=\"{{og:image}}\"></td>\n<td> {{description}}\n</td>\n</tr>\n</table>",
+        "defaultContent": "The query didn't return any results."
+      },
+      "pluginVersion": "8.3.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "volkovlabs-rss-datasource",
+            "uid": "P2C48277B5CA0E41B"
+          },
+          "feedType": "items",
+          "refId": "A"
+        }
+      ],
+      "title": "Grafana Blog",
+      "type": "marcusolsson-dynamictext-panel"
     }
   ],
   "refresh": "",
-  "schemaVersion": 33,
+  "schemaVersion": 34,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-30d",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Panels",
   "uid": "O4tc_E6Gz",
-  "version": 1,
+  "version": 6,
   "weekStart": ""
 }

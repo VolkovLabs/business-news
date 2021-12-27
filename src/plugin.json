@@ -1,10 +1,11 @@
 {
   "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
+  "alerting": true,
   "dependencies": {
     "grafanaDependency": ">=8.0.0",
     "plugins": []
   },
-  "id": "volkovlabs-abc-datasource",
+  "id": "volkovlabs-rss-datasource",
   "info": {
     "author": {
       "name": "Volkov Labs",
@@ -22,11 +23,24 @@
       "large": "img/logo.svg",
       "small": "img/logo.svg"
     },
-    "screenshots": [],
+    "screenshots": [
+      {
+        "name": "Dashboard",
+        "path": "img/dashboard.png"
+      }
+    ],
     "updated": "%TODAY%",
     "version": "%VERSION%"
   },
   "metrics": true,
-  "name": "Abc",
+  "name": "RSS",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "feed",
+      "reqRole": "Viewer",
+      "url": "{{ .JsonData.feed }}"
+    }
+  ],
   "type": "datasource"
 }

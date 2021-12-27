@@ -1,7 +1,7 @@
 # Change Log
 
-## 1.0.0 (2021-12-13)
+## 1.0.0 (2021-12-26)
 
 ### Features / Enhancements
 
-- Initial release based on Grafana 8.3.0
+- Initial release based on the Volkov Labs Abc Data source template
