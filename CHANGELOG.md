@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.2.0 (2022-01-11)
+
+### Features / Enhancements
+
+- Signed as Community datasource plugin (#6).
+
 ## 1.1.0 (2021-12-27)
 
 ### Features / Enhancements
