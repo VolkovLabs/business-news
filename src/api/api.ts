@@ -30,7 +30,6 @@ export class Api {
       getBackendSrv().fetch({
         method: 'GET',
         url: `${this.instanceSettings.url}/feed`,
-        showErrorAlert: true,
       })
     );
 
