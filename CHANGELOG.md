@@ -4,7 +4,7 @@
 
 ### Features / Enhancements
 
-- Signed as Community datasource plugin (#6).
+- Signed as Community datasource plugin (#7).
 
 ## 1.1.0 (2021-12-27)
 
