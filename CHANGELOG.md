@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.3.0 (IN PROGRESS)
+
+### Features / Enhancements
+
+- Update README with link to the Grafana Marketplace (#8)
+
 ## 1.2.0 (2022-01-11)
 
 ### Features / Enhancements
