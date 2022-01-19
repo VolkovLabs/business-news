@@ -5,6 +5,7 @@
 ### Features / Enhancements
 
 - Update README with link to the Grafana Marketplace (#8)
+- Rebuild using 8.3.4 (#6)
 
 ## 1.2.0 (2022-01-11)
 
