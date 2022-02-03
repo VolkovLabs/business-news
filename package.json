@@ -17,7 +17,7 @@
   },
   "name": "volkovlabs-rss-datasource",
   "scripts": {
-    "build": "grafana-toolkit plugin:build --coverage",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && grafana-toolkit plugin:build --coverage",
     "dev": "grafana-toolkit plugin:dev",
     "format": "prettier --write \"**\"",
     "sign": "grafana-toolkit plugin:sign",
@@ -25,7 +25,7 @@
     "stop": "docker-compose down",
     "test": "grafana-toolkit plugin:test",
     "upgrade": "yarn upgrade --latest",
-    "watch": "grafana-toolkit plugin:dev --watch"
+    "watch": "export NODE_OPTIONS=--openssl-legacy-provider && grafana-toolkit plugin:dev --watch"
   },
-  "version": "1.3.0"
+  "version": "1.3.1"
 }

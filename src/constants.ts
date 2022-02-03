@@ -53,6 +53,7 @@ export enum MetaProperties {
 export enum ItemKeys {
   LINK = 'link',
   CONTENT = 'content',
+  SUMMARY = 'summary',
   META = 'meta',
   GUID = 'guid',
   CONTENT_ENCODED = 'content:encoded',
@@ -61,3 +62,8 @@ export enum ItemKeys {
   CONTENT_IMG_SRC = 'content:img-src',
   PUB_DATE = 'pubDate',
 }
+
+/**
+ * Parse as Array
+ */
+export const alwaysArray = ['feed.entry'];

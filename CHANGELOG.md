@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.3.1 (2022-02-02)
+
+### Bug fixes
+
+- Google Workspace Atom feed failed #11
+
 ## 1.3.0 (2022-01-24)
 
 ### Features / Enhancements

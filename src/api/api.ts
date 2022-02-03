@@ -2,7 +2,7 @@ import { XMLParser } from 'fast-xml-parser';
 import { lastValueFrom } from 'rxjs';
 import { DataSourceInstanceSettings, FieldType, MutableDataFrame } from '@grafana/data';
 import { getBackendSrv } from '@grafana/runtime';
-import { FeedTypeValue, ItemKeys, MetaProperties } from '../constants';
+import { alwaysArray, FeedTypeValue, ItemKeys, MetaProperties } from '../constants';
 import { DataSourceOptions, Query } from '../types';
 import { setItem } from '../utils';
 
@@ -44,7 +44,12 @@ export class Api {
     /**
      * Parse XML
      */
-    const parser = new XMLParser({ ignoreAttributes: false });
+    const parser = new XMLParser({
+      ignoreAttributes: false,
+      isArray: (name, jpath, isLeafNode, isAttribute) => {
+        return alwaysArray.indexOf(jpath) !== -1 ? true : false;
+      },
+    });
     const data = parser.parse(response.data as any);
 
     /**
@@ -200,6 +205,13 @@ export class Api {
          * Parse Content
          */
         if (key === ItemKeys.CONTENT && value['#text']) {
+          value = value['#text'];
+        }
+
+        /**
+         * Parse Summary
+         */
+        if (key === ItemKeys.SUMMARY && value['#text']) {
           value = value['#text'];
         }
 

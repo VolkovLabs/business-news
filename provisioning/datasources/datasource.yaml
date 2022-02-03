@@ -34,3 +34,11 @@ datasources:
     editable: true
     jsonData:
       feed: https://status.redis.com/history.atom
+  - name: Google Workspace
+    type: volkovlabs-rss-datasource
+    access: proxy
+    orgId: 1
+    version: 1
+    editable: true
+    jsonData:
+      feed: https://www.google.com/appsstatus/dashboard/en/feed.atom
