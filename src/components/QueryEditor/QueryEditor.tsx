@@ -2,7 +2,7 @@ import { defaults } from 'lodash';
 import React, { PureComponent } from 'react';
 import { css } from '@emotion/css';
 import { QueryEditorProps, SelectableValue } from '@grafana/data';
-import { InlineFieldRow, InlineFormLabel, Select } from '@grafana/ui';
+import { InlineField, InlineFieldRow, Select } from '@grafana/ui';
 import { FeedType, FeedTypeValue } from '../../constants';
 import { DataSource } from '../../datasource';
 import { DataSourceOptions, defaultQuery, Query } from '../../types';
@@ -32,20 +32,18 @@ export class QueryEditor extends PureComponent<Props> {
     const query = defaults(this.props.query, defaultQuery);
 
     return (
-      <>
-        <InlineFieldRow>
-          <InlineFormLabel width={8}>Return</InlineFormLabel>
+      <InlineFieldRow>
+        <InlineField label="Return" labelWidth={8} grow={true}>
           <Select
             className={css`
               margin-right: 5px;
             `}
-            width={40}
             options={FeedType}
             value={FeedType.find((type) => type.value === query.feedType)}
             onChange={this.onFeedTypeChange}
           />
-        </InlineFieldRow>
-      </>
+        </InlineField>
+      </InlineFieldRow>
     );
   }
 }
