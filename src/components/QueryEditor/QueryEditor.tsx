@@ -1,7 +1,7 @@
 import { defaults } from 'lodash';
-import React, { PureComponent } from 'react';
+import React, { ChangeEvent, PureComponent } from 'react';
 import { QueryEditorProps, SelectableValue } from '@grafana/data';
-import { InlineField, InlineFieldRow, Select } from '@grafana/ui';
+import { InlineField, InlineFieldRow, Input, Select } from '@grafana/ui';
 import { FeedType, FeedTypeValue } from '../../constants';
 import { DataSource } from '../../datasource';
 import { DataSourceOptions, defaultQuery, Query } from '../../types';
@@ -25,21 +25,42 @@ export class QueryEditor extends PureComponent<Props> {
   };
 
   /**
+   * Date Field change
+   */
+  onDateFieldChange = async (event: ChangeEvent<HTMLInputElement>) => {
+    const { onChange, onRunQuery, query } = this.props;
+    onChange({ ...query, dateField: event.target.value });
+    onRunQuery();
+  };
+
+  /**
    * Render
    */
   render() {
     const query = defaults(this.props.query, defaultQuery);
 
     return (
-      <InlineFieldRow>
-        <InlineField label="Return" labelWidth={8} grow={true}>
-          <Select
-            options={FeedType}
-            value={FeedType.find((type) => type.value === query.feedType)}
-            onChange={this.onFeedTypeChange}
-          />
-        </InlineField>
-      </InlineFieldRow>
+      <>
+        <InlineFieldRow>
+          <InlineField label="Return" labelWidth={8} grow={true}>
+            <Select
+              options={FeedType}
+              value={FeedType.find((type) => type.value === query.feedType)}
+              onChange={this.onFeedTypeChange}
+            />
+          </InlineField>
+        </InlineFieldRow>
+        <InlineFieldRow>
+          <InlineField
+            label="Filter by Date field"
+            labelWidth={20}
+            tooltip="Specify the date field's name to filter news in the time range"
+            grow
+          >
+            <Input type="text" value={query.dateField} onChange={this.onDateFieldChange} placeholder="pubDate" />
+          </InlineField>
+        </InlineFieldRow>
+      </>
     );
   }
 }

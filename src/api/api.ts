@@ -1,10 +1,10 @@
 import { XMLParser } from 'fast-xml-parser';
 import { lastValueFrom } from 'rxjs';
-import { DataSourceInstanceSettings, FieldType, MutableDataFrame } from '@grafana/data';
+import { DataSourceInstanceSettings, FieldType, MutableDataFrame, TimeRange } from '@grafana/data';
 import { getBackendSrv } from '@grafana/runtime';
 import { alwaysArray, FeedTypeValue, ItemKeys, MetaProperties } from '../constants';
 import { DataSourceOptions, Query } from '../types';
-import { setItem } from '../utils';
+import { isDateBetweenRange, setItem } from '../utils';
 
 /**
  * API
@@ -19,10 +19,11 @@ export class Api {
    * Get RSS feed
    *
    * @async
-   * @param {RedisEnterpriseQuery} query Query
-   * @returns {Promise<Cluster>} Cluster info
+   * @param {Query} query Query
+   * @param {TimeRange} range Time Range
+   * @returns {Promise<MutableDataFrame[]>} Feed
    */
-  async getFeed(query: Query): Promise<MutableDataFrame[]> {
+  async getFeed(query: Query, range: TimeRange | null = null): Promise<MutableDataFrame[]> {
     /**
      * Fetch Feed
      */
@@ -89,6 +90,13 @@ export class Api {
        */
       const items: { [id: string]: string[] } = {};
       channel.item.forEach((item: any) => {
+        /**
+         * Filter by specified Date field
+         */
+        if (query.dateField && range && !isDateBetweenRange(item[query.dateField], range)) {
+          return;
+        }
+
         Object.keys(item).forEach((key: string) => {
           let value = item[key];
 
@@ -191,6 +199,13 @@ export class Api {
      */
     const entries: { [id: string]: string[] } = {};
     feed.entry.forEach((entry: any) => {
+      /**
+       * Filter by specified Date field
+       */
+      if (query.dateField && range && !isDateBetweenRange(entry[query.dateField], range)) {
+        return;
+      }
+
       Object.keys(entry).forEach((key: string) => {
         let value = entry[key];
 

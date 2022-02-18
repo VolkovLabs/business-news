@@ -38,6 +38,7 @@ grafana-cli plugins install volkovlabs-rss-datasource
 - Extract and parse as additional fields:
   - Image from Meta.
   - H4 and Image from the Encoded content.
+- Filter items/entries based on the selected Time Range.
 
 ## Feedback
 

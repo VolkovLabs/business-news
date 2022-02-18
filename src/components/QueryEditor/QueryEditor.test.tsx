@@ -16,6 +16,7 @@ type ShallowComponent = ShallowWrapper<QueryEditor['props'], QueryEditor['state'
  */
 export const getQuery = (overrideQuery = {}): Query => ({
   feedType: defaultQuery.feedType,
+  dateField: 'pubDate',
   refId: 'A',
   ...overrideQuery,
 });
@@ -58,6 +59,35 @@ describe('QueryEditor', () => {
       expect(onChange).toHaveBeenCalledWith({
         ...query,
         feedType: newValue?.value,
+      });
+    });
+  });
+
+  /**
+   * Date field
+   */
+  describe('DateField', () => {
+    const getComponent = (wrapper: ShallowComponent) =>
+      wrapper.findWhere((node) => {
+        return node.prop('onChange') === wrapper.instance().onDateFieldChange;
+      });
+
+    it('Should apply dateField value and change', () => {
+      const query = getQuery();
+      const wrapper = shallow<QueryEditor>(
+        <QueryEditor datasource={[] as any} query={query} onRunQuery={onRunQuery} onChange={onChange} />
+      );
+
+      const testedComponent = getComponent(wrapper);
+      expect(testedComponent.prop('value')).toEqual('pubDate');
+
+      /**
+       * OnChange
+       */
+      testedComponent.simulate('change', { target: { value: 'date' } });
+      expect(onChange).toHaveBeenCalledWith({
+        ...query,
+        dateField: 'date',
       });
     });
   });

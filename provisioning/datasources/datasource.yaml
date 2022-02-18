@@ -42,3 +42,12 @@ datasources:
     editable: true
     jsonData:
       feed: https://www.google.com/appsstatus/dashboard/en/feed.atom
+  - name: Bitcoin
+    type: volkovlabs-rss-datasource
+    access: proxy
+    orgId: 1
+    uid: rZAdZdf7k
+    version: 1
+    editable: true
+    jsonData:
+      feed: https://news.bitcoin.com/feed/

@@ -44,6 +44,7 @@
             "type": "volkovlabs-abc-datasource",
             "uid": "${DS_ABC}"
           },
+          "dateField": "pubDate",
           "feedType": "items",
           "queryText": "test",
           "refId": "A"
@@ -91,6 +92,7 @@
             "type": "volkovlabs-rss-datasource",
             "uid": "P2C48277B5CA0E41B"
           },
+          "dateField": "pubDate",
           "feedType": "items",
           "refId": "A"
         }
@@ -137,6 +139,7 @@
             "type": "volkovlabs-rss-datasource",
             "uid": "P18E95235D4DEADAE"
           },
+          "dateField": "pubDate",
           "feedType": "items",
           "refId": "A"
         }
@@ -183,6 +186,7 @@
             "type": "volkovlabs-rss-datasource",
             "uid": "PC2BC760787550059"
           },
+          "dateField": "updated",
           "feedType": "items",
           "refId": "A"
         }
@@ -229,6 +233,7 @@
             "type": "volkovlabs-rss-datasource",
             "uid": "PE12154EB4CA97411"
           },
+          "dateField": "updated",
           "feedType": "items",
           "refId": "A"
         }
@@ -250,17 +255,65 @@
         }
       ],
       "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "volkovlabs-rss-datasource",
+        "uid": "rZAdZdf7k"
+      },
+      "gridPos": {
+        "h": 17,
+        "w": 11,
+        "x": 13,
+        "y": 34
+      },
+      "id": 8,
+      "options": {
+        "content": "<h2><a target=\"_blank\" style=\"color: blue\" href=\"{{link}}\">{{title}}</a></h2>\n<b>{{date pubDate 'MMM, DD YYYY'}} by {{dc:creator}}</b>\n<div>{{{description}}}</div>\n<br/>",
+        "defaultContent": "The query didn't return any results.",
+        "everyRow": true
+      },
+      "pluginVersion": "8.3.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "volkovlabs-rss-datasource",
+            "uid": "rZAdZdf7k"
+          },
+          "dateField": "pubDate",
+          "feedType": "items",
+          "queryText": "test",
+          "refId": "A"
+        }
+      ],
+      "title": "Bitcoin",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "dateFormat": "ddd, DD MMM YYYY HH:mm:ss ZZ",
+                "destinationType": "time",
+                "targetField": "pubDate"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "marcusolsson-dynamictext-panel"
     }
   ],
   "refresh": "",
-  "schemaVersion": 34,
+  "schemaVersion": 35,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-30d",
+    "from": "now-1y",
     "to": "now"
   },
   "timepicker": {},

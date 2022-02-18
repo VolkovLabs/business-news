@@ -11,6 +11,13 @@ export interface Query extends DataQuery {
    * @type {string}
    */
   feedType?: string;
+
+  /**
+   * Date field to filter items
+   *
+   * @type {string}
+   */
+  dateField?: string;
 }
 
 /**

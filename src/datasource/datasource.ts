@@ -32,6 +32,7 @@ export class DataSource extends DataSourceApi<Query, DataSourceOptions> {
    * Query
    */
   async query(options: DataQueryRequest<Query>): Promise<DataQueryResponse> {
+    const { range } = options;
     const data: DataFrame[] = [];
 
     /**
@@ -39,7 +40,7 @@ export class DataSource extends DataSourceApi<Query, DataSourceOptions> {
      */
     await Promise.all(
       options.targets.map(async (target) => {
-        const frames = await this.api.getFeed(target);
+        const frames = await this.api.getFeed(target, range);
         if (frames && frames.length) {
           data.push(...frames);
         }
