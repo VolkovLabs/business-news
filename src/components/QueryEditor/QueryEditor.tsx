@@ -1,6 +1,5 @@
 import { defaults } from 'lodash';
 import React, { PureComponent } from 'react';
-import { css } from '@emotion/css';
 import { QueryEditorProps, SelectableValue } from '@grafana/data';
 import { InlineField, InlineFieldRow, Select } from '@grafana/ui';
 import { FeedType, FeedTypeValue } from '../../constants';
@@ -35,9 +34,6 @@ export class QueryEditor extends PureComponent<Props> {
       <InlineFieldRow>
         <InlineField label="Return" labelWidth={8} grow={true}>
           <Select
-            className={css`
-              margin-right: 5px;
-            `}
             options={FeedType}
             value={FeedType.find((type) => type.value === query.feedType)}
             onChange={this.onFeedTypeChange}

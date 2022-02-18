@@ -40,8 +40,8 @@ export class ConfigEditor extends PureComponent<Props, State> {
 
     return (
       <InlineFieldRow>
-        <InlineField label="Feed URL" labelWidth={14}>
-          <Input type="text" value={jsonData.feed} width={40} onChange={this.onFeedChange} placeholder="https://feed" />
+        <InlineField label="Feed URL" labelWidth={14} grow>
+          <Input type="text" value={jsonData.feed} onChange={this.onFeedChange} placeholder="https://feed" />
         </InlineField>
       </InlineFieldRow>
     );
