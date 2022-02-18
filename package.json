@@ -2,18 +2,18 @@
   "author": "Volkov Labs",
   "description": "RSS/Atom data source plugin for Grafana",
   "devDependencies": {
-    "@grafana/data": "8.3.6",
-    "@grafana/runtime": "8.3.6",
-    "@grafana/toolkit": "8.3.6",
-    "@grafana/ui": "8.3.6",
+    "@grafana/data": "8.4.0",
+    "@grafana/runtime": "8.4.0",
+    "@grafana/toolkit": "8.4.0",
+    "@grafana/ui": "8.4.0",
     "@types/enzyme": "^3.10.11",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
-    "fast-xml-parser": "^4.0.2"
+    "fast-xml-parser": "^4.0.3"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "name": "volkovlabs-rss-datasource",
   "scripts": {
