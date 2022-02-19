@@ -5,7 +5,8 @@
 ### Features / Enhancements
 
 - Rebuild using 8.3.6 (#13)
-- Rebuild using 8.4.0 and use PluginCheck v2
+- Rebuild using 8.4.0 and use PluginCheck v2 (#14)
+- Select items/entries based on the selected Time Range (#3)
 
 ## 1.3.1 (2022-02-02)
 
