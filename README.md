@@ -40,6 +40,25 @@ grafana-cli plugins install volkovlabs-rss-datasource
   - H4 and Image from the Encoded content.
 - Filter items/entries based on the selected Time Range.
 
+## Provisioning
+
+Grafana supports managing data sources by adding one or more YAML config files in the `provisioning/datasources` folder.
+
+Example of provisioning the RSS/Atom Data Source for Bitcoin news feed.
+
+```
+datasources:
+  - name: Bitcoin
+    type: volkovlabs-rss-datasource
+    access: proxy
+    orgId: 1
+    uid: rZAdZdf7k
+    version: 1
+    editable: true
+    jsonData:
+      feed: https://news.bitcoin.com/feed/
+```
+
 ## Feedback
 
 We love to hear from users, developers, and the whole community interested in this plugin. These are various ways to get in touch with us:

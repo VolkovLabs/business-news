@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.5.0 (IN PROGRESS)
+
+### Features / Enhancements
+
+- Add Provisioning instructions to README
+
 ## 1.4.0 (2022-02-18)
 
 ### Features / Enhancements
