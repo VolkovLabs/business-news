@@ -4,7 +4,8 @@
 
 ### Features / Enhancements
 
-- Add Provisioning instructions to README
+- Add Provisioning instructions to README (#16)
+- Rebuild using 8.4.3
 
 ## 1.4.0 (2022-02-18)
 
