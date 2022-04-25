@@ -5,6 +5,7 @@ datasources:
     type: volkovlabs-rss-datasource
     access: proxy
     isDefault: true
+    uid: rZAdZdf7a
     orgId: 1
     version: 1
     editable: true
@@ -51,3 +52,12 @@ datasources:
     editable: true
     jsonData:
       feed: https://news.bitcoin.com/feed/
+  - name: National Vulnerability Database
+    type: volkovlabs-rss-datasource
+    access: proxy
+    orgId: 1
+    uid: rZAdZdf72
+    version: 1
+    editable: true
+    jsonData:
+      feed: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss.xml
