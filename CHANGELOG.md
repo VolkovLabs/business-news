@@ -5,7 +5,9 @@
 ### Features / Enhancements
 
 - Add Provisioning instructions to README (#16)
-- Rebuild using 8.4.3
+- Rebuild using 8.4.3 (#17)
+- Adding RSS 1.0 support (#19)
+- Rebuild based on 8.5.0 (#20)
 
 ## 1.4.0 (2022-02-18)
 

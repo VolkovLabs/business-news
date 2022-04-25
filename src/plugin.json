@@ -9,14 +9,14 @@
   "info": {
     "author": {
       "name": "Volkov Labs",
-      "url": "https://volkovlabs.com"
+      "url": "https://volkovlabs.io"
     },
     "description": "RSS/Atom datasource plugin for Grafana",
     "keywords": ["rss", "atom", "news"],
     "links": [
       {
         "name": "Website",
-        "url": "https://volkovlabs.com"
+        "url": "https://volkovlabs.io"
       }
     ],
     "logos": {
