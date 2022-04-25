@@ -54,6 +54,14 @@ export class Api {
     const data = parser.parse(response.data as any);
 
     /**
+     * RSS 1.0 (RDF) support
+     */
+    if (data['rdf:RDF'] && !data.rss) {
+      data.rss = data['rdf:RDF'];
+      data.rss.channel.item = data.rss.item;
+    }
+
+    /**
      * RSS 2.0 with Channel data
      */
     if (data.rss && data.rss.channel) {
