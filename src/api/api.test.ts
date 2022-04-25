@@ -156,5 +156,14 @@ describe('Api', () => {
       let result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ITEMS }, range);
       expect(result?.length).toEqual(1);
     });
+
+    it('Should handle getFeed request for RSS 1.0', async () => {
+      xmlResponse.data =
+        '<?xml version="1.0" encoding="UTF-8"?>\r\n<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/">\r\n  <channel rdf:about="https://web.nvd.nist.gov/view/vuln/search">\r\n    <title>National Vulnerability Database</title>\r\n    <link>https://web.nvd.nist.gov/view/vuln/search</link>\r\n    <description>This feed contains the most recent CVE cyber vulnerabilities published within the National Vulnerability Database.</description>\r\n   <dc:date>2022-04-25T18:00:00Z</dc:date>\r\n    <dc:language>en-us</dc:language>\r\n    <dc:rights>This material is not copywritten and may be freely used, however, attribution is requested.</dc:rights>\r\n  </channel>\r\n  <item rdf:about="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-20014">\r\n    <title>CVE-2016-20014</title>\r\n    <link>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-20014</link>\r\n    <description>In pam_tacplus.c in pam_tacplus before 1.4.1, pam_sm_acct_mgmt does not zero out the arep data structure.</description>\r\n    <dc:date>2022-04-21T04:15:09Z</dc:date>\r\n  </item>\r\n  <item rdf:about="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-25059">\r\n    <title>CVE-2019-25059</title>\r\n    <link>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-25059</link>\r\n    <description>Artifex Ghostscript through 9.26 mishandles .completefont. NOTE: this issue exists because of an incomplete fix for CVE-2019-3839.</description>\r\n    <dc:date>2022-04-25T04:15:07Z</dc:date>\r\n  </item>\r\n </rdf:RDF>\r\n\r\n';
+
+      let result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ITEMS }, range);
+      expect(result?.length).toEqual(1);
+      expect(result[0].fields.length).toEqual(5);
+    });
   });
 });
