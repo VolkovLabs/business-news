@@ -32,7 +32,7 @@ grafana-cli plugins install volkovlabs-rss-datasource
 
 ## Features
 
-- Supports RSS 2.0 and Atom.
+- Supports RSS 2.0, RSS 1.0 and Atom.
 - Works great with Dynamic Text panel by Marcus Olsson (marcusolsson-dynamictext-panel).
 - Returns Channel (Feed) data, Items (Entries) or both as separate data frames.
 - Extract and parse as additional fields:
