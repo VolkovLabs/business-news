@@ -141,29 +141,102 @@ describe('Api', () => {
       expect(result?.length).toEqual(0);
     });
 
+    /**
+     * Atom with Title only
+     */
     it('Should handle getFeed request for Atom with title only', async () => {
-      xmlResponse.data =
-        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Test</title></channel></rss>';
+      xmlResponse.data = `<rss version="2.0"
+      xmlns:atom="http://www.w3.org/2005/Atom">
+      <channel>
+          <title>Test</title>
+      </channel>
+      </rss>`;
 
       let result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ALL }, range);
       expect(result?.length).toEqual(1);
     });
 
+    /**
+     * Atom with image and no Source
+     */
     it('Should handle getFeed request for Atom with image and no src', async () => {
-      xmlResponse.data =
-        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><item><content:encoded><![CDATA[<h4>Test.</h4><figure><img alt="" src="" /></figure>]]></content:encoded></item><item><content:encoded><![CDATA[<h4 /><figure />]]></content:encoded></item></channel></rss>';
+      xmlResponse.data = `<rss version="2.0"
+      xmlns:atom="http://www.w3.org/2005/Atom">
+      <channel>
+          <item>
+              <content:encoded><![CDATA[<h4>Test.</h4><figure><img alt="" src="" /></figure>]]></content:encoded>
+          </item>
+          <item>
+              <content:encoded><![CDATA[<h4 /><figure />]]></content:encoded>
+          </item>
+      </channel>
+      </rss>`;
 
       let result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ITEMS }, range);
       expect(result?.length).toEqual(1);
     });
 
+    /**
+     * RSS
+     */
     it('Should handle getFeed request for RSS 1.0', async () => {
-      xmlResponse.data =
-        '<?xml version="1.0" encoding="UTF-8"?>\r\n<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/">\r\n  <channel rdf:about="https://web.nvd.nist.gov/view/vuln/search">\r\n    <title>National Vulnerability Database</title>\r\n    <link>https://web.nvd.nist.gov/view/vuln/search</link>\r\n    <description>This feed contains the most recent CVE cyber vulnerabilities published within the National Vulnerability Database.</description>\r\n   <dc:date>2022-04-25T18:00:00Z</dc:date>\r\n    <dc:language>en-us</dc:language>\r\n    <dc:rights>This material is not copywritten and may be freely used, however, attribution is requested.</dc:rights>\r\n  </channel>\r\n  <item rdf:about="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-20014">\r\n    <title>CVE-2016-20014</title>\r\n    <link>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-20014</link>\r\n    <description>In pam_tacplus.c in pam_tacplus before 1.4.1, pam_sm_acct_mgmt does not zero out the arep data structure.</description>\r\n    <dc:date>2022-04-21T04:15:09Z</dc:date>\r\n  </item>\r\n  <item rdf:about="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-25059">\r\n    <title>CVE-2019-25059</title>\r\n    <link>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-25059</link>\r\n    <description>Artifex Ghostscript through 9.26 mishandles .completefont. NOTE: this issue exists because of an incomplete fix for CVE-2019-3839.</description>\r\n    <dc:date>2022-04-25T04:15:07Z</dc:date>\r\n  </item>\r\n </rdf:RDF>\r\n\r\n';
+      xmlResponse.data = `<?xml version="1.0" encoding="UTF-8"?>
+      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+          xmlns="http://purl.org/rss/1.0/"
+          xmlns:dc="http://purl.org/dc/elements/1.1/">
+          <channel rdf:about="https://web.nvd.nist.gov/view/vuln/search">
+              <title>National Vulnerability Database</title>
+              <link>https://web.nvd.nist.gov/view/vuln/search</link>
+              <description>This feed contains the most recent CVE cyber vulnerabilities published within the National Vulnerability Database.</description>
+              <dc:date>2022-04-25T18:00:00Z</dc:date>
+              <dc:language>en-us</dc:language>
+              <dc:rights>This material is not copywritten and may be freely used, however, attribution is requested.</dc:rights>
+          </channel>
+          <item rdf:about="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-20014">
+              <title>CVE-2016-20014</title>
+              <link>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-20014</link>
+              <description>In pam_tacplus.c in pam_tacplus before 1.4.1, pam_sm_acct_mgmt does not zero out the arep data structure.</description>
+              <dc:date>2022-04-21T04:15:09Z</dc:date>
+          </item>
+      </rdf:RDF>`;
 
       let result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ITEMS }, range);
       expect(result?.length).toEqual(1);
       expect(result[0].fields.length).toEqual(5);
+    });
+
+    /**
+     * GitHub Atom
+     */
+    it('Should make getFeed request for GitHub Atom', async () => {
+      xmlResponse.data = `<?xml version="1.0" encoding="UTF-8"?>
+      <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+        <id>tag:github.com,2008:https://github.com/sonatype/nexus-public/releases</id>
+        <link type="text/html" rel="alternate" href="https://github.com/sonatype/nexus-public/releases"/>
+        <link type="application/atom+xml" rel="self" href="https://github.com/sonatype/nexus-public/releases.atom"/>
+        <title>Release notes from nexus-public</title>
+        <updated>2022-03-29T22:38:42Z</updated>
+        <entry>
+          <id>tag:github.com,2008:Repository/40029062/release-3.38.1-01</id>
+          <updated>2022-03-30T09:02:42Z</updated>
+          <link rel="alternate" type="text/html" href="https://github.com/sonatype/nexus-public/releases/tag/release-3.38.1-01"/>
+          <title>3.38.1-01</title>
+          <content type="html">&lt;p&gt;&lt;a href=&quot;https://help.sonatype.com/repomanager3/product-information/release-notes/2022-release-notes/nexus-repository-3.38.0---3.38.1-release-notes&quot; rel=&quot;nofollow&quot;&gt;https://help.sonatype.com/repomanager3/product-information/release-notes/2022-release-notes/nexus-repository-3.38.0---3.38.1-release-notes&lt;/a&gt;&lt;/p&gt;</content>
+          <author>
+            <name>Blacktiger</name>
+          </author>
+          <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/86939?s=60&amp;v=4"/>
+        </entry>
+      </feed>`;
+
+      let result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ALL }, range);
+      expect(result?.length).toEqual(2);
+
+      result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ITEMS }, range);
+      expect(result?.length).toEqual(1);
+
+      result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.CHANNEL }, range);
+      expect(result?.length).toEqual(1);
     });
   });
 });

@@ -50,20 +50,22 @@ export enum MetaProperties {
 /**
  * Item Keys
  */
-export enum ItemKeys {
-  LINK = 'link',
+export enum ItemKey {
+  AUTHOR = 'author',
   CONTENT = 'content',
-  SUMMARY = 'summary',
-  META = 'meta',
-  GUID = 'guid',
   CONTENT_ENCODED = 'content:encoded',
   CONTENT_H4 = 'content:h4',
   CONTENT_IMG = 'content:img',
   CONTENT_IMG_SRC = 'content:img-src',
+  GUID = 'guid',
+  LINK = 'link',
+  MEDIA_THUMBNAIL = 'media:thumbnail',
+  META = 'meta',
   PUB_DATE = 'pubDate',
+  SUMMARY = 'summary',
 }
 
 /**
  * Parse as Array
  */
-export const alwaysArray = ['feed.entry'];
+export const alwaysArray = ['feed.entry', 'rdf:RDF.item'];

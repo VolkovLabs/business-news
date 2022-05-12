@@ -54,7 +54,7 @@ export class QueryEditor extends PureComponent<Props> {
           <InlineField
             label="Filter by Date field"
             labelWidth={20}
-            tooltip="Specify the date field's name to filter news in the time range"
+            tooltip="Specify the date field's name to filter news in the time range. Use Transformation if required."
             grow
           >
             <Input type="text" value={query.dateField} onChange={this.onDateFieldChange} placeholder="pubDate" />
