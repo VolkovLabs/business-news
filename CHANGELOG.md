@@ -1,10 +1,11 @@
 # Change Log
 
-## 1.6.0 (IN PROGRESS)
+## 1.6.0 (2022-05-12)
 
 ### Bug fixes
 
 - Can't parse GitHub releases feed (#21)
+- Rebuild based on 8.5.2 (#23)
 
 ## 1.5.0 (2022-04-25)
 
