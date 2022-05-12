@@ -68,4 +68,4 @@ export enum ItemKey {
 /**
  * Parse as Array
  */
-export const alwaysArray = ['feed.entry'];
+export const alwaysArray = ['feed.entry', 'rdf:RDF.item'];

@@ -249,7 +249,6 @@ export class Api {
          * Thumbnail
          */
         if (key === ItemKey.MEDIA_THUMBNAIL && value['@_url']) {
-          console.log(value);
           value = value['@_url'];
         }
 
