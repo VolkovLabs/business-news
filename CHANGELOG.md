@@ -1,6 +1,10 @@
 # Change Log
 
-## 1.6.0 (IN PROGRESS)
+## 1.6.0 (2022-05-12)
+
+### Features / Enhancements
+
+- Rebuild based on 8.5.2 (#23)
 
 ### Bug fixes
 

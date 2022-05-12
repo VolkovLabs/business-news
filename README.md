@@ -46,7 +46,7 @@ Grafana supports managing data sources by adding one or more YAML config files i
 
 Example of provisioning the RSS/Atom Data Source for Bitcoin news feed.
 
-```
+```yaml
 datasources:
   - name: Bitcoin
     type: volkovlabs-rss-datasource
@@ -57,6 +57,14 @@ datasources:
     editable: true
     jsonData:
       feed: https://news.bitcoin.com/feed/
+```
+
+## Disable Sanitize HTML
+
+To display HTML returned from feeds please disable sanitize HTML parameter. For Docker:
+
+```bash
+GF_PANELS_DISABLE_SANITIZE_HTML=true
 ```
 
 ## Feedback
