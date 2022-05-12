@@ -370,6 +370,54 @@
         }
       ],
       "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "volkovlabs-rss-datasource",
+        "uid": "rZAdZdf73"
+      },
+      "gridPos": {
+        "h": 17,
+        "w": 11,
+        "x": 13,
+        "y": 51
+      },
+      "id": 12,
+      "options": {
+        "content": "<h2><a target=\"_blank\" style=\"color: blue\" href=\"{{link}}\">{{title}}</a></h2>\n<img src=\"{{media:thumbnail}}\">\n<b>{{date updated 'MMM, DD YYYY'}} by {{author}}</b>\n<div>{{{content}}}</div>\n<br/>",
+        "defaultContent": "The query didn't return any results.",
+        "everyRow": true
+      },
+      "pluginVersion": "8.3.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "volkovlabs-rss-datasource",
+            "uid": "rZAdZdf73"
+          },
+          "dateField": "updated",
+          "feedType": "items",
+          "queryText": "test",
+          "refId": "A"
+        }
+      ],
+      "title": "Nexus",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "dateFormat": "ddd, DD MMM YYYY HH:mm:ss ZZ",
+                "destinationType": "time",
+                "targetField": "updated"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "marcusolsson-dynamictext-panel"
     }
   ],
   "refresh": "",

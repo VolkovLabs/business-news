@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.6.0 (IN PROGRESS)
+
+### Bug fixes
+
+- Can't parse GitHub releases feed (#21)
+
 ## 1.5.0 (2022-04-25)
 
 ### Features / Enhancements

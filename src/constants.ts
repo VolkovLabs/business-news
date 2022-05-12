@@ -50,7 +50,7 @@ export enum MetaProperties {
 /**
  * Item Keys
  */
-export enum ItemKeys {
+export enum ItemKey {
   LINK = 'link',
   CONTENT = 'content',
   SUMMARY = 'summary',
@@ -61,6 +61,8 @@ export enum ItemKeys {
   CONTENT_IMG = 'content:img',
   CONTENT_IMG_SRC = 'content:img-src',
   PUB_DATE = 'pubDate',
+  AUTHOR = 'author',
+  MEDIA_THUMBNAIL = 'media:thumbnail',
 }
 
 /**

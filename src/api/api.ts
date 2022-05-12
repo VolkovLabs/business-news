@@ -2,7 +2,7 @@ import { XMLParser } from 'fast-xml-parser';
 import { lastValueFrom } from 'rxjs';
 import { DataSourceInstanceSettings, FieldType, MutableDataFrame, TimeRange } from '@grafana/data';
 import { getBackendSrv } from '@grafana/runtime';
-import { alwaysArray, FeedTypeValue, ItemKeys, MetaProperties } from '../constants';
+import { alwaysArray, FeedTypeValue, ItemKey, MetaProperties } from '../constants';
 import { DataSourceOptions, Query } from '../types';
 import { isDateBetweenRange, setItem } from '../utils';
 
@@ -111,7 +111,7 @@ export class Api {
           /**
            * Parse Meta
            */
-          if (key === ItemKeys.META && value['@_property'] === MetaProperties.OG_IMAGE) {
+          if (key === ItemKey.META && value['@_property'] === MetaProperties.OG_IMAGE) {
             key = MetaProperties.OG_IMAGE;
             value = value['@_content'];
           }
@@ -119,26 +119,26 @@ export class Api {
           /**
            * Parse Guid
            */
-          if (key === ItemKeys.GUID && value['#text']) {
+          if (key === ItemKey.GUID && value['#text']) {
             value = value['#text'];
           }
 
           /**
            * Parse Encoded content for H4 and first Image
            */
-          if (key === ItemKeys.CONTENT_ENCODED) {
+          if (key === ItemKey.CONTENT_ENCODED) {
             const h4 = value.match(/<h4>(.*?)<\/h4>/);
             const figure = value.match(/<figure>(.*?)<\/figure>/);
 
-            setItem(items, ItemKeys.CONTENT_H4, h4?.length ? h4[1] : '');
+            setItem(items, ItemKey.CONTENT_H4, h4?.length ? h4[1] : '');
 
             /**
              * Extract image and source
              */
             if (figure?.length) {
-              setItem(items, ItemKeys.CONTENT_IMG, figure[1]);
+              setItem(items, ItemKey.CONTENT_IMG, figure[1]);
               const img = figure[1].match(/<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/);
-              setItem(items, ItemKeys.CONTENT_IMG_SRC, img?.length ? img[1] : '');
+              setItem(items, ItemKey.CONTENT_IMG_SRC, img?.length ? img[1] : '');
             }
           }
 
@@ -188,7 +188,7 @@ export class Api {
       name: 'channel',
       refId: query.refId,
       fields: [
-        { name: 'author', values: [feed.author.name], type: FieldType.string },
+        { name: 'author', values: [feed.author?.name], type: FieldType.string },
         { name: 'id', values: [feed.id], type: FieldType.string },
         { name: 'title', values: [feed.title], type: FieldType.string },
         { name: 'updated', values: [feed.updated], type: FieldType.string },
@@ -218,24 +218,39 @@ export class Api {
         let value = entry[key];
 
         /**
-         * Parse Link
+         * Link
          */
-        if (key === ItemKeys.LINK && value['@_href']) {
+        if (key === ItemKey.LINK && value['@_href']) {
           value = value['@_href'];
         }
 
         /**
-         * Parse Content
+         * Content
          */
-        if (key === ItemKeys.CONTENT && value['#text']) {
+        if (key === ItemKey.CONTENT && value['#text']) {
           value = value['#text'];
         }
 
         /**
-         * Parse Summary
+         * Summary
          */
-        if (key === ItemKeys.SUMMARY && value['#text']) {
+        if (key === ItemKey.SUMMARY && value['#text']) {
           value = value['#text'];
+        }
+
+        /**
+         * Author
+         */
+        if (key === ItemKey.AUTHOR && value['name']) {
+          value = value['name'];
+        }
+
+        /**
+         * Thumbnail
+         */
+        if (key === ItemKey.MEDIA_THUMBNAIL && value['@_url']) {
+          console.log(value);
+          value = value['@_url'];
         }
 
         setItem(entries, key, value);
