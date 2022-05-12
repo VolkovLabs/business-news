@@ -51,18 +51,18 @@ export enum MetaProperties {
  * Item Keys
  */
 export enum ItemKey {
-  LINK = 'link',
+  AUTHOR = 'author',
   CONTENT = 'content',
-  SUMMARY = 'summary',
-  META = 'meta',
-  GUID = 'guid',
   CONTENT_ENCODED = 'content:encoded',
   CONTENT_H4 = 'content:h4',
   CONTENT_IMG = 'content:img',
   CONTENT_IMG_SRC = 'content:img-src',
-  PUB_DATE = 'pubDate',
-  AUTHOR = 'author',
+  GUID = 'guid',
+  LINK = 'link',
   MEDIA_THUMBNAIL = 'media:thumbnail',
+  META = 'meta',
+  PUB_DATE = 'pubDate',
+  SUMMARY = 'summary',
 }
 
 /**
