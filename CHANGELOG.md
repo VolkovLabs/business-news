@@ -2,10 +2,11 @@
 
 ## 1.6.1 (2022-05-13)
 
-### Breaking changes
+### Features / Enhancements
 
 - Clarify Breaking change introduced in 1.6.0 (#24)
 - Refactor API tests and set parsing `rss.channel.item` as array always (#25)
+- Improve test coverage (#26)
 
 ## 1.6.0 (2022-05-12)
 
