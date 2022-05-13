@@ -44,6 +44,14 @@ const xmlResponse = {
           <guid isPermaLink="false">https://grafana.com/blog/2021/12/23/how-product-teams-can-manage-their-performance-using-grafana-prometheus-and-oracle-metrics/?utm_source=grafana_news&amp;utm_medium=rss&amp;src=in-prod&amp;plcmt=rss</guid>
           <description>Ever known a project manager who thinks a task takes minutes when it really takes hours? One company has developed a helpful monitoring tool that not only helps project managers make more realistic estimates, but also helps product teams save time, increase efficiency, and improve their overall performance.\nAt ObservabilityCON 2020, Walter Ritzel Paixão Côrtes, a product designer at Dell, gave a presentation about a data-driven solution his team developed called Product Team Observability.</description>
       </item>
+      <item>
+          <content:encoded><![CDATA[<h4>We discussed the benefits of using Docker containers and initial Provisioning in the recent article on creating our panel plugin template for Grafana. While working on the current feature request for the Base64 image/PDF panel, this technique helped us quickly deliver solutions and improve the long-term support for the panel.</h4><p>When we created a Base64 image/PDF panel to display images for one of our projects, support for PDF documents was added as a feature. I am glad the panel is being used to display PDF documents stored in the databases like PostgreSQL.</p><figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/0*ZhXFfccuxa1PugIM" /></figure>]]></content:encoded>
+          <link>https://volkovlabs.com/using-grafana-to-display-large-pdf-documents-weve-got-you-covered-4e654e8d4bce?source=rss----97b04264832a---4</link>
+      </item>
+      <item>
+          <pubDate>123</pubDate>
+          <content:encoded><![CDATA[<h4 /><figure />]]></content:encoded>
+      </item>
       <image>
           <url>https://cdn-images-1.medium.com/proxy/1*TGH72Nnw24QL3iV9IOm4VA.png</url>
           <title>Volkov Labs - Medium</title>
