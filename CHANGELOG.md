@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.6.2 (2022-05-13)
+
+### Breaking changes
+
+- Requires Grafana 8.3.0 or newer.
+
 ## 1.6.1 (2022-05-13)
 
 ### Features / Enhancements
