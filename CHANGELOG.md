@@ -1,6 +1,16 @@
 # Change Log
 
+## 1.6.1 (2022-05-13)
+
+### Breaking changes
+
+- Clarify Breaking change introduced in 1.6.0
+
 ## 1.6.0 (2022-05-12)
+
+### Breaking changes
+
+- Automatic parsing of `author.name` and `media:thumbnail.url` fields break templates who uses them. To fix it, just replace it with `author` and `media:thumbnail`. Thanks to @vfauth for testing.
 
 ### Features / Enhancements
 
