@@ -4,7 +4,8 @@
 
 ### Breaking changes
 
-- Clarify Breaking change introduced in 1.6.0
+- Clarify Breaking change introduced in 1.6.0 (#24)
+- Refactor API tests and set parsing `rss.channel.item` as array always (#25)
 
 ## 1.6.0 (2022-05-12)
 
