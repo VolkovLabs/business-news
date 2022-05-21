@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.7.0 (2022-05-21)
+
+### Features / Enhancements
+
+- Support Feed URL with query parameters (#28)
+
 ## 1.6.2 (2022-05-13)
 
 ### Breaking changes

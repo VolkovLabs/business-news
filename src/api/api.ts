@@ -24,13 +24,23 @@ export class Api {
    * @returns {Promise<MutableDataFrame[]>} Feed
    */
   async getFeed(query: Query, range: TimeRange | null = null): Promise<MutableDataFrame[]> {
+    let urlQuery = '';
+
+    /**
+     * Extract parameters
+     */
+    const params = this.instanceSettings.jsonData.feed?.split('?');
+    if (params?.length && params[1]) {
+      urlQuery = `?${params[1]}`;
+    }
+
     /**
      * Fetch Feed
      */
     const response = await lastValueFrom(
       getBackendSrv().fetch({
         method: 'GET',
-        url: `${this.instanceSettings.url}/feed`,
+        url: `${this.instanceSettings.url}/feed${urlQuery}`,
       })
     );
 
