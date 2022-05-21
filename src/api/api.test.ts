@@ -94,7 +94,9 @@ jest.mock('@grafana/runtime', () => ({
  * API
  */
 describe('Api', () => {
-  const instanceSettings: any = {};
+  const instanceSettings: any = {
+    jsonData: { feed: 'https://feed.com?type=rss' },
+  };
 
   /**
    * Api
@@ -322,6 +324,26 @@ describe('Api', () => {
 
       result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.CHANNEL }, range);
       expect(result?.length).toEqual(1);
+    });
+
+    /**
+     * GitHub Atom
+     */
+    it('Should fail doing getFeed request without URL', async () => {
+      const instanceSettings: any = {
+        jsonData: {},
+      };
+
+      /**
+       * Api
+       */
+      const api = new Api(instanceSettings);
+
+      xmlResponse.data = '';
+      jest.spyOn(console, 'error').mockImplementation();
+
+      let result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ALL }, range);
+      expect(result?.length).toEqual(0);
     });
   });
 });
