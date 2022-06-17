@@ -2,7 +2,7 @@
 
 ![Dashboard](https://raw.githubusercontent.com/VolkovLabs/volkovlabs-rss-datasource/main/src/img/dashboard.png)
 
-[![Grafana 8](https://img.shields.io/badge/Grafana-8-orange)](https://www.grafana.com)
+[![Grafana 9](https://img.shields.io/badge/Grafana-9-orange)](https://www.grafana.com)
 [![RSS/Atom](https://img.shields.io/badge/dynamic/json?color=blue&label=RSS%2FAtom%20Data%20Source&query=%24.version&url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fvolkovlabs-rss-datasource)](https://grafana.com/grafana/plugins/volkovlabs-rss-datasource)
 ![CI](https://github.com/volkovlabs/volkovlabs-rss-datasource/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-rss-datasource/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-rss-datasource)
@@ -18,7 +18,8 @@ Demo is available on [demo.volkovlabs.io](https://demo.volkovlabs.io).
 
 ### Requirements
 
-Grafana 8.0 is required.
+- **Grafana 8.5+**, **Grafana 9.0+** is required for version 2.X.
+- **Grafana 8.0+** is required for version 1.X.
 
 ## Getting Started
 

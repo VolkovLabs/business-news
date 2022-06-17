@@ -1,5 +1,15 @@
 # Change Log
 
+## 2.0.0 (2022-06-17)
+
+### Breaking changes
+
+- Requires Grafana 8.5+ and 9.0+
+
+### Features / Enhancements
+
+- Rebuild based on 9.0.0
+
 ## 1.7.0 (2022-05-21)
 
 ### Features / Enhancements
