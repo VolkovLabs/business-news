@@ -8,7 +8,7 @@
 
 ### Features / Enhancements
 
-- Rebuild based on 9.0.0
+- Rebuild based on 9.0.0 (#30)
 
 ## 1.7.0 (2022-05-21)
 
