@@ -345,5 +345,75 @@ describe('Api', () => {
       let result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ALL }, range);
       expect(result?.length).toEqual(0);
     });
+
+    /**
+     * YouTube
+     */
+    it('Should handle getFeed request for YouTube', async () => {
+      xmlResponse.data = `<feed xmlns:yt="http://www.youtube.com/xml/schemas/2015"
+  xmlns:media="http://search.yahoo.com/mrss/"
+  xmlns="http://www.w3.org/2005/Atom">
+  <link rel="self" href="http://www.youtube.com/feeds/videos.xml?channel_id=UCQadniwbukI6ZmTN2oTTb-g"/>
+  <id>yt:channel:UCQadniwbukI6ZmTN2oTTb-g</id>
+  <yt:channelId>UCQadniwbukI6ZmTN2oTTb-g</yt:channelId>
+  <title>Volkov Labs</title>
+  <link rel="alternate" href="https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g"/>
+  <author>
+    <name>Volkov Labs</name>
+    <uri>https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g</uri>
+  </author>
+  <published>2022-01-18T15:17:13+00:00</published>
+  <entry>
+    <id>yt:video:PaiGygHI-dA</id>
+    <yt:videoId>PaiGygHI-dA</yt:videoId>
+    <yt:channelId>UCQadniwbukI6ZmTN2oTTb-g</yt:channelId>
+    <title>Favorite sessions of Grafana Conference 2022 | GrafanaCONline 2022 | Grafana 9</title>
+    <link rel="alternate" href="https://www.youtube.com/watch?v=PaiGygHI-dA"/>
+    <author>
+      <name>Volkov Labs</name>
+      <uri>https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g</uri>
+    </author>
+    <published>2022-06-20T18:10:53+00:00</published>
+    <updated>2022-06-20T19:26:02+00:00</updated>
+    <media:group>
+      <media:title>Favorite sessions of Grafana Conference 2022 | GrafanaCONline 2022 | Grafana 9</media:title>
+      <media:content url="https://www.youtube.com/v/PaiGygHI-dA?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+      <media:thumbnail url="https://i1.ytimg.com/vi/PaiGygHI-dA/hqdefault.jpg" width="480" height="360"/>
+      <media:description>ABOUT THIS VIDEO Grafa</media:description>
+      <media:community>
+        <media:starRating count="0" average="0.00" min="1" max="5"/>
+        <media:statistics views="42"/>
+      </media:community>
+    </media:group>
+  </entry>
+  <entry>
+    <id>yt:video:RAxqS2hpWkg</id>
+    <yt:videoId>RAxqS2hpWkg</yt:videoId>
+    <yt:channelId>UCQadniwbukI6ZmTN2oTTb-g</yt:channelId>
+    <title>RSS/Atom Data Source for Grafana | News feed tutorial for Grafana Dashboard</title>
+    <link rel="alternate" href="https://www.youtube.com/watch?v=RAxqS2hpWkg"/>
+    <author>
+      <name>Volkov Labs</name>
+      <uri>https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g</uri>
+    </author>
+    <published>2022-06-08T22:26:34+00:00</published>
+    <updated>2022-06-09T00:10:05+00:00</updated>
+    <media:group>
+      <media:title>RSS/Atom Data Source for Grafana | News feed tutorial for Grafana Dashboard</media:title>
+      <media:content url="https://www.youtube.com/v/RAxqS2hpWkg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+      <media:thumbnail url="https://i3.ytimg.com/vi/RAxqS2hpWkg/hqdefault.jpg" width="480" height="360"/>
+      <media:description>ABOUT THIS VIDEO In the m</media:description>
+      <media:community>
+        <media:starRating count="0" average="0.00" min="1" max="5"/>
+        <media:statistics views="65"/>
+      </media:community>
+    </media:group>
+  </entry>
+</feed>`;
+
+      let result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ITEMS }, range);
+      expect(result?.length).toEqual(1);
+      expect(result[0].fields.length).toEqual(12);
+    });
   });
 });

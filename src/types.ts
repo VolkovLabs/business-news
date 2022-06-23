@@ -1,5 +1,4 @@
 import { DataQuery, DataSourceJsonData } from '@grafana/data';
-import { FeedTypeValue } from './constants';
 
 /**
  * Query
@@ -19,13 +18,6 @@ export interface Query extends DataQuery {
    */
   dateField?: string;
 }
-
-/**
- * Defaults for Query
- */
-export const defaultQuery: Partial<Query> = {
-  feedType: FeedTypeValue.ALL,
-};
 
 /**
  * Datasource Options

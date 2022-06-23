@@ -2,9 +2,9 @@ import { defaults } from 'lodash';
 import React, { ChangeEvent, PureComponent } from 'react';
 import { QueryEditorProps, SelectableValue } from '@grafana/data';
 import { InlineField, InlineFieldRow, Input, Select } from '@grafana/ui';
-import { FeedType, FeedTypeValue } from '../../constants';
+import { defaultQuery, FeedType, FeedTypeValue } from '../../constants';
 import { DataSource } from '../../datasource';
-import { DataSourceOptions, defaultQuery, Query } from '../../types';
+import { DataSourceOptions, Query } from '../../types';
 
 /**
  * Editor Properties

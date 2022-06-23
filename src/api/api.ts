@@ -262,6 +262,40 @@ export class Api {
           value = value['@_url'];
         }
 
+        /**
+         * Media Group
+         */
+        if (key === ItemKey.MEDIA_GROUP) {
+          /**
+           * Thumbnail URL
+           */
+          if (value[ItemKey.MEDIA_THUMBNAIL] && value[ItemKey.MEDIA_THUMBNAIL]['@_url']) {
+            setItem(
+              entries,
+              `${ItemKey.MEDIA_GROUP}:${ItemKey.MEDIA_THUMBNAIL}:url`,
+              value[ItemKey.MEDIA_THUMBNAIL]['@_url']
+            );
+          }
+
+          /**
+           * Content URL
+           */
+          if (value[ItemKey.MEDIA_CONTENT] && value[ItemKey.MEDIA_CONTENT]['@_url']) {
+            setItem(
+              entries,
+              `${ItemKey.MEDIA_GROUP}:${ItemKey.MEDIA_CONTENT}:url`,
+              value[ItemKey.MEDIA_CONTENT]['@_url']
+            );
+          }
+
+          /**
+           * Description
+           */
+          if (value[ItemKey.MEDIA_DESCRIPTION]) {
+            setItem(entries, `${ItemKey.MEDIA_GROUP}:${ItemKey.MEDIA_DESCRIPTION}`, value[ItemKey.MEDIA_DESCRIPTION]);
+          }
+        }
+
         setItem(entries, key, value);
       });
     });
