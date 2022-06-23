@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.0 (IN PROGRESS)
+
+### Features / Enhancements
+
+- Add YouTube fields parsing and refactoring
+
 ## 2.0.0 (2022-06-17)
 
 ### Breaking changes
