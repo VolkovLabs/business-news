@@ -12,9 +12,7 @@
 
 The RSS/Atom data source is a plugin for Grafana that retrieves RSS/Atom feeds and allows to visualize them using Dynamic Text and other panels.
 
-### Demo
-
-Demo is available on [demo.volkovlabs.io](https://demo.volkovlabs.io).
+[![Images, PDFs, Video, Live Camera Feed on Grafana Dashboard! You will need Base64 Image/PDF Plugin](https://raw.githubusercontent.com/volkovlabs/volkovlabs-rss-datasource/main/img/video.png)](https://youtu.be/RAxqS2hpWkg)
 
 ### Requirements
 
