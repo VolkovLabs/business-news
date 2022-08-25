@@ -1,10 +1,11 @@
 # Change Log
 
-## 2.2.0 (IN PROGRESS)
+## 2.2.0 (2022-08-25)
 
 ### Features / Enhancements
 
 - Add YouTube video in README (#32)
+- Rebuild based on 9.1.1 (#35)
 
 ## 2.1.0 (2022-06-23)
 
