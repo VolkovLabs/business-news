@@ -34,7 +34,7 @@
       },
       "gridPos": {
         "h": 17,
-        "w": 13,
+        "w": 12,
         "x": 0,
         "y": 0
       },
@@ -82,8 +82,8 @@
       },
       "gridPos": {
         "h": 17,
-        "w": 11,
-        "x": 13,
+        "w": 12,
+        "x": 12,
         "y": 0
       },
       "id": 4,
@@ -129,7 +129,7 @@
       },
       "gridPos": {
         "h": 17,
-        "w": 13,
+        "w": 12,
         "x": 0,
         "y": 17
       },
@@ -173,107 +173,13 @@
     {
       "datasource": {
         "type": "volkovlabs-rss-datasource",
-        "uid": "PC2BC760787550059"
-      },
-      "gridPos": {
-        "h": 17,
-        "w": 11,
-        "x": 13,
-        "y": 17
-      },
-      "id": 6,
-      "options": {
-        "content": "# {{date updated 'LLL'}} <a target=\"_blank\" style=\"color:blue\" href='{{link}}'>{{title}}</a>\n{{{content}}}",
-        "defaultContent": "The query didn't return any results.",
-        "everyRow": true
-      },
-      "pluginVersion": "8.3.3",
-      "targets": [
-        {
-          "datasource": {
-            "type": "volkovlabs-rss-datasource",
-            "uid": "PC2BC760787550059"
-          },
-          "dateField": "updated",
-          "feedType": "items",
-          "refId": "A"
-        }
-      ],
-      "title": "Redis Status",
-      "transformations": [
-        {
-          "id": "convertFieldType",
-          "options": {
-            "conversions": [
-              {
-                "dateFormat": "",
-                "destinationType": "time",
-                "targetField": "updated"
-              }
-            ],
-            "fields": {}
-          }
-        }
-      ],
-      "type": "marcusolsson-dynamictext-panel"
-    },
-    {
-      "datasource": {
-        "type": "volkovlabs-rss-datasource",
-        "uid": "P18E95235D4DEADAE"
-      },
-      "gridPos": {
-        "h": 17,
-        "w": 13,
-        "x": 0,
-        "y": 34
-      },
-      "id": 3,
-      "options": {
-        "content": "# {{date pubDate 'LLL'}} <a target=\"_blank\" style=\"color: blue\" href=\"{{link}}\">{{title}}</a>\n{{description}}\n\n<a href='{{guid}}' style='color:gray'>{{guid}}</a>",
-        "defaultContent": "The query didn't return any results.",
-        "everyRow": true
-      },
-      "pluginVersion": "8.3.3",
-      "targets": [
-        {
-          "datasource": {
-            "type": "volkovlabs-rss-datasource",
-            "uid": "P18E95235D4DEADAE"
-          },
-          "dateField": "pubDate",
-          "feedType": "items",
-          "refId": "A"
-        }
-      ],
-      "title": "Amazon CloudFront Service Status",
-      "transformations": [
-        {
-          "id": "convertFieldType",
-          "options": {
-            "conversions": [
-              {
-                "dateFormat": "ddd, DD MMM YYYY HH:mm:ss ZZ",
-                "destinationType": "time",
-                "targetField": "pubDate"
-              }
-            ],
-            "fields": {}
-          }
-        }
-      ],
-      "type": "marcusolsson-dynamictext-panel"
-    },
-    {
-      "datasource": {
-        "type": "volkovlabs-rss-datasource",
         "uid": "rZAdZdf7k"
       },
       "gridPos": {
         "h": 17,
-        "w": 11,
-        "x": 13,
-        "y": 34
+        "w": 12,
+        "x": 12,
+        "y": 17
       },
       "id": 8,
       "options": {
@@ -319,9 +225,9 @@
       },
       "gridPos": {
         "h": 17,
-        "w": 13,
+        "w": 12,
         "x": 0,
-        "y": 51
+        "y": 34
       },
       "id": 7,
       "options": {
@@ -362,61 +268,13 @@
     {
       "datasource": {
         "type": "volkovlabs-rss-datasource",
-        "uid": "rZAdZdf73"
-      },
-      "gridPos": {
-        "h": 17,
-        "w": 11,
-        "x": 13,
-        "y": 51
-      },
-      "id": 12,
-      "options": {
-        "content": "<h2><a target=\"_blank\" style=\"color: blue\" href=\"{{link}}\">{{title}}</a></h2>\n<img src=\"{{media:thumbnail}}\">\n<b>{{date updated 'MMM, DD YYYY'}} by {{author}}</b>\n<div>{{{content}}}</div>\n<br/>",
-        "defaultContent": "The query didn't return any results.",
-        "everyRow": true
-      },
-      "pluginVersion": "8.3.3",
-      "targets": [
-        {
-          "datasource": {
-            "type": "volkovlabs-rss-datasource",
-            "uid": "rZAdZdf73"
-          },
-          "dateField": "updated",
-          "feedType": "items",
-          "queryText": "test",
-          "refId": "A"
-        }
-      ],
-      "title": "Nexus",
-      "transformations": [
-        {
-          "id": "convertFieldType",
-          "options": {
-            "conversions": [
-              {
-                "dateFormat": "ddd, DD MMM YYYY HH:mm:ss ZZ",
-                "destinationType": "time",
-                "targetField": "updated"
-              }
-            ],
-            "fields": {}
-          }
-        }
-      ],
-      "type": "marcusolsson-dynamictext-panel"
-    },
-    {
-      "datasource": {
-        "type": "volkovlabs-rss-datasource",
         "uid": "rZAdZdf72"
       },
       "gridPos": {
         "h": 17,
-        "w": 13,
-        "x": 0,
-        "y": 68
+        "w": 12,
+        "x": 12,
+        "y": 34
       },
       "id": 9,
       "options": {
@@ -469,7 +327,7 @@
     }
   ],
   "refresh": "",
-  "schemaVersion": 36,
+  "schemaVersion": 37,
   "style": "dark",
   "tags": [],
   "templating": {
