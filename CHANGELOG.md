@@ -7,6 +7,7 @@
 - Update to Grafana 9.1.4 (#36)
 - Add Compatibility Check Workflow (#37)
 - Update CI to Node 16 and Synchronize with Release workflow (#38)
+- Update to Grafana 9.2.2 (#39)
 
 ## 2.2.0 (2022-08-25)
 
