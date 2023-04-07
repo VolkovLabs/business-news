@@ -4,7 +4,8 @@
 
 ### Features / Enhancements
 
-- Update to Grafana 9.4.7 (#43)
+- Update to Grafana 9.4.7 (#44)
+- Update CI and Release workflows (#45)
 
 ## 2.3.0 (2022-11-16)
 
