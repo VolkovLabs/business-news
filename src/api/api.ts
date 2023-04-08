@@ -48,7 +48,7 @@ export class Api {
      * Nothing returned
      */
     if (!response || !response.data) {
-      console.error('RSS data is not found');
+      console.error('Feed data is not found');
       return [];
     }
 
