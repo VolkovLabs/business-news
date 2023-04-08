@@ -21,7 +21,7 @@ export class Api {
    * @async
    * @param {Query} query Query
    * @param {TimeRange} range Time Range
-   * @param {Record<string, any>} params Query parameters
+   * @param {Record<string, any>} params URL parameters
    * @returns {Promise<MutableDataFrame[]>} Feed
    */
   async getFeed(

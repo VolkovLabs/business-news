@@ -38,7 +38,7 @@ grafana-cli plugins install volkovlabs-rss-datasource
   - H4 and Image from the Encoded content.
   - Media:Group for YouTube.
 - Filter items/entries based on the selected Time Range.
-- Allows specifying Query parameters with dashboard variables.
+- Allows specifying URL parameters with dashboard variables.
 
 ## Documentation
 
