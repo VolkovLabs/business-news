@@ -18,6 +18,13 @@ export interface Query extends DataQuery {
    * @type {string}
    */
   dateField?: string;
+
+  /**
+   * URL Params
+   *
+   * @type {Record<string, any>}
+   */
+  params?: Record<string, any>;
 }
 
 /**

@@ -4,6 +4,7 @@ services:
   grafana:
     container_name: grafana
     image: ghcr.io/volkovlabs/app:latest
+    entrypoint: /run.sh
     ports:
       - 3000:3000/tcp
     environment:

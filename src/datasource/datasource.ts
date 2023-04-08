@@ -5,6 +5,7 @@ import {
   DataSourceApi,
   DataSourceInstanceSettings,
 } from '@grafana/data';
+import { getTemplateSrv } from '@grafana/runtime';
 import { Api } from '../api';
 import { DataSourceTestStatus, FeedTypeValue } from '../constants';
 import { DataSourceOptions, Query } from '../types';
@@ -32,7 +33,7 @@ export class DataSource extends DataSourceApi<Query, DataSourceOptions> {
    * Query
    */
   async query(options: DataQueryRequest<Query>): Promise<DataQueryResponse> {
-    const { range } = options;
+    const { range, scopedVars } = options;
     const data: DataFrame[] = [];
 
     /**
@@ -40,7 +41,21 @@ export class DataSource extends DataSourceApi<Query, DataSourceOptions> {
      */
     await Promise.all(
       options.targets.map(async (target) => {
-        const frames = await this.api.getFeed(target, range);
+        const params = target.params ? target.params : {};
+
+        /**
+         * Replace Variables
+         */
+        if (Object.keys(params).length) {
+          Object.keys(params).forEach((param) => {
+            params[param] = getTemplateSrv().replace(params[param], scopedVars);
+          });
+        }
+
+        /**
+         * Get Data Frame from Feed
+         */
+        const frames = await this.api.getFeed(target, range, params);
         if (frames && frames.length) {
           data.push(...frames);
         }
@@ -72,7 +87,7 @@ export class DataSource extends DataSourceApi<Query, DataSourceOptions> {
      */
     return {
       status: isStatusOk ? DataSourceTestStatus.SUCCESS : DataSourceTestStatus.ERROR,
-      message: isStatusOk ? `Connected...` : "Error. Can't connect.",
+      message: isStatusOk ? `Connected.` : "Error. Can't connect.",
     };
   }
 }
