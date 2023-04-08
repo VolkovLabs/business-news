@@ -63,7 +63,7 @@ export class QueryEditor extends PureComponent<Props> {
           </InlineField>
         </InlineFieldRow>
 
-        <CollapsableSection label="Query Parameters" isOpen={true}>
+        <CollapsableSection label="URL Parameters" isOpen={true}>
           <ParametersEditor query={query} onChange={onChange} onRunQuery={onRunQuery} />
         </CollapsableSection>
       </>
