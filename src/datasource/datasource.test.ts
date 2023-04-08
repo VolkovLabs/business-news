@@ -203,7 +203,7 @@ describe('DataSource', () => {
       const result = await dataSource.testDatasource();
       expect(result).toEqual({
         status: DataSourceTestStatus.SUCCESS,
-        message: `Connected...`,
+        message: `Connected.`,
       });
     });
 

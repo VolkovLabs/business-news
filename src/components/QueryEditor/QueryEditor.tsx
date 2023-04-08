@@ -1,10 +1,11 @@
 import { defaults } from 'lodash';
 import React, { ChangeEvent, PureComponent } from 'react';
 import { QueryEditorProps, SelectableValue } from '@grafana/data';
-import { InlineField, InlineFieldRow, Input, Select } from '@grafana/ui';
+import { CollapsableSection, InlineField, InlineFieldRow, Input, Select } from '@grafana/ui';
 import { defaultQuery, FeedType, FeedTypeValue } from '../../constants';
 import { DataSource } from '../../datasource';
 import { DataSourceOptions, Query } from '../../types';
+import { ParametersEditor } from '../ParametersEditor';
 
 /**
  * Editor Properties
@@ -38,6 +39,7 @@ export class QueryEditor extends PureComponent<Props> {
    */
   render() {
     const query = defaults(this.props.query, defaultQuery);
+    const { onChange, onRunQuery } = this.props;
 
     return (
       <>
@@ -60,6 +62,10 @@ export class QueryEditor extends PureComponent<Props> {
             <Input type="text" value={query.dateField} onChange={this.onDateFieldChange} placeholder="pubDate" />
           </InlineField>
         </InlineFieldRow>
+
+        <CollapsableSection label="Query Parameters" isOpen={true}>
+          <ParametersEditor query={query} onChange={onChange} onRunQuery={onRunQuery} />
+        </CollapsableSection>
       </>
     );
   }

@@ -61,6 +61,9 @@
           },
           "dateField": "updated",
           "feedType": "items",
+          "params": {
+            "channel_id": "$channel"
+          },
           "queryText": "test",
           "refId": "A"
         }
@@ -324,7 +327,30 @@
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "UCQadniwbukI6ZmTN2oTTb-g",
+          "value": "UCQadniwbukI6ZmTN2oTTb-g"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "Channel",
+        "multi": false,
+        "name": "channel",
+        "options": [
+          {
+            "selected": true,
+            "text": "UCQadniwbukI6ZmTN2oTTb-g",
+            "value": "UCQadniwbukI6ZmTN2oTTb-g"
+          }
+        ],
+        "query": "UCQadniwbukI6ZmTN2oTTb-g",
+        "skipUrlSync": false,
+        "type": "custom"
+      }
+    ]
   },
   "time": {
     "from": "now-1y",

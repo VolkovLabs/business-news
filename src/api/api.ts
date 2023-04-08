@@ -29,14 +29,21 @@ export class Api {
     range: TimeRange | null = null,
     params: Record<string, any> | undefined = undefined
   ): Promise<MutableDataFrame[]> {
-    let urlQuery = '';
+    if (!params) {
+      params = {};
+    }
 
     /**
      * Extract parameters
      */
-    const queryParams = this.instanceSettings.jsonData.feed?.split('?');
-    if (queryParams?.length && queryParams[1]) {
-      urlQuery = `?${queryParams[1]}`;
+    const queryParams = this.instanceSettings.jsonData.feed?.split(/[\?\&]/);
+    if (queryParams?.length) {
+      queryParams.forEach((param) => {
+        const paramSplit = param.split('=');
+        if (params && paramSplit.length > 1) {
+          params[paramSplit[0]] = paramSplit[1];
+        }
+      });
     }
 
     /**
@@ -45,7 +52,7 @@ export class Api {
     const response = await lastValueFrom(
       getBackendSrv().fetch({
         method: 'GET',
-        url: `${this.instanceSettings.url}/feed${urlQuery}`,
+        url: `${this.instanceSettings.url}/feed`,
         params,
       })
     );
