@@ -21,17 +21,22 @@ export class Api {
    * @async
    * @param {Query} query Query
    * @param {TimeRange} range Time Range
+   * @param {Record<string, any>} params Query parameters
    * @returns {Promise<MutableDataFrame[]>} Feed
    */
-  async getFeed(query: Query, range: TimeRange | null = null): Promise<MutableDataFrame[]> {
+  async getFeed(
+    query: Query,
+    range: TimeRange | null = null,
+    params: Record<string, any> | undefined = undefined
+  ): Promise<MutableDataFrame[]> {
     let urlQuery = '';
 
     /**
      * Extract parameters
      */
-    const params = this.instanceSettings.jsonData.feed?.split('?');
-    if (params?.length && params[1]) {
-      urlQuery = `?${params[1]}`;
+    const queryParams = this.instanceSettings.jsonData.feed?.split('?');
+    if (queryParams?.length && queryParams[1]) {
+      urlQuery = `?${queryParams[1]}`;
     }
 
     /**
@@ -41,6 +46,7 @@ export class Api {
       getBackendSrv().fetch({
         method: 'GET',
         url: `${this.instanceSettings.url}/feed${urlQuery}`,
+        params,
       })
     );
 

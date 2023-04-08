@@ -40,7 +40,7 @@ export class DataSource extends DataSourceApi<Query, DataSourceOptions> {
      */
     await Promise.all(
       options.targets.map(async (target) => {
-        const frames = await this.api.getFeed(target, range);
+        const frames = await this.api.getFeed(target, range, target.params);
         if (frames && frames.length) {
           data.push(...frames);
         }
