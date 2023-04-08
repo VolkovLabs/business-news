@@ -44,7 +44,7 @@ export class QueryEditor extends PureComponent<Props> {
     return (
       <>
         <InlineFieldRow>
-          <InlineField label="Return" labelWidth={8} grow={true}>
+          <InlineField label="Request" labelWidth={8} grow={true}>
             <Select
               options={FeedType}
               value={FeedType.find((type) => type.value === query.feedType)}
