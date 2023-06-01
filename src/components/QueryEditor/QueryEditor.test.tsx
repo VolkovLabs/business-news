@@ -1,13 +1,39 @@
-import { shallow, ShallowWrapper } from 'enzyme';
 import React from 'react';
-import { defaultQuery, FeedType, FeedTypeValue } from '../../constants';
+import { act, screen, render, fireEvent } from '@testing-library/react';
+import { defaultQuery, FeedTypeValue, TestIds } from '../../constants';
 import { Query } from '../../types';
 import { QueryEditor } from './QueryEditor';
 
 /**
- * Component
+ * Mock @grafana/ui
  */
-type ShallowComponent = ShallowWrapper<QueryEditor['props'], QueryEditor['state'], QueryEditor>;
+jest.mock('@grafana/ui', () => ({
+  ...jest.requireActual('@grafana/ui'),
+  /**
+   * Mock Select component
+   */
+  Select: jest.fn().mockImplementation(({ options, onChange, value, ...restProps }) => (
+    <select
+      onChange={(event: any) => {
+        if (onChange) {
+          onChange(options.find((option: any) => option.value === event.target.value));
+        }
+      }}
+      /**
+       * Fix jest warnings because null value.
+       * For Select component in @grafana/ui should be used null to reset value.
+       */
+      value={value === null ? '' : value}
+      {...restProps}
+    >
+      {options.map(({ label, value }: any) => (
+        <option key={value} value={value}>
+          {label}
+        </option>
+      ))}
+    </select>
+  )),
+}));
 
 /**
  * Get Query with default values and ability to override
@@ -37,28 +63,24 @@ describe('QueryEditor', () => {
    * Feed Type
    */
   describe('FeedType', () => {
-    const getComponent = (wrapper: ShallowComponent) =>
-      wrapper.findWhere((node) => {
-        return node.prop('onChange') === wrapper.instance().onFeedTypeChange;
-      });
-
-    it('Should apply feedType value and change', () => {
+    it('Should apply feedType value and change', async () => {
       const query = getQuery();
-      const wrapper = shallow<QueryEditor>(
-        <QueryEditor datasource={[] as any} query={query} onRunQuery={onRunQuery} onChange={onChange} />
-      );
 
-      const testedComponent = getComponent(wrapper);
-      expect(testedComponent.prop('value')).toEqual(FeedType.find((type) => type.value === query.feedType));
+      render(<QueryEditor datasource={[] as any} query={query} onRunQuery={onRunQuery} onChange={onChange} />);
+
+      const field = screen.getByLabelText(TestIds.queryEditor.fieldFeedType);
+
+      expect(field).toHaveValue(FeedTypeValue.ALL);
 
       /**
        * OnChange
        */
-      const newValue = FeedType.find((type) => type.value === FeedTypeValue.ITEMS);
-      testedComponent.simulate('change', newValue);
+
+      await act(() => fireEvent.change(field, { target: { value: FeedTypeValue.CHANNEL } }));
+
       expect(onChange).toHaveBeenCalledWith({
         ...query,
-        feedType: newValue?.value,
+        feedType: FeedTypeValue.CHANNEL,
       });
     });
   });
@@ -67,24 +89,20 @@ describe('QueryEditor', () => {
    * Date field
    */
   describe('DateField', () => {
-    const getComponent = (wrapper: ShallowComponent) =>
-      wrapper.findWhere((node) => {
-        return node.prop('onChange') === wrapper.instance().onDateFieldChange;
-      });
-
-    it('Should apply dateField value and change', () => {
+    it('Should apply dateField value and change', async () => {
       const query = getQuery();
-      const wrapper = shallow<QueryEditor>(
-        <QueryEditor datasource={[] as any} query={query} onRunQuery={onRunQuery} onChange={onChange} />
-      );
 
-      const testedComponent = getComponent(wrapper);
-      expect(testedComponent.prop('value')).toEqual('pubDate');
+      render(<QueryEditor datasource={[] as any} query={query} onRunQuery={onRunQuery} onChange={onChange} />);
+
+      const field = screen.getByTestId(TestIds.queryEditor.fieldDate);
+
+      expect(field).toHaveValue('pubDate');
 
       /**
        * OnChange
        */
-      testedComponent.simulate('change', { target: { value: 'date' } });
+      await act(() => fireEvent.change(field, { target: { value: 'date' } }));
+
       expect(onChange).toHaveBeenCalledWith({
         ...query,
         dateField: 'date',

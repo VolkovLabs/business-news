@@ -2,7 +2,7 @@ import { defaults } from 'lodash';
 import React, { ChangeEvent, PureComponent } from 'react';
 import { QueryEditorProps, SelectableValue } from '@grafana/data';
 import { CollapsableSection, InlineField, InlineFieldRow, Input, Select } from '@grafana/ui';
-import { defaultQuery, FeedType, FeedTypeValue } from '../../constants';
+import { defaultQuery, FeedType, FeedTypeValue, TestIds } from '../../constants';
 import { DataSource } from '../../datasource';
 import { DataSourceOptions, Query } from '../../types';
 import { ParametersEditor } from '../ParametersEditor';
@@ -49,6 +49,7 @@ export class QueryEditor extends PureComponent<Props> {
               options={FeedType}
               value={FeedType.find((type) => type.value === query.feedType)}
               onChange={this.onFeedTypeChange}
+              aria-label={TestIds.queryEditor.fieldFeedType}
             />
           </InlineField>
         </InlineFieldRow>
@@ -59,7 +60,13 @@ export class QueryEditor extends PureComponent<Props> {
             tooltip="Specify the date field's name to filter news in the time range."
             grow
           >
-            <Input type="text" value={query.dateField} onChange={this.onDateFieldChange} placeholder="pubDate" />
+            <Input
+              type="text"
+              value={query.dateField}
+              onChange={this.onDateFieldChange}
+              placeholder="pubDate"
+              data-testid={TestIds.queryEditor.fieldDate}
+            />
           </InlineField>
         </InlineFieldRow>
 

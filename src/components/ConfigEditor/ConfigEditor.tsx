@@ -1,6 +1,7 @@
 import React, { ChangeEvent, PureComponent } from 'react';
 import { DataSourcePluginOptionsEditorProps } from '@grafana/data';
 import { InlineField, InlineFieldRow, Input } from '@grafana/ui';
+import { TestIds } from '../../constants';
 import { DataSourceOptions } from '../../types';
 
 /**
@@ -41,7 +42,13 @@ export class ConfigEditor extends PureComponent<Props, State> {
     return (
       <InlineFieldRow>
         <InlineField label="Feed URL" labelWidth={14} grow invalid={jsonData.feed === ''}>
-          <Input type="text" value={jsonData.feed} onChange={this.onFeedChange} placeholder="https://feed" />
+          <Input
+            type="text"
+            value={jsonData.feed}
+            onChange={this.onFeedChange}
+            placeholder="https://feed"
+            data-testid={TestIds.configEditor.fieldUrl}
+          />
         </InlineField>
       </InlineFieldRow>
     );
