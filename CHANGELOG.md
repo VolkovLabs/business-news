@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.5.0 (IN PROGRESS)
+
+### Features / Enhancements
+
+- Update tests with testing-library/react (#50)
+
 ## 2.4.0 (2023-04-08)
 
 ### Features / Enhancements
