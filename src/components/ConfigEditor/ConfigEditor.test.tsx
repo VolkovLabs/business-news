@@ -1,13 +1,9 @@
-import { shallow, ShallowWrapper } from 'enzyme';
 import React from 'react';
 import { DataSourceSettings } from '@grafana/data';
+import { act, screen, render, fireEvent } from '@testing-library/react';
+import { TestIds } from '../../constants';
 import { DataSourceOptions } from '../../types';
 import { ConfigEditor } from './ConfigEditor';
-
-/**
- * Component
- */
-type ShallowComponent = ShallowWrapper<ConfigEditor['props'], ConfigEditor['state'], ConfigEditor>;
 
 /**
  * Override Options
@@ -64,20 +60,19 @@ describe('ConfigEditor', () => {
    * RSS Feed
    */
   describe('Feed', () => {
-    const getComponent = (wrapper: ShallowComponent) =>
-      wrapper.findWhere((node) => {
-        return node.prop('onChange') === wrapper.instance().onFeedChange;
-      });
-
-    it('Should apply path value and change options if field was changed', () => {
+    it('Should apply path value and change options if field was changed', async () => {
       const options = getOptions({ jsonData: { feed: '/feed' } });
-      const wrapper = shallow<ConfigEditor>(<ConfigEditor options={options} onOptionsChange={onChange} />);
 
-      const testedComponent = getComponent(wrapper);
-      expect(testedComponent.prop('value')).toEqual(options.jsonData.feed);
+      render(<ConfigEditor options={options} onOptionsChange={onChange} />);
+
+      const fieldUrl = screen.getByTestId(TestIds.configEditor.fieldUrl);
+
+      expect(fieldUrl).toHaveValue(options.jsonData.feed);
 
       const newValue = '/123';
-      testedComponent.simulate('change', { target: { value: newValue } });
+
+      await act(() => fireEvent.change(fieldUrl, { target: { value: newValue } }));
+
       expect(onChange).toHaveBeenCalledWith({
         ...options,
         jsonData: {
