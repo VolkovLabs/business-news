@@ -2,8 +2,9 @@
 
 ![Dashboard](https://raw.githubusercontent.com/VolkovLabs/volkovlabs-rss-datasource/main/src/img/dashboard.png)
 
-![Grafana 10](https://img.shields.io/badge/Grafana-10.0.0-orange)
+![Grafana](https://img.shields.io/badge/Grafana-10.0-orange)
 ![CI](https://github.com/volkovlabs/volkovlabs-rss-datasource/workflows/CI/badge.svg)
+![E2E](https://github.com/volkovlabs/volkovlabs-rss-datasource/workflows/E2E/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-rss-datasource/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-rss-datasource)
 [![CodeQL](https://github.com/VolkovLabs/volkovlabs-rss-datasource/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/volkovlabs-rss-datasource/actions/workflows/codeql-analysis.yml)
 
@@ -15,8 +16,9 @@ The RSS/Atom data source is a plugin for Grafana that retrieves RSS/Atom feeds a
 
 ## Requirements
 
-- **Grafana 8.5+**, **Grafana 9.0+** is required for major version 2.
-- **Grafana 8.0+** is required for major version 1.
+- **Grafana 9** and **Grafana 10** are required for major version 3.
+- **Grafana 8.5** and **Grafana 9** are required for major version 2.
+- **Grafana 8** is required for major version 1.
 
 ## Getting Started
 

@@ -28,7 +28,7 @@ export interface Query extends DataQuery {
 }
 
 /**
- * Datasource Options
+ * Data source Options
  */
 export interface DataSourceOptions extends DataSourceJsonData {
   /**

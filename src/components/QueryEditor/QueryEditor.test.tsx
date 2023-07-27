@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, screen, render, fireEvent } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import { defaultQuery, FeedTypeValue, TestIds } from '../../constants';
 import { Query } from '../../types';
 import { QueryEditor } from './QueryEditor';

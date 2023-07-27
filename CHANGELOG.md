@@ -1,6 +1,10 @@
 # Change Log
 
-## 2.5.0 (IN PROGRESS)
+## 3.0.0 (2023-07-26)
+
+### Breaking changes
+
+- Requires Grafana 9 and Grafana 10
 
 ### Features / Enhancements
 
@@ -9,6 +13,8 @@
 - Update to Node 18 and npm (#51)
 - Update to Grafana 10.0.0 (#51)
 - Add E2E Cypress testing (#52)
+- Remove Grafana 8.5 support (#56)
+- Update ESLint configuration (#56)
 
 ## 2.4.0 (2023-04-08)
 

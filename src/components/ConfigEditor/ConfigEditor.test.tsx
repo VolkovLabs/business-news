@@ -1,6 +1,6 @@
 import React from 'react';
 import { DataSourceSettings } from '@grafana/data';
-import { act, screen, render, fireEvent } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import { TestIds } from '../../constants';
 import { DataSourceOptions } from '../../types';
 import { ConfigEditor } from './ConfigEditor';
