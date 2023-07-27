@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, screen, render, fireEvent } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import { TestIds } from '../../constants';
 import { ParametersEditor } from './ParametersEditor';
 
