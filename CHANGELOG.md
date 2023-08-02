@@ -4,7 +4,7 @@
 
 ### Bugfix
 
-- Remove root URL https://localhost:3000 added during migration to Plugin Tools
+- Remove root URL http://localhost:3000 added during migration to Plugin Tools
 
 ## 3.0.0 (2023-07-26)
 
