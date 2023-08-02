@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.0.1 (2023-08-02)
+
+### Bugfix
+
+- Remove root URL http://localhost:3000 added during migration to Plugin Tools
+
 ## 3.0.0 (2023-07-26)
 
 ### Breaking changes
