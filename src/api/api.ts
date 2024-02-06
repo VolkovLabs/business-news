@@ -52,6 +52,9 @@ export class Api {
     const response = await lastValueFrom(
       getBackendSrv().fetch({
         method: 'GET',
+        headers: {
+          Accept: 'application/rss+xml;charset=UTF-8',
+        },
         url: `${this.instanceSettings.url}/feed`,
         params,
       })
