@@ -53,7 +53,7 @@ export class Api {
       getBackendSrv().fetch({
         method: 'GET',
         headers: {
-          Accept: 'application/rss+xml;charset=UTF-8',
+          Accept: 'application/rss+xml',
         },
         url: `${this.instanceSettings.url}/feed`,
         params,
