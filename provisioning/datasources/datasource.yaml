@@ -60,7 +60,7 @@ datasources:
     version: 1
     editable: true
     jsonData:
-      feed: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss.xml
+      feed: https://www.nist.gov/news-events/news/rss.xml
   - name: Nexus
     type: volkovlabs-rss-datasource
     access: proxy
