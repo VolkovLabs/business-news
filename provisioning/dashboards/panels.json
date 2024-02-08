@@ -32,6 +32,25 @@
         "type": "volkovlabs-rss-datasource",
         "uid": "rZAdZdf82"
       },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unitScale": true
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 17,
         "w": 12,
@@ -40,6 +59,7 @@
       },
       "id": 13,
       "options": {
+        "afterRender": "",
         "content": "<table width=100% style='border:0'>\n<tr>\n<td width=\"*\" style='border:0'><h3><a target=\"_blank\" style=\"color: blue\" href=\"{{link}}\">{{title}}</a></h3>\n{{{content:h4}}}</td>\n<td rowspan=2 style='border:0' width=\"30%\">\n<div><img src=\"{{media:group:media:thumbnail:url}}\"></div></td>\n</tr>\n<tr>\n<td style='border:0'><b>{{date updated 'MMM, DD YYYY'}} by {{author}}</b></td>\n</table>",
         "defaultContent": "The query didn't return any results.",
         "editor": {
@@ -48,11 +68,14 @@
           "language": "markdown"
         },
         "editors": [],
-        "everyRow": true,
+        "externalScripts": [],
+        "externalStyles": [],
         "helpers": "",
-        "styles": ""
+        "renderMode": "everyRow",
+        "styles": "",
+        "wrap": true
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "4.3.0",
       "targets": [
         {
           "datasource": {
@@ -91,6 +114,25 @@
         "type": "volkovlabs-rss-datasource",
         "uid": "P2C48277B5CA0E41B"
       },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unitScale": true
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 17,
         "w": 12,
@@ -99,6 +141,7 @@
       },
       "id": 4,
       "options": {
+        "afterRender": "",
         "content": "<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style='border:0px !important'>\n<tr style='border:0px'>\n<td width=\"40%\" style='border:0px;'><img src=\"{{og:image}}\"></td>\n<td width=\"*\" style='border:0px'><b>{{date pubDate 'MMM DD'}}</b><h3><a style='color:blue' target=\"_blank\" href=\"{{link}}\">{{title}}</a></h3>{{description}}\n</td>\n</tr>\n</table>",
         "defaultContent": "The query didn't return any results.",
         "editor": {
@@ -107,11 +150,14 @@
           "language": "markdown"
         },
         "editors": [],
-        "everyRow": true,
+        "externalScripts": [],
+        "externalStyles": [],
         "helpers": "",
-        "styles": ""
+        "renderMode": "everyRow",
+        "styles": "",
+        "wrap": true
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "4.3.0",
       "targets": [
         {
           "datasource": {
@@ -146,6 +192,25 @@
         "type": "volkovlabs-abc-datasource",
         "uid": "rZAdZdf7a"
       },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unitScale": true
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 17,
         "w": 12,
@@ -154,6 +219,7 @@
       },
       "id": 2,
       "options": {
+        "afterRender": "",
         "content": "<table width=100% style='border:0'>\n<tr>\n<td width=\"*\" style='border:0'><h3><a target=\"_blank\" style=\"color: blue\" href=\"{{link}}\">{{title}}</a></h3>\n{{{content:h4}}}</td>\n<td rowspan=2 style='border:0' width=\"30%\">\n<div><img src=\"https://volkovlabs.io/{{content:img-src}}\"></div></td>\n</tr>\n<tr>\n<td style='border:0'><b>{{date pubDate 'MMM, DD YYYY'}} in {{category}}</b></td>\n</table>",
         "defaultContent": "The query didn't return any results.",
         "editor": {
@@ -162,11 +228,14 @@
           "language": "markdown"
         },
         "editors": [],
-        "everyRow": true,
+        "externalScripts": [],
+        "externalStyles": [],
         "helpers": "",
-        "styles": ""
+        "renderMode": "everyRow",
+        "styles": "",
+        "wrap": true
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "4.3.0",
       "targets": [
         {
           "datasource": {
@@ -202,6 +271,25 @@
         "type": "volkovlabs-rss-datasource",
         "uid": "rZAdZdf72"
       },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unitScale": true
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 17,
         "w": 12,
@@ -210,6 +298,7 @@
       },
       "id": 9,
       "options": {
+        "afterRender": "",
         "content": "<table width=100% style='border:0'>\n<tr>\n<td style='border:0'><h3><a target=\"_blank\" style=\"color: blue\" href=\"{{link}}\">{{title}}</a> on {{date dc:date 'MMM, DD YYYY'}}</h3>\n{{{description}}}</td>\n</tr>\n</table>",
         "defaultContent": "The query didn't return any results.",
         "editor": {
@@ -218,18 +307,21 @@
           "language": "markdown"
         },
         "editors": [],
-        "everyRow": true,
+        "externalScripts": [],
+        "externalStyles": [],
         "helpers": "",
-        "styles": ""
+        "renderMode": "everyRow",
+        "styles": "",
+        "wrap": true
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "4.3.0",
       "targets": [
         {
           "datasource": {
             "type": "volkovlabs-rss-datasource",
             "uid": "rZAdZdf72"
           },
-          "dateField": "dc:date",
+          "dateField": "",
           "feedType": "items",
           "queryText": "test",
           "refId": "A"
@@ -270,6 +362,25 @@
         "type": "volkovlabs-rss-datasource",
         "uid": "PE12154EB4CA97411"
       },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unitScale": true
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 17,
         "w": 12,
@@ -278,6 +389,7 @@
       },
       "id": 7,
       "options": {
+        "afterRender": "",
         "content": "# {{date pubDate 'LLL'}} <a target=\"_blank\" style=\"color: blue\" href=\"{{link}}\">{{title}}</a>\n{{{summary}}}",
         "defaultContent": "The query didn't return any results.",
         "editor": {
@@ -286,11 +398,14 @@
           "language": "markdown"
         },
         "editors": [],
-        "everyRow": true,
+        "externalScripts": [],
+        "externalStyles": [],
         "helpers": "",
-        "styles": ""
+        "renderMode": "everyRow",
+        "styles": "",
+        "wrap": true
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "4.3.0",
       "targets": [
         {
           "datasource": {
@@ -323,8 +438,7 @@
   ],
   "refresh": "",
   "revision": 1,
-  "schemaVersion": 38,
-  "style": "dark",
+  "schemaVersion": 39,
   "tags": [],
   "templating": {
     "list": [

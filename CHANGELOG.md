@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.0 (IN PROGRESS)
+
+### Features / Enhancements
+
+- Add application type in Headers (#61)
+
 ## 3.0.1 (2023-08-02)
 
 ### Bugfix
