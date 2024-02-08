@@ -1,13 +1,14 @@
-import React, { ChangeEvent, PureComponent } from 'react';
 import { DataSourcePluginOptionsEditorProps } from '@grafana/data';
 import { InlineField, InlineFieldRow, Input } from '@grafana/ui';
+import React, { ChangeEvent, PureComponent } from 'react';
+
 import { TestIds } from '../../constants';
 import { DataSourceOptions } from '../../types';
 
 /**
  * Editor Properties
  */
-interface Props extends DataSourcePluginOptionsEditorProps<DataSourceOptions> {}
+type Props = DataSourcePluginOptionsEditorProps<DataSourceOptions>
 
 /**
  * State

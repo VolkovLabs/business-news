@@ -1,5 +1,6 @@
-import React from 'react';
 import { Button, InlineField, InlineFieldRow, Input } from '@grafana/ui';
+import React from 'react';
+
 import { TestIds } from '../../constants';
 import { Query } from '../../types';
 

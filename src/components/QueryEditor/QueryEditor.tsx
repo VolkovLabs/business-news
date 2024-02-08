@@ -1,7 +1,8 @@
-import { defaults } from 'lodash';
-import React, { ChangeEvent, PureComponent } from 'react';
 import { QueryEditorProps, SelectableValue } from '@grafana/data';
 import { CollapsableSection, InlineField, InlineFieldRow, Input, Select } from '@grafana/ui';
+import { defaults } from 'lodash';
+import React, { ChangeEvent, PureComponent } from 'react';
+
 import { defaultQuery, FeedType, FeedTypeValue, TestIds } from '../../constants';
 import { DataSource } from '../../datasource';
 import { DataSourceOptions, Query } from '../../types';

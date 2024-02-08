@@ -1,7 +1,8 @@
-import { XMLParser } from 'fast-xml-parser';
-import { lastValueFrom } from 'rxjs';
 import { DataSourceInstanceSettings, FieldType, MutableDataFrame, TimeRange } from '@grafana/data';
 import { getBackendSrv } from '@grafana/runtime';
+import { XMLParser } from 'fast-xml-parser';
+import { lastValueFrom } from 'rxjs';
+
 import { alwaysArray, FeedTypeValue, ItemKey, MetaProperties } from '../constants';
 import { DataSourceOptions, Query } from '../types';
 import { isDateBetweenRange, setItem } from '../utils';

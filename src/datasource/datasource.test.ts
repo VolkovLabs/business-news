@@ -1,4 +1,5 @@
 import { dateTime } from '@grafana/data';
+
 import { DataSourceTestStatus, FeedTypeValue } from '../constants';
 import { DataSource } from './datasource';
 
