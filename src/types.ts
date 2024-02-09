@@ -22,9 +22,9 @@ export interface Query extends DataQuery {
   /**
    * URL Params
    *
-   * @type {Record<string, any>}
+   * @type {Record<string, string>}
    */
-  params?: Record<string, any>;
+  params?: Record<string, string>;
 }
 
 /**
@@ -37,4 +37,28 @@ export interface DataSourceOptions extends DataSourceJsonData {
    * @type {string}
    */
   feed: string;
+}
+
+/**
+ * Feed items
+ */
+export interface FeedItems {
+  /**
+   * Mapping of ID to an array of strings representing the items
+   *
+   * @type {Record<string, string[]>}
+   */
+  [id: string]: string[];
+}
+
+/**
+ * Data item
+ */
+export interface DataItem {
+  /**
+   * Data Item
+   *
+   * @type {[key: string]: string | Record<string, string>}
+   */
+  [key: string]: string | Record<string, string>;
 }

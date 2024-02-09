@@ -160,6 +160,7 @@ const apiMock = {
 };
 
 jest.mock('../api/api', () => ({
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   Api: jest.fn().mockImplementation(() => apiMock),
 }));
 

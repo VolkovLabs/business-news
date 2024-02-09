@@ -3,7 +3,7 @@ import { CollapsableSection, InlineField, InlineFieldRow, Input, Select } from '
 import { defaults } from 'lodash';
 import React, { ChangeEvent, PureComponent } from 'react';
 
-import { defaultQuery, FeedType, FeedTypeValue, TestIds } from '../../constants';
+import { DEFAULT_QUERY, FEED_TYPE, FeedTypeValue, TEST_IDS } from '../../constants';
 import { DataSource } from '../../datasource';
 import { DataSourceOptions, Query } from '../../types';
 import { ParametersEditor } from '../ParametersEditor';
@@ -22,7 +22,7 @@ export class QueryEditor extends PureComponent<Props> {
    */
   onFeedTypeChange = async (item: SelectableValue<FeedTypeValue>) => {
     const { onChange, onRunQuery, query } = this.props;
-    onChange({ ...query, feedType: item.value! });
+    onChange({ ...query, feedType: item.value });
     onRunQuery();
   };
 
@@ -39,7 +39,7 @@ export class QueryEditor extends PureComponent<Props> {
    * Render
    */
   render() {
-    const query = defaults(this.props.query, defaultQuery);
+    const query = defaults(this.props.query, DEFAULT_QUERY);
     const { onChange, onRunQuery } = this.props;
 
     return (
@@ -47,10 +47,10 @@ export class QueryEditor extends PureComponent<Props> {
         <InlineFieldRow>
           <InlineField label="Request" labelWidth={8} grow={true}>
             <Select
-              options={FeedType}
-              value={FeedType.find((type) => type.value === query.feedType)}
+              options={FEED_TYPE}
+              value={FEED_TYPE.find((type) => type.value === query.feedType)}
               onChange={this.onFeedTypeChange}
-              aria-label={TestIds.queryEditor.fieldFeedType}
+              aria-label={TEST_IDS.queryEditor.fieldFeedType}
             />
           </InlineField>
         </InlineFieldRow>
@@ -66,7 +66,7 @@ export class QueryEditor extends PureComponent<Props> {
               value={query.dateField}
               onChange={this.onDateFieldChange}
               placeholder="pubDate"
-              data-testid={TestIds.queryEditor.fieldDate}
+              data-testid={TEST_IDS.queryEditor.fieldDate}
             />
           </InlineField>
         </InlineFieldRow>

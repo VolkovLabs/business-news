@@ -1,7 +1,7 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 
-import { defaultQuery, FeedTypeValue, TestIds } from '../../constants';
+import { DEFAULT_QUERY, FeedTypeValue, TEST_IDS } from '../../constants';
 import { Query } from '../../types';
 import { QueryEditor } from './QueryEditor';
 
@@ -42,7 +42,7 @@ jest.mock('@grafana/ui', () => ({
  * @param overrideQuery
  */
 export const getQuery = (overrideQuery = {}): Query => ({
-  feedType: defaultQuery.feedType,
+  feedType: DEFAULT_QUERY.feedType,
   dateField: 'pubDate',
   refId: 'A',
   ...overrideQuery,
@@ -69,7 +69,7 @@ describe('QueryEditor', () => {
 
       render(<QueryEditor datasource={[] as any} query={query} onRunQuery={onRunQuery} onChange={onChange} />);
 
-      const field = screen.getByLabelText(TestIds.queryEditor.fieldFeedType);
+      const field = screen.getByLabelText(TEST_IDS.queryEditor.fieldFeedType);
 
       expect(field).toHaveValue(FeedTypeValue.ALL);
 
@@ -95,7 +95,7 @@ describe('QueryEditor', () => {
 
       render(<QueryEditor datasource={[] as any} query={query} onRunQuery={onRunQuery} onChange={onChange} />);
 
-      const field = screen.getByTestId(TestIds.queryEditor.fieldDate);
+      const field = screen.getByTestId(TEST_IDS.queryEditor.fieldDate);
 
       expect(field).toHaveValue('pubDate');
 

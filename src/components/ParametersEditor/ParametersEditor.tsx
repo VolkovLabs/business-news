@@ -1,7 +1,7 @@
 import { Button, InlineField, InlineFieldRow, Input } from '@grafana/ui';
 import React from 'react';
 
-import { TestIds } from '../../constants';
+import { TEST_IDS } from '../../constants';
 import { Query } from '../../types';
 
 /**
@@ -88,7 +88,7 @@ export const ParametersEditor = ({ query, onChange, onRunQuery }: Props) => {
                 title="Remove"
                 onClick={() => removeParameters(param)}
                 icon="trash-alt"
-                data-testid={TestIds.parametersEditor.buttonRemove}
+                data-testid={TEST_IDS.parametersEditor.buttonRemove}
               />
             </InlineField>
           </InlineFieldRow>
@@ -102,7 +102,7 @@ export const ParametersEditor = ({ query, onChange, onRunQuery }: Props) => {
             title="Add a Parameter"
             onClick={() => setParameter('', '')}
             icon="plus"
-            data-testid={TestIds.parametersEditor.buttonAdd}
+            data-testid={TEST_IDS.parametersEditor.buttonAdd}
           >
             Add a Parameter
           </Button>

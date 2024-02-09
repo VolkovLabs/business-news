@@ -14,7 +14,7 @@ export enum FeedTypeValue {
 /**
  * Defaults for Query
  */
-export const defaultQuery: Partial<Query> = {
+export const DEFAULT_QUERY: Partial<Query> = {
   feedType: FeedTypeValue.ALL,
 };
 
@@ -23,7 +23,7 @@ export const defaultQuery: Partial<Query> = {
  *
  * @type {SelectableValue[]}
  */
-export const FeedType: SelectableValue[] = [
+export const FEED_TYPE: SelectableValue[] = [
   {
     label: 'Channel & Items',
     description: 'Returns channel data and items',
