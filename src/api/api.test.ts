@@ -1,5 +1,6 @@
-import { Observable } from 'rxjs';
 import { dateTime } from '@grafana/data';
+import { Observable } from 'rxjs';
+
 import { FeedTypeValue } from '../constants';
 import { Api } from './api';
 
@@ -217,14 +218,14 @@ describe('Api', () => {
       xmlResponse.data = '';
       jest.spyOn(console, 'error').mockImplementation();
 
-      let result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ALL }, range);
+      const result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ALL }, range);
       expect(result?.length).toEqual(0);
     });
 
     it('Should handle getFeed request for Atom with no data', async () => {
       xmlResponse.data = '<?xml version="1.0" encoding="UTF-8"?>\n\n';
 
-      let result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ALL });
+      const result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ALL });
       expect(result?.length).toEqual(0);
     });
 
@@ -239,7 +240,7 @@ describe('Api', () => {
       </channel>
       </rss>`;
 
-      let result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ALL }, range);
+      const result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ALL }, range);
       expect(result?.length).toEqual(1);
     });
 
@@ -259,7 +260,7 @@ describe('Api', () => {
       </channel>
       </rss>`;
 
-      let result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ITEMS }, range);
+      const result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ITEMS }, range);
       expect(result?.length).toEqual(1);
     });
 
@@ -287,7 +288,7 @@ describe('Api', () => {
           </item>
       </rdf:RDF>`;
 
-      let result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ITEMS }, range);
+      const result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ITEMS }, range);
       expect(result?.length).toEqual(1);
       expect(result[0].fields.length).toEqual(5);
     });
@@ -342,7 +343,7 @@ describe('Api', () => {
       xmlResponse.data = '';
       jest.spyOn(console, 'error').mockImplementation();
 
-      let result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ALL }, range);
+      const result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ALL }, range);
       expect(result?.length).toEqual(0);
     });
 
@@ -411,7 +412,7 @@ describe('Api', () => {
   </entry>
 </feed>`;
 
-      let result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ITEMS }, range);
+      const result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ITEMS }, range);
       expect(result?.length).toEqual(1);
       expect(result[0].fields.length).toEqual(12);
     });

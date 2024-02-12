@@ -1,4 +1,5 @@
 import { dateTime } from '@grafana/data';
+
 import { DataSourceTestStatus, FeedTypeValue } from '../constants';
 import { DataSource } from './datasource';
 
@@ -159,6 +160,7 @@ const apiMock = {
 };
 
 jest.mock('../api/api', () => ({
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   Api: jest.fn().mockImplementation(() => apiMock),
 }));
 

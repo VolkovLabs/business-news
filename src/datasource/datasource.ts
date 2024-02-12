@@ -6,6 +6,7 @@ import {
   DataSourceInstanceSettings,
 } from '@grafana/data';
 import { getTemplateSrv } from '@grafana/runtime';
+
 import { Api } from '../api';
 import { DataSourceTestStatus, FeedTypeValue } from '../constants';
 import { DataSourceOptions, Query } from '../types';

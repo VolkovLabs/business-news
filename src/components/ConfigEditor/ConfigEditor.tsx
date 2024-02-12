@@ -1,23 +1,19 @@
-import React, { ChangeEvent, PureComponent } from 'react';
 import { DataSourcePluginOptionsEditorProps } from '@grafana/data';
 import { InlineField, InlineFieldRow, Input } from '@grafana/ui';
-import { TestIds } from '../../constants';
+import React, { ChangeEvent, PureComponent } from 'react';
+
+import { TEST_IDS } from '../../constants';
 import { DataSourceOptions } from '../../types';
 
 /**
  * Editor Properties
  */
-interface Props extends DataSourcePluginOptionsEditorProps<DataSourceOptions> {}
-
-/**
- * State
- */
-interface State {}
+type Props = DataSourcePluginOptionsEditorProps<DataSourceOptions>;
 
 /**
  * Config Editor
  */
-export class ConfigEditor extends PureComponent<Props, State> {
+export class ConfigEditor extends PureComponent<Props, object> {
   /**
    * Feed URL Change
    */
@@ -47,7 +43,7 @@ export class ConfigEditor extends PureComponent<Props, State> {
             value={jsonData.feed}
             onChange={this.onFeedChange}
             placeholder="https://feed"
-            data-testid={TestIds.configEditor.fieldUrl}
+            data-testid={TEST_IDS.configEditor.fieldUrl}
           />
         </InlineField>
       </InlineFieldRow>

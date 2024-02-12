@@ -1,6 +1,7 @@
-import React from 'react';
 import { act, fireEvent, render, screen } from '@testing-library/react';
-import { TestIds } from '../../constants';
+import React from 'react';
+
+import { TEST_IDS } from '../../constants';
 import { ParametersEditor } from './ParametersEditor';
 
 /**
@@ -15,7 +16,7 @@ describe('Editor', () => {
   it('Should find component with Button', async () => {
     render(getComponent({ model }));
 
-    expect(screen.getByTestId(TestIds.parametersEditor.buttonAdd)).toBeInTheDocument();
+    expect(screen.getByTestId(TEST_IDS.parametersEditor.buttonAdd)).toBeInTheDocument();
   });
 
   it('Should add new parameter', async () => {
@@ -23,7 +24,7 @@ describe('Editor', () => {
     const onRunQuery = jest.fn();
     render(getComponent({ model, onChange, onRunQuery }));
 
-    await act(() => fireEvent.click(screen.getByTestId(TestIds.parametersEditor.buttonAdd)));
+    await act(() => fireEvent.click(screen.getByTestId(TEST_IDS.parametersEditor.buttonAdd)));
 
     expect(onChange).toHaveBeenCalledWith(
       expect.objectContaining({

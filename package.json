@@ -1,6 +1,5 @@
 {
   "author": "Volkov Labs",
-  "description": "RSS/Atom data source plugin for Grafana",
   "dependencies": {
     "@emotion/css": "^11.11.2",
     "@grafana/data": "^10.0.0",
@@ -12,6 +11,7 @@
     "react-dom": "^18.2.0",
     "tslib": "^2.6.1"
   },
+  "description": "RSS/Atom data source plugin for Grafana",
   "devDependencies": {
     "@babel/core": "^7.22.9",
     "@grafana/e2e": "^10.0.3",
@@ -27,6 +27,7 @@
     "@types/lodash": "^4.14.196",
     "@types/node": "^18.17.1",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@volkovlabs/eslint-config": "^1.3.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
     "eslint-plugin-deprecation": "^1.4.1",

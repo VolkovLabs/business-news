@@ -1,9 +1,10 @@
-import { XMLParser } from 'fast-xml-parser';
-import { lastValueFrom } from 'rxjs';
 import { DataSourceInstanceSettings, FieldType, MutableDataFrame, TimeRange } from '@grafana/data';
 import { getBackendSrv } from '@grafana/runtime';
-import { alwaysArray, FeedTypeValue, ItemKey, MetaProperties } from '../constants';
-import { DataSourceOptions, Query } from '../types';
+import { XMLParser } from 'fast-xml-parser';
+import { lastValueFrom } from 'rxjs';
+
+import { ALWAYS_ARRAY, FeedTypeValue, ItemKey, MetaProperties } from '../constants';
+import { DataItem, DataSourceOptions, FeedItems, Query } from '../types';
 import { isDateBetweenRange, setItem } from '../utils';
 
 /**
@@ -27,7 +28,7 @@ export class Api {
   async getFeed(
     query: Query,
     range: TimeRange | null = null,
-    params: Record<string, any> | undefined = undefined
+    params: Record<string, unknown> | undefined = undefined
   ): Promise<MutableDataFrame[]> {
     if (!params) {
       params = {};
@@ -53,7 +54,7 @@ export class Api {
       getBackendSrv().fetch({
         method: 'GET',
         headers: {
-          Accept: 'application/rss+xml, application/atom+xml',
+          accept: 'application/rss+xml, application/atom+xml',
         },
         url: `${this.instanceSettings.url}/feed`,
         params,
@@ -64,7 +65,6 @@ export class Api {
      * Nothing returned
      */
     if (!response || !response.data) {
-      console.error('Feed data is not found');
       return [];
     }
 
@@ -73,11 +73,11 @@ export class Api {
      */
     const parser = new XMLParser({
       ignoreAttributes: false,
-      isArray: (name, jpath, isLeafNode, isAttribute) => {
-        return alwaysArray.indexOf(jpath) !== -1 ? true : false;
+      isArray: (name, jpath) => {
+        return ALWAYS_ARRAY.indexOf(jpath) !== -1 ? true : false;
       },
     });
-    const data = parser.parse(response.data as any);
+    const data = parser.parse(response.data as string | Buffer);
 
     /**
      * RSS 1.0 (RDF) support
@@ -122,12 +122,13 @@ export class Api {
       /**
        * Find all items
        */
-      const items: { [id: string]: string[] } = {};
-      channel.item.forEach((item: any) => {
+      const items: FeedItems = {};
+
+      channel.item.forEach((item: DataItem) => {
         /**
          * Filter by specified Date field
          */
-        if (query.dateField && range && !isDateBetweenRange(item[query.dateField], range)) {
+        if (query.dateField && range && !isDateBetweenRange(item[query.dateField] as string, range)) {
           return;
         }
 
@@ -137,24 +138,24 @@ export class Api {
           /**
            * Parse Meta
            */
-          if (key === ItemKey.META && value['@_property'] === MetaProperties.OG_IMAGE) {
+          if (key === ItemKey.META && (value as Record<string, string>)['@_property'] === MetaProperties.OG_IMAGE) {
             key = MetaProperties.OG_IMAGE;
-            value = value['@_content'];
+            value = (value as Record<string, string>)['@_content'];
           }
 
           /**
            * Parse Guid
            */
-          if (key === ItemKey.GUID && value['#text']) {
-            value = value['#text'];
+          if (key === ItemKey.GUID && (value as Record<string, string>)['#text']) {
+            value = (value as Record<string, string>)['#text'];
           }
 
           /**
            * Parse Encoded content for H4 and first Image
            */
           if (key === ItemKey.CONTENT_ENCODED) {
-            const h4 = value.match(/<h4>(.*?)<\/h4>/);
-            const figure = value.match(/<figure>(.*?)<\/figure>/);
+            const h4 = value.toString().match(/<h4>(.*?)<\/h4>/);
+            const figure = value.toString().match(/<figure>(.*?)<\/figure>/);
 
             setItem(items, ItemKey.CONTENT_H4, h4?.length ? h4[1] : '');
 
@@ -168,7 +169,7 @@ export class Api {
             }
           }
 
-          setItem(items, key, value);
+          setItem(items, key, value as string);
         });
       });
 
@@ -231,12 +232,13 @@ export class Api {
     /**
      * Find all entries
      */
-    const entries: { [id: string]: string[] } = {};
-    feed.entry.forEach((entry: any) => {
+    const entries: FeedItems = {};
+
+    feed.entry.forEach((entry: DataItem) => {
       /**
        * Filter by specified Date field
        */
-      if (query.dateField && range && !isDateBetweenRange(entry[query.dateField], range)) {
+      if (query.dateField && range && !isDateBetweenRange(entry[query.dateField] as string, range)) {
         return;
       }
 
@@ -246,73 +248,85 @@ export class Api {
         /**
          * Link
          */
-        if (key === ItemKey.LINK && value['@_href']) {
-          value = value['@_href'];
+        if (key === ItemKey.LINK && (value as Record<string, string>)['@_href']) {
+          value = (value as Record<string, string>)['@_href'];
         }
 
         /**
          * Content
          */
-        if (key === ItemKey.CONTENT && value['#text']) {
-          value = value['#text'];
+        if (key === ItemKey.CONTENT && (value as Record<string, string>)['#text']) {
+          value = (value as Record<string, string>)['#text'];
         }
 
         /**
          * Summary
          */
-        if (key === ItemKey.SUMMARY && value['#text']) {
-          value = value['#text'];
+        if (key === ItemKey.SUMMARY && (value as Record<string, string>)['#text']) {
+          value = (value as Record<string, string>)['#text'];
         }
 
         /**
          * Author
          */
-        if (key === ItemKey.AUTHOR && value['name']) {
-          value = value['name'];
+        if (key === ItemKey.AUTHOR && (value as Record<string, string>)['name']) {
+          value = (value as Record<string, string>)['name'];
         }
 
         /**
          * Thumbnail
          */
-        if (key === ItemKey.MEDIA_THUMBNAIL && value['@_url']) {
-          value = value['@_url'];
+        if (key === ItemKey.MEDIA_THUMBNAIL && (value as Record<string, string>)['@_url']) {
+          value = (value as Record<string, string>)['@_url'];
         }
 
         /**
          * Media Group
          */
         if (key === ItemKey.MEDIA_GROUP) {
+          const mediaGroup: Record<string, unknown> = value as Record<string, unknown>;
+
           /**
            * Thumbnail URL
            */
-          if (value[ItemKey.MEDIA_THUMBNAIL] && value[ItemKey.MEDIA_THUMBNAIL]['@_url']) {
+          if (
+            mediaGroup[ItemKey.MEDIA_THUMBNAIL] &&
+            (mediaGroup[ItemKey.MEDIA_THUMBNAIL] as Record<string, unknown>)['@_url']
+          ) {
             setItem(
               entries,
               `${ItemKey.MEDIA_GROUP}:${ItemKey.MEDIA_THUMBNAIL}:url`,
-              value[ItemKey.MEDIA_THUMBNAIL]['@_url']
+              (mediaGroup[ItemKey.MEDIA_THUMBNAIL] as Record<string, unknown>)['@_url'] as string
             );
           }
 
           /**
            * Content URL
            */
-          if (value[ItemKey.MEDIA_CONTENT] && value[ItemKey.MEDIA_CONTENT]['@_url']) {
+          if (
+            mediaGroup[ItemKey.MEDIA_CONTENT] &&
+            (mediaGroup[ItemKey.MEDIA_CONTENT] as Record<string, unknown>)['@_url']
+          ) {
             setItem(
               entries,
               `${ItemKey.MEDIA_GROUP}:${ItemKey.MEDIA_CONTENT}:url`,
-              value[ItemKey.MEDIA_CONTENT]['@_url']
+              (mediaGroup[ItemKey.MEDIA_CONTENT] as Record<string, unknown>)['@_url'] as string
             );
           }
 
           /**
            * Description
            */
-          if (value[ItemKey.MEDIA_DESCRIPTION]) {
-            setItem(entries, `${ItemKey.MEDIA_GROUP}:${ItemKey.MEDIA_DESCRIPTION}`, value[ItemKey.MEDIA_DESCRIPTION]);
+          if (mediaGroup[ItemKey.MEDIA_DESCRIPTION]) {
+            setItem(
+              entries,
+              `${ItemKey.MEDIA_GROUP}:${ItemKey.MEDIA_DESCRIPTION}`,
+              mediaGroup[ItemKey.MEDIA_DESCRIPTION] as string
+            );
           }
         }
 
-        setItem(entries, key, value);
+        setItem(entries, key, value as string);
       });
     });
 

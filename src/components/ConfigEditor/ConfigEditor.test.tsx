@@ -1,7 +1,8 @@
-import React from 'react';
 import { DataSourceSettings } from '@grafana/data';
 import { act, fireEvent, render, screen } from '@testing-library/react';
-import { TestIds } from '../../constants';
+import React from 'react';
+
+import { TEST_IDS } from '../../constants';
 import { DataSourceOptions } from '../../types';
 import { ConfigEditor } from './ConfigEditor';
 
@@ -17,11 +18,10 @@ interface OverrideOptions {
 /**
  * Configuration Options
  */
-const getOptions = ({
-  jsonData = {},
-  secureJsonData = {},
-  ...overrideOptions
-}: OverrideOptions = {}): DataSourceSettings<DataSourceOptions, any> => ({
+const getOptions = ({ jsonData = {}, secureJsonData, ...overrideOptions }: OverrideOptions = {}): DataSourceSettings<
+  DataSourceOptions,
+  any
+> => ({
   id: 1,
   orgId: 2,
   name: '',
@@ -65,7 +65,7 @@ describe('ConfigEditor', () => {
 
       render(<ConfigEditor options={options} onOptionsChange={onChange} />);
 
-      const fieldUrl = screen.getByTestId(TestIds.configEditor.fieldUrl);
+      const fieldUrl = screen.getByTestId(TEST_IDS.configEditor.fieldUrl);
 
       expect(fieldUrl).toHaveValue(options.jsonData.feed);
 

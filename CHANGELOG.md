@@ -5,6 +5,7 @@
 ### Features / Enhancements
 
 - Add application type in Headers (#61)
+- Update ESLint configuration and refactoring (#62)
 
 ## 3.0.1 (2023-08-02)
 
