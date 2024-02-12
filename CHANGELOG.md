@@ -1,11 +1,12 @@
 # Change Log
 
-## 3.1.0 (IN PROGRESS)
+## 3.1.0 (2023-02-12)
 
 ### Features / Enhancements
 
 - Add application type in Headers (#61)
 - Update ESLint configuration and refactoring (#62)
+- Update to Grafana 10.3.1 (#63)
 
 ## 3.0.1 (2023-08-02)
 
