@@ -5,5 +5,8 @@ webpack.config.ts
 
 # Development folders
 coverage/
-cypress/
 dist/
+
+# Playwright tests
+playwright.config.ts
+test/panel.spec.ts
