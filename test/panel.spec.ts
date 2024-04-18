@@ -1,6 +1,6 @@
 import { test, expect } from '@grafana/plugin-e2e';
 
-test.describe('Static RSS datasource', () => {
+test.describe('RSS datasource', () => {
   test('Should display a Dynamic Text with Data Source', async ({ gotoDashboardPage, dashboardPage, page }) => {
     /**
      * Go To panels dashboard panels.json
