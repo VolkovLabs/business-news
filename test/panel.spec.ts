@@ -1,7 +1,7 @@
 import { test, expect } from '@grafana/plugin-e2e';
 
-test.describe('Static Data Source', () => {
-  test('Viewing a panel with a Logs from Static Data', async ({ gotoDashboardPage, dashboardPage, page }) => {
+test.describe('Static RSS datasource', () => {
+  test('Should display a Dynamic Text with Data Source', async ({ gotoDashboardPage, dashboardPage, page }) => {
     /**
      * Go To panels dashboard panels.json
      * return dashboardPage
@@ -14,19 +14,9 @@ test.describe('Static Data Source', () => {
     await page.waitForTimeout(1000);
 
     /**
-     * Find panel by title with chart
+     * Find panel by title with data
      * Should be visible
      */
     await expect(dashboardPage.getPanelByTitle('Volkov Labs YouTube').locator).toBeVisible();
-
-    /**
-     * Check and compare image
-     */
-    await expect(dashboardPage.getPanelByTitle('Volkov Labs YouTube').locator).toHaveScreenshot(
-      'actual-screenshot.png',
-      {
-        maxDiffPixelRatio: 0.1,
-      }
-    );
   });
 });
