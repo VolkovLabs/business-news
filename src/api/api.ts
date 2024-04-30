@@ -1,4 +1,4 @@
-import { DataSourceInstanceSettings, FieldType, MutableDataFrame, TimeRange } from '@grafana/data';
+import { createDataFrame, DataFrame, DataSourceInstanceSettings, FieldType, TimeRange } from '@grafana/data';
 import { getBackendSrv } from '@grafana/runtime';
 import { XMLParser } from 'fast-xml-parser';
 import { lastValueFrom } from 'rxjs';
@@ -23,13 +23,13 @@ export class Api {
    * @param {Query} query Query
    * @param {TimeRange} range Time Range
    * @param {Record<string, any>} params URL parameters
-   * @returns {Promise<MutableDataFrame[]>} Feed
+   * @returns {Promise<DataFrame[]>} Feed
    */
   async getFeed(
     query: Query,
     range: TimeRange | null = null,
     params: Record<string, unknown> | undefined = undefined
-  ): Promise<MutableDataFrame[]> {
+  ): Promise<DataFrame[]> {
     if (!params) {
       params = {};
     }
@@ -95,7 +95,7 @@ export class Api {
        * Channel Data
        */
       const channel = data.rss.channel;
-      const channelFrame = new MutableDataFrame({
+      const channelFrame = createDataFrame({
         name: 'channel',
         refId: query.refId,
         fields: [
@@ -176,7 +176,7 @@ export class Api {
       /**
        * Create Items frame
        */
-      const itemsFrame = new MutableDataFrame({
+      const itemsFrame = createDataFrame({
         name: 'items',
         refId: query.refId,
         fields: Object.keys(items).map((key) => {
@@ -211,7 +211,7 @@ export class Api {
      * Channel Data
      */
     const feed = data.feed;
-    const channelFrame = new MutableDataFrame({
+    const channelFrame = createDataFrame({
       name: 'channel',
       refId: query.refId,
       fields: [
@@ -333,7 +333,7 @@ export class Api {
     /**
      * Create Items frame
      */
-    const itemsFrame = new MutableDataFrame({
+    const itemsFrame = createDataFrame({
       name: 'items',
       refId: query.refId,
       fields: Object.keys(entries).map((key) => {
