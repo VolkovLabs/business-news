@@ -1,4 +1,4 @@
-# RSS/Atom Data Source for Grafana
+# Business News Data Source for Grafana
 
 ![Dashboard](https://raw.githubusercontent.com/VolkovLabs/volkovlabs-rss-datasource/main/src/img/dashboard.png)
 
@@ -10,19 +10,20 @@
 
 ## Introduction
 
-The RSS/Atom data source is a plugin for Grafana that retrieves RSS/Atom feeds and allows visualizing them using Dynamic Text and other panels.
+The Business News data source is a plugin for Grafana that retrieves RSS/Atom feeds and allows visualizing them using Dynamic Text and other panels.
 
-[![RSS/Atom Data Source for Grafana | News feed tutorial for Grafana Dashboard](https://raw.githubusercontent.com/volkovlabs/volkovlabs-rss-datasource/main/img/video.png)](https://youtu.be/RAxqS2hpWkg)
+[![Business News Data Source for Grafana | News feed tutorial for Grafana Dashboard](https://raw.githubusercontent.com/volkovlabs/volkovlabs-rss-datasource/main/img/video.png)](https://youtu.be/RAxqS2hpWkg)
 
 ## Requirements
 
-- **Grafana 9** and **Grafana 10** are required for major version 3.
-- **Grafana 8.5** and **Grafana 9** are required for major version 2.
-- **Grafana 8** is required for major version 1.
+- Business News Data Source 4.X requires **Grafana 10** or **Grafana 11**.
+- Business News Data Source 3.X requires **Grafana 9** or **Grafana 10**.
+- Business News Data Source 2.X requires **Grafana 8.5** or **Grafana 9**.
+- Business News Data Source 1.X requires **Grafana 8**.
 
 ## Getting Started
 
-RSS/Atom data source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-rss-datasource/) or utilizing the Grafana command line tool.
+The Business News data source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-rss-datasource/) or utilizing the Grafana command line tool.
 
 For the latter, please use the following command.
 
@@ -33,7 +34,7 @@ grafana-cli plugins install volkovlabs-rss-datasource
 ## Highlights
 
 - Supports RSS 2.0, RSS 1.0 and Atom.
-- Works great with Dynamic Text visualization panel.
+- Works with Dynamic Text visualization panel.
 - Returns Channel (Feed) data, Items (Entries) or both as separate data frames.
 - Extract and parse as additional fields:
   - Image from Meta.
