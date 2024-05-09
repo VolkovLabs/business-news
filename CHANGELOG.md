@@ -1,6 +1,6 @@
 # Change Log
 
-## 4.0.0 (IN PROGRESS)
+## 4.0.0 (2024-05-09)
 
 ### Breaking changes
 
@@ -8,22 +8,23 @@
 
 ### Features / Enhancements
 
-- Add plugin e2e tests and remove cypress (#68)
-- Prepare for Grafana 11 (#71)
+- Added plugin e2e tests and remove cypress (#68)
+- Prepared for Grafana 11 (#71)
+- Updated to Grafana 10.4.2 and dependencies (#72)
 
 ## 3.1.0 (2024-02-12)
 
 ### Features / Enhancements
 
-- Add application type in Headers (#61)
-- Update ESLint configuration and refactoring (#62)
-- Update to Grafana 10.3.1 (#63)
+- Added application type in Headers (#61)
+- Updated ESLint configuration and refactoring (#62)
+- Updated to Grafana 10.3.1 (#63)
 
 ## 3.0.1 (2023-08-02)
 
 ### Bugfix
 
-- Remove root URL http://localhost:3000 added during migration to Plugin Tools
+- Removed root URL http://localhost:3000 added during migration to Plugin Tools
 
 ## 3.0.0 (2023-07-26)
 
@@ -33,45 +34,45 @@
 
 ### Features / Enhancements
 
-- Update tests with testing-library/react (#50)
-- Migrate to Plugin Tools 1.5.2 (#51)
-- Update to Node 18 and npm (#51)
-- Update to Grafana 10.0.0 (#51)
-- Add E2E Cypress testing (#52)
-- Remove Grafana 8.5 support (#56)
-- Update ESLint configuration (#56)
+- Updated tests with testing-library/react (#50)
+- Migrated to Plugin Tools 1.5.2 (#51)
+- Updated to Node 18 and npm (#51)
+- Updated to Grafana 10.0.0 (#51)
+- Added E2E Cypress testing (#52)
+- Removed Grafana 8.5 support (#56)
+- Updated ESLint configuration (#56)
 
 ## 2.4.0 (2023-04-08)
 
 ### Features / Enhancements
 
-- Update to Grafana 9.4.7 (#44)
-- Update CI and Release workflows (#45)
-- Update Documentation, Provisioning (#46)
-- Add URL parameters with variables support (#47, #48)
+- Updated to Grafana 9.4.7 (#44)
+- Updated CI and Release workflows (#45)
+- Updated Documentation, Provisioning (#46)
+- Added URL parameters with variables support (#47, #48)
 
 ## 2.3.0 (2022-11-16)
 
 ### Features / Enhancements
 
-- Update to Grafana 9.1.4 (#36)
-- Add Compatibility Check Workflow (#37)
-- Update CI to Node 16 and Synchronize with Release workflow (#39)
-- Update to Grafana 9.2.2 (#40)
-- Update CI to upload signed artifacts (#41)
+- Updated to Grafana 9.1.4 (#36)
+- Added Compatibility Check Workflow (#37)
+- Updated CI to Node 16 and Synchronize with Release workflow (#39)
+- Updated to Grafana 9.2.2 (#40)
+- Updated CI to upload signed artifacts (#41)
 
 ## 2.2.0 (2022-08-25)
 
 ### Features / Enhancements
 
-- Add YouTube video in README (#32)
-- Rebuild based on 9.1.1 (#35)
+- Added YouTube video in README (#32)
+- Updated based on 9.1.1 (#35)
 
 ## 2.1.0 (2022-06-23)
 
 ### Features / Enhancements
 
-- Add YouTube fields parsing and refactoring (#31)
+- Added YouTube fields parsing and refactoring (#31)
 
 ## 2.0.0 (2022-06-17)
 
@@ -81,13 +82,13 @@
 
 ### Features / Enhancements
 
-- Rebuild based on 9.0.0 (#30)
+- Updated based on 9.0.0 (#30)
 
 ## 1.7.0 (2022-05-21)
 
 ### Features / Enhancements
 
-- Support Feed URL with query parameters (#28)
+- Added Feed URL with query parameters (#28)
 
 ## 1.6.2 (2022-05-13)
 
@@ -100,8 +101,8 @@
 ### Features / Enhancements
 
 - Clarify Breaking change introduced in 1.6.0 (#24)
-- Refactor API tests and set parsing `rss.channel.item` as array always (#25)
-- Improve test coverage (#26)
+- Updated API tests and set parsing `rss.channel.item` as array always (#25)
+- Improved test coverage (#26)
 
 ## 1.6.0 (2022-05-12)
 
@@ -111,7 +112,7 @@
 
 ### Features / Enhancements
 
-- Rebuild based on 8.5.2 (#23)
+- Updated based on 8.5.2 (#23)
 
 ### Bug fixes
 
@@ -121,17 +122,15 @@
 
 ### Features / Enhancements
 
-- Add Provisioning instructions to README (#16)
-- Rebuild using 8.4.3 (#17)
-- Adding RSS 1.0 support (#19)
-- Rebuild based on 8.5.0 (#20)
+- Added Provisioning instructions to README (#16)
+- Added RSS 1.0 support (#19)
+- Rebuild based on 8.5.0 (#17, #20)
 
 ## 1.4.0 (2022-02-18)
 
 ### Features / Enhancements
 
-- Rebuild using 8.3.6 (#13)
-- Rebuild using 8.4.0 and use PluginCheck v2 (#14)
+- Updated using 8.4.0 and use PluginCheck v2 (#13, #14)
 - Select items/entries based on the selected Time Range (#3)
 
 ## 1.3.1 (2022-02-02)
