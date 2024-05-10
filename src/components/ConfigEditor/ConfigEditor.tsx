@@ -37,7 +37,13 @@ export class ConfigEditor extends PureComponent<Props, object> {
 
     return (
       <InlineFieldRow>
-        <InlineField label="Feed URL" labelWidth={14} grow invalid={jsonData.feed === ''}>
+        <InlineField
+          label="Feed URL"
+          labelWidth={14}
+          grow
+          invalid={jsonData.feed === ''}
+          tooltip={`The URL must be correct and contain all necessary characters ('/' at the end, etc.)`}
+        >
           <Input
             type="text"
             value={jsonData.feed}
