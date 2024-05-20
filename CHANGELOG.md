@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.1.0 (IN PROGRESS)
+
+### Features / Enhancements
+
+- Added tooltip to Feed URL (#73)
+
 ## 4.0.0 (2024-05-09)
 
 ### Breaking changes
