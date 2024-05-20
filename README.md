@@ -18,8 +18,8 @@ The Business News data source is a plugin for Grafana that retrieves RSS/Atom fe
 
 - Business News Data Source 4.X requires **Grafana 10.1** or **Grafana 11**.
 - RSS/Atom Data Source 3.X requires **Grafana 9** or **Grafana 10**.
-- RSS/Atom News Data Source 2.X requires **Grafana 8.5** or **Grafana 9**.
-- RSS/Atom News Data Source 1.X requires **Grafana 8**.
+- RSS/Atom Data Source 2.X requires **Grafana 8.5** or **Grafana 9**.
+- RSS/Atom Data Source 1.X requires **Grafana 8**.
 
 ## Getting Started
 
