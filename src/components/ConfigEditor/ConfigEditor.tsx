@@ -42,7 +42,7 @@ export class ConfigEditor extends PureComponent<Props, object> {
           labelWidth={14}
           grow
           invalid={jsonData.feed === ''}
-          tooltip={`The URL must be correct and contain all necessary characters ('/' at the end, etc.)`}
+          tooltip={`The URL must be contain all necessary characters ('/' at the end, etc.) to avoid redirects and CORS issues.`}
         >
           <Input
             type="text"
