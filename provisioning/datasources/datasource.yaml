@@ -70,12 +70,23 @@ datasources:
     editable: true
     jsonData:
       feed: https://github.com/sonatype/nexus-public/releases.atom
-  - name: Volkov Labs YouTube
+  - name: Grafana Cloud RSS
     type: volkovlabs-rss-datasource
     access: proxy
     orgId: 1
-    uid: rZAdZdf82
+    uid: rss1
     version: 1
     editable: true
     jsonData:
-      feed: https://www.youtube.com/feeds/videos.xml?channel_id=UCQadniwbukI6ZmTN2oTTb-g
+      feed: https://grafana.com/docs/grafana-cloud/whats-new/index.xml
+  - name: Grafana Cloud Infinity
+    type: yesoreyeram-infinity-datasource
+    access: proxy
+    isDefault: false
+    orgId: 1
+    uid: infinity1
+    version: 1
+    editable: true
+    jsonData:
+      url: https://grafana.com/docs/grafana-cloud/whats-new/index.xml
+      feedType: rss
