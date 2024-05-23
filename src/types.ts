@@ -44,11 +44,11 @@ export interface DataSourceOptions extends DataSourceJsonData {
  */
 export interface FeedItems {
   /**
-   * Mapping of ID to an array of strings representing the items
+   * Mapping of ID to an array of strings or strings and null
    *
-   * @type {Record<string, string[]>}
+   * @type {Record<string, (string | null)[]>}
    */
-  [id: string]: string[];
+  [id: string]: Array<string | null>;
 }
 
 /**

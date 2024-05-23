@@ -416,5 +416,38 @@ describe('Api', () => {
       expect(result?.length).toEqual(1);
       expect(result[0].fields.length).toEqual(12);
     });
+
+    /**
+     * Source with different key count in item
+     */
+    it('Should return null value if key doesn`t contain in element', async () => {
+      xmlResponse.data = `<rss version="2.0"
+      xmlns:atom="http://www.w3.org/2005/Atom">
+      <channel>
+          <item>
+              <title>
+				        RSS Tutorial
+			        </title>
+              <content:encoded><![CDATA[<h4>Test.</h4><figure><img alt="" src="" /></figure>]]></content:encoded>
+          </item>
+          <item>
+              <content:encoded><![CDATA[<h4 /><figure />]]></content:encoded>
+              <title>
+				        RSS Tutorial 2
+			        </title>
+              <tag>
+                RSS Tag 2
+              </tag>
+          </item>
+      </channel>
+      </rss>`;
+
+      const result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ITEMS }, range);
+
+      const tagField = result[0].fields.find((elem) => elem.name === 'tag');
+
+      expect(result?.length).toEqual(1);
+      expect(tagField?.values).toEqual([null, 'RSS Tag 2']);
+    });
   });
 });

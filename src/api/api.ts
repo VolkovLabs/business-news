@@ -5,7 +5,7 @@ import { lastValueFrom } from 'rxjs';
 
 import { ALWAYS_ARRAY, FeedTypeValue, ItemKey, MetaProperties } from '../constants';
 import { DataItem, DataSourceOptions, FeedItems, Query } from '../types';
-import { isDateBetweenRange, setItem } from '../utils';
+import { createUniqueKeyObject, isDateBetweenRange, setItem } from '../utils';
 
 /**
  * API
@@ -120,10 +120,14 @@ export class Api {
       }
 
       /**
+       * Configure Items
+       * Take all the unique keys in all items
+       */
+      const items: FeedItems = createUniqueKeyObject(channel.item);
+
+      /**
        * Find all items
        */
-      const items: FeedItems = {};
-
       channel.item.forEach((item: DataItem) => {
         /**
          * Filter by specified Date field
@@ -132,44 +136,51 @@ export class Api {
           return;
         }
 
-        Object.keys(item).forEach((key: string) => {
+        Object.keys(items).forEach((key: string) => {
+          let currentKey = key;
           let value = item[key];
 
           /**
-           * Parse Meta
+           * If Item doesn`t contain key set key with null value to avoid mixed up
            */
-          if (key === ItemKey.META && (value as Record<string, string>)['@_property'] === MetaProperties.OG_IMAGE) {
-            key = MetaProperties.OG_IMAGE;
-            value = (value as Record<string, string>)['@_content'];
-          }
-
-          /**
-           * Parse Guid
-           */
-          if (key === ItemKey.GUID && (value as Record<string, string>)['#text']) {
-            value = (value as Record<string, string>)['#text'];
-          }
-
-          /**
-           * Parse Encoded content for H4 and first Image
-           */
-          if (key === ItemKey.CONTENT_ENCODED) {
-            const h4 = value.toString().match(/<h4>(.*?)<\/h4>/);
-            const figure = value.toString().match(/<figure>(.*?)<\/figure>/);
-
-            setItem(items, ItemKey.CONTENT_H4, h4?.length ? h4[1] : '');
+          if (!value) {
+            setItem(items, currentKey, null);
+          } else {
+            /**
+             * Parse Meta
+             */
+            if (key === ItemKey.META && (value as Record<string, string>)['@_property'] === MetaProperties.OG_IMAGE) {
+              currentKey = MetaProperties.OG_IMAGE;
+              value = (value as Record<string, string>)['@_content'];
+            }
 
             /**
-             * Extract image and source
+             * Parse Guid
              */
-            if (figure?.length) {
-              setItem(items, ItemKey.CONTENT_IMG, figure[1]);
-              const img = figure[1].match(/<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/);
-              setItem(items, ItemKey.CONTENT_IMG_SRC, img?.length ? img[1] : '');
+            if (key === ItemKey.GUID && (value as Record<string, string>)['#text']) {
+              value = (value as Record<string, string>)['#text'];
             }
-          }
 
-          setItem(items, key, value as string);
+            /**
+             * Parse Encoded content for H4 and first Image
+             */
+            if (key === ItemKey.CONTENT_ENCODED) {
+              const h4 = value.toString().match(/<h4>(.*?)<\/h4>/);
+              const figure = value.toString().match(/<figure>(.*?)<\/figure>/);
+
+              setItem(items, ItemKey.CONTENT_H4, h4?.length ? h4[1] : '');
+
+              /**
+               * Extract image and source
+               */
+              if (figure?.length) {
+                setItem(items, ItemKey.CONTENT_IMG, figure[1]);
+                const img = figure[1].match(/<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/);
+                setItem(items, ItemKey.CONTENT_IMG_SRC, img?.length ? img[1] : '');
+              }
+            }
+            setItem(items, currentKey, value as string);
+          }
         });
       });
 
@@ -230,10 +241,14 @@ export class Api {
     }
 
     /**
+     * Configure entries
+     * Take all the unique keys in all entries
+     */
+    const entries: FeedItems = createUniqueKeyObject(feed.entry);
+
+    /**
      * Find all entries
      */
-    const entries: FeedItems = {};
-
     feed.entry.forEach((entry: DataItem) => {
       /**
        * Filter by specified Date field
@@ -242,91 +257,98 @@ export class Api {
         return;
       }
 
-      Object.keys(entry).forEach((key: string) => {
+      Object.keys(entries).forEach((key: string) => {
         let value = entry[key];
 
         /**
-         * Link
+         * If Entry doesn`t contain key set key with null value to avoid mixed up
          */
-        if (key === ItemKey.LINK && (value as Record<string, string>)['@_href']) {
-          value = (value as Record<string, string>)['@_href'];
-        }
-
-        /**
-         * Content
-         */
-        if (key === ItemKey.CONTENT && (value as Record<string, string>)['#text']) {
-          value = (value as Record<string, string>)['#text'];
-        }
-
-        /**
-         * Summary
-         */
-        if (key === ItemKey.SUMMARY && (value as Record<string, string>)['#text']) {
-          value = (value as Record<string, string>)['#text'];
-        }
-
-        /**
-         * Author
-         */
-        if (key === ItemKey.AUTHOR && (value as Record<string, string>)['name']) {
-          value = (value as Record<string, string>)['name'];
-        }
-
-        /**
-         * Thumbnail
-         */
-        if (key === ItemKey.MEDIA_THUMBNAIL && (value as Record<string, string>)['@_url']) {
-          value = (value as Record<string, string>)['@_url'];
-        }
-
-        /**
-         * Media Group
-         */
-        if (key === ItemKey.MEDIA_GROUP) {
-          const mediaGroup: Record<string, unknown> = value as Record<string, unknown>;
-
+        if (!value) {
+          setItem(entries, key, null);
+        } else {
           /**
-           * Thumbnail URL
+           * Link
            */
-          if (
-            mediaGroup[ItemKey.MEDIA_THUMBNAIL] &&
-            (mediaGroup[ItemKey.MEDIA_THUMBNAIL] as Record<string, unknown>)['@_url']
-          ) {
-            setItem(
-              entries,
-              `${ItemKey.MEDIA_GROUP}:${ItemKey.MEDIA_THUMBNAIL}:url`,
-              (mediaGroup[ItemKey.MEDIA_THUMBNAIL] as Record<string, unknown>)['@_url'] as string
-            );
+          if (key === ItemKey.LINK && (value as Record<string, string>)['@_href']) {
+            value = (value as Record<string, string>)['@_href'];
           }
 
           /**
-           * Content URL
+           * Content
            */
-          if (
-            mediaGroup[ItemKey.MEDIA_CONTENT] &&
-            (mediaGroup[ItemKey.MEDIA_CONTENT] as Record<string, unknown>)['@_url']
-          ) {
-            setItem(
-              entries,
-              `${ItemKey.MEDIA_GROUP}:${ItemKey.MEDIA_CONTENT}:url`,
-              (mediaGroup[ItemKey.MEDIA_CONTENT] as Record<string, unknown>)['@_url'] as string
-            );
+          if (key === ItemKey.CONTENT && (value as Record<string, string>)['#text']) {
+            value = (value as Record<string, string>)['#text'];
           }
 
           /**
-           * Description
+           * Summary
            */
-          if (mediaGroup[ItemKey.MEDIA_DESCRIPTION]) {
-            setItem(
-              entries,
-              `${ItemKey.MEDIA_GROUP}:${ItemKey.MEDIA_DESCRIPTION}`,
-              mediaGroup[ItemKey.MEDIA_DESCRIPTION] as string
-            );
+          if (key === ItemKey.SUMMARY && (value as Record<string, string>)['#text']) {
+            value = (value as Record<string, string>)['#text'];
           }
-        }
 
-        setItem(entries, key, value as string);
+          /**
+           * Author
+           */
+          if (key === ItemKey.AUTHOR && (value as Record<string, string>)['name']) {
+            value = (value as Record<string, string>)['name'];
+          }
+
+          /**
+           * Thumbnail
+           */
+          if (key === ItemKey.MEDIA_THUMBNAIL && (value as Record<string, string>)['@_url']) {
+            value = (value as Record<string, string>)['@_url'];
+          }
+
+          /**
+           * Media Group
+           */
+          if (key === ItemKey.MEDIA_GROUP) {
+            const mediaGroup: Record<string, unknown> = value as Record<string, unknown>;
+
+            /**
+             * Thumbnail URL
+             */
+            if (
+              mediaGroup[ItemKey.MEDIA_THUMBNAIL] &&
+              (mediaGroup[ItemKey.MEDIA_THUMBNAIL] as Record<string, unknown>)['@_url']
+            ) {
+              setItem(
+                entries,
+                `${ItemKey.MEDIA_GROUP}:${ItemKey.MEDIA_THUMBNAIL}:url`,
+                (mediaGroup[ItemKey.MEDIA_THUMBNAIL] as Record<string, unknown>)['@_url'] as string
+              );
+            }
+
+            /**
+             * Content URL
+             */
+            if (
+              mediaGroup[ItemKey.MEDIA_CONTENT] &&
+              (mediaGroup[ItemKey.MEDIA_CONTENT] as Record<string, unknown>)['@_url']
+            ) {
+              setItem(
+                entries,
+                `${ItemKey.MEDIA_GROUP}:${ItemKey.MEDIA_CONTENT}:url`,
+                (mediaGroup[ItemKey.MEDIA_CONTENT] as Record<string, unknown>)['@_url'] as string
+              );
+            }
+
+            /**
+             * Description
+             */
+            if (mediaGroup[ItemKey.MEDIA_DESCRIPTION]) {
+              setItem(
+                entries,
+                `${ItemKey.MEDIA_GROUP}:${ItemKey.MEDIA_DESCRIPTION}`,
+                mediaGroup[ItemKey.MEDIA_DESCRIPTION] as string
+              );
+            }
+          }
+
+          setItem(entries, key, value as string);
+        }
       });
     });
 
