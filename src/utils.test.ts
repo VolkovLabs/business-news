@@ -4,12 +4,12 @@ import { createUniqueKeyObject } from './utils';
  * createUniqueKeyObject
  */
 describe('createUniqueKeyObject', () => {
-  it('Should returns an empty object for an empty input array', () => {
+  it('Should return an empty object for an empty input array', () => {
     const result = createUniqueKeyObject([]);
     expect(result).toEqual({});
   });
 
-  it('Should creates a unique key object for a non-empty array', () => {
+  it('Should create a unique key object for a non-empty array', () => {
     const items = [
       { name: 'John', age: 30 },
       { name: 'Jane', email: 'jane@example.com' },
@@ -24,7 +24,7 @@ describe('createUniqueKeyObject', () => {
     });
   });
 
-  it('Should handles duplicate keys in the array', () => {
+  it('Should handle duplicate keys in the array', () => {
     const items = [
       { name: 'John', age: 30 },
       { name: 'Jane', age: 35 },
