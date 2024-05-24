@@ -6,7 +6,11 @@ const path = require('path');
 const app = express();
 const port = process.argv.includes('--port') ? parseInt(process.argv[process.argv.indexOf('--port') + 1]) : 8001;
 
-app.get('/feed', (req, res) => {
+app.get('/ping', (req, res) => {
+  res.status(200).send('Pong');
+});
+
+app.get('/random', (req, res) => {
   const xml = generateRandomXml();
   res.type('application/rss+xml');
   res.send(xml);
@@ -14,6 +18,19 @@ app.get('/feed', (req, res) => {
 
 app.get('/rss', (req, res) => {
   const filePath = path.join(__dirname, 'xml', 'rss.xml');
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Internal Server Error');
+    } else {
+      res.type('application/xml');
+      res.send(data);
+    }
+  });
+});
+
+app.get('/feed', (req, res) => {
+  const filePath = path.join(__dirname, 'xml', 'feed.xml');
   fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
       console.error(err);

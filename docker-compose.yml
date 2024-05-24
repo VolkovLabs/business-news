@@ -14,3 +14,9 @@ services:
     volumes:
       - ./dist:/var/lib/grafana/plugins/volkovlabs-rss-datasource
       - ./provisioning:/etc/grafana/provisioning
+  server:
+    container_name: xml-server
+    build:
+      context: ./xml-server
+    ports:
+      - 8001:8001

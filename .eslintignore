@@ -7,6 +7,9 @@ webpack.config.ts
 coverage/
 dist/
 
+# Servers
+xml-server/
+
 # Playwright tests
 playwright.config.ts
 test/panel.spec.ts

@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:yt="http://www.youtube.com/xml/schemas/2015" xmlns:media="http://search.yahoo.com/mrss/" xmlns="http://www.w3.org/2005/Atom">
+	<link rel="self" href="http://www.youtube.com/feeds/videos.xml?channel_id=UCQadniwbukI6ZmTN2oTTb-g" />
+	<id>
+		yt:channel:QadniwbukI6ZmTN2oTTb-g
+	</id>
+	<channelId>
+		QadniwbukI6ZmTN2oTTb-g
+	</channelId>
+	<title>
+		Volkov Labs
+	</title>
+	<link rel="alternate" href="https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g" />
+	<author>
+		<name>
+			Volkov Labs
+		</name>
+		<uri>
+			https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g
+		</uri>
+	</author>
+	<published>
+		2022-01-18T15:17:13+00:00
+	</published>
+	<entry>
+		<id>
+			yt:video:FdTKSK6up-Y
+		</id>
+		<videoId>
+			FdTKSK6up-Y
+		</videoId>
+		<channelId>
+			UCQadniwbukI6ZmTN2oTTb-g
+		</channelId>
+		<title>
+			Business Calendar panel 3.0.0 for Grafana #grafana #calendar #community #opensource
+		</title>
+		<link rel="alternate" href="https://www.youtube.com/watch?v=FdTKSK6up-Y" />
+		<author>
+			<name>
+				Volkov Labs
+			</name>
+			<uri>
+				https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g
+			</uri>
+		</author>
+		<published>
+			2024-05-17T03:17:30+00:00
+		</published>
+		<updated>
+			2024-05-21T01:38:10+00:00
+		</updated>
+		<group>
+			<title>
+				Business Calendar panel 3.0.0 for Grafana #grafana #calendar #community #opensource
+			</title>
+			<content url="https://www.youtube.com/v/FdTKSK6up-Y?version=3" type="application/x-shockwave-flash" width="640" height="390" />
+			<thumbnail url="https://i3.ytimg.com/vi/FdTKSK6up-Y/hqdefault.jpg" width="480" height="360" />
+			<description>
+				Our calendar plugin joins the Business Suite we are developing. Now, it should be called Business Calendar for Grafana. The latest available version is 3.0.0. A new name with the same incredible functionality.  Business Calendar panel 3.0.0 for Grafana is here! Check out the blog post for details: https://volkovlabs.io/blog/calendar-panel-3.0.0-20240514/ Become a member of our fan club https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g/join and earn loyalty badges! DISCOVER 👉 Documentation: https://docs.volkovlabs.io 👉 Blog: https://blog.volkovlabs.io 👉 GitHub: https://github.com/VolkovLabs GET IN TOUCH 👉 Issues and questions: https://github.com/VolkovLabs 👉 GitHub Sponsor: https://github.com/sponsors/VolkovLabs 👉 LinkedIn: https://www.linkedin.com/company/volkovlabs #Grafana #GrafanaPlugins #Visualization #visualización Song: Elektronomia - Limitless [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://ncs.io/Limitless Watch: http://youtu.be/cNcy3J4x62M
+			</description>
+			<community>
+				<starRating count="9" average="5.00" min="1" max="5" />
+				<statistics views="150" />
+			</community>
+		</group>
+	</entry>
+	<entry>
+		<id>
+			yt:video:adOjUxrfysc
+		</id>
+		<videoId>
+			adOjUxrfysc
+		</videoId>
+		<channelId>
+			UCQadniwbukI6ZmTN2oTTb-g
+		</channelId>
+		<title>
+			Business Charts panel for Grafana 6.0.0 powered by Apache ECharts library | Visual Editor tutorial
+		</title>
+		<link rel="alternate" href="https://www.youtube.com/watch?v=adOjUxrfysc" />
+		<author>
+			<name>
+				Volkov Labs
+			</name>
+			<uri>
+				https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g
+			</uri>
+		</author>
+		<published>
+			2024-05-13T01:03:35+00:00
+		</published>
+		<updated>
+			2024-05-14T04:37:27+00:00
+		</updated>
+		<group>
+			<title>
+				Business Charts panel for Grafana 6.0.0 powered by Apache ECharts library | Visual Editor tutorial
+			</title>
+			<content url="https://www.youtube.com/v/adOjUxrfysc?version=3" type="application/x-shockwave-flash" width="640" height="390" />
+			<thumbnail url="https://i2.ytimg.com/vi/adOjUxrfysc/hqdefault.jpg" width="480" height="360" />
+			<description>
+				This video announces a new name for one of our famous plugins. Now it is called the Business Chart plugin for Grafana powered by the Apache ECharts library. A new name with same mighty functionality. PLUS, an amazing new feature - Visual editor. Become a member of our fan club https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g/join and earn loyalty badges! CHAPTERS 0:00 Intro 0:36 Rebranding, new road map 1:14 Business Charts examples 1:38 Business Charts plugin architecture 2:12 Business Charts plugin architecture a bit deeper 2:50 Visual Editor 5:50 Visual Editor examples 6:06 Outro DISCOVER 👉 Documentation: https://docs.volkovlabs.io 👉 Blog: https://blog.volkovlabs.io 👉 GitHub: https://github.com/VolkovLabs GET IN TOUCH 👉 Issues and questions: https://github.com/VolkovLabs 👉 GitHub Sponsor: https://github.com/sponsors/VolkovLabs 👉 LinkedIn: https://www.linkedin.com/company/volkovlabs #Grafana #GrafanaPlugins #Visualization #visualización
+			</description>
+			<community>
+				<starRating count="29" average="5.00" min="1" max="5" />
+				<statistics views="634" />
+			</community>
+		</group>
+	</entry>
+	<entry>
+		<id>
+			yt:video:n4xsVrSesy0
+		</id>
+		<videoId>
+			n4xsVrSesy0
+		</videoId>
+		<channelId>
+			UCQadniwbukI6ZmTN2oTTb-g
+		</channelId>
+		<title>
+			Dynamic Forms in Grafana using Data Manipulation panel
+		</title>
+		<link rel="alternate" href="https://www.youtube.com/watch?v=n4xsVrSesy0" />
+		<author>
+			<name>
+				Volkov Labs
+			</name>
+			<uri>
+				https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g
+			</uri>
+		</author>
+		<published>
+			2024-05-01T19:43:28+00:00
+		</published>
+		<updated>
+			2024-05-22T04:00:05+00:00
+		</updated>
+		<group>
+			<title>
+				Dynamic Forms in Grafana using Data Manipulation panel
+			</title>
+			<content url="https://www.youtube.com/v/n4xsVrSesy0?version=3" type="application/x-shockwave-flash" width="640" height="390" />
+			<thumbnail url="https://i3.ytimg.com/vi/n4xsVrSesy0/hqdefault.jpg" width="480" height="360" />
+			<description>
+				We created the Data Manipulation plugin for Grafana to make sending data back into a connected data source possible. This functionality opens the door to a new universe of use cases with great potential to convert your dashboard into a full-scale web application. Become a member of our fan club https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g/join and earn loyalty badges! DISCOVER 👉 Documentation: https://docs.volkovlabs.io 👉 Blog: https://blog.volkovlabs.io 👉 GitHub: https://github.com/VolkovLabs GET IN TOUCH 👉 Issues and questions: https://github.com/VolkovLabs 👉 GitHub Sponsor: https://github.com/sponsors/VolkovLabs 👉 LinkedIn: https://www.linkedin.com/company/volkovlabs #Grafana #GrafanaPlugins #Visualization #visualización Song: Elektronomia - Heaven [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://ncs.io/Reloaded Watch: http://youtu.be/uDmgZlkOQ5w
+			</description>
+			<community>
+				<starRating count="12" average="5.00" min="1" max="5" />
+				<statistics views="292" />
+			</community>
+		</group>
+	</entry>
+	<entry>
+		<id>
+			yt:video:qH4XWJEhCWQ
+		</id>
+		<videoId>
+			qH4XWJEhCWQ
+		</videoId>
+		<channelId>
+			UCQadniwbukI6ZmTN2oTTb-g
+		</channelId>
+		<title>
+			Device Management using Grafana dashboard and Data Manipulation panel #grafana #nvidia #controlpanel
+		</title>
+		<link rel="alternate" href="https://www.youtube.com/watch?v=qH4XWJEhCWQ" />
+		<author>
+			<name>
+				Volkov Labs
+			</name>
+			<uri>
+				https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g
+			</uri>
+		</author>
+		<published>
+			2024-04-26T02:14:07+00:00
+		</published>
+		<updated>
+			2024-05-22T08:58:08+00:00
+		</updated>
+		<group>
+			<title>
+				Device Management using Grafana dashboard and Data Manipulation panel #grafana #nvidia #controlpanel
+			</title>
+			<content url="https://www.youtube.com/v/qH4XWJEhCWQ?version=3" type="application/x-shockwave-flash" width="640" height="390" />
+			<thumbnail url="https://i2.ytimg.com/vi/qH4XWJEhCWQ/hqdefault.jpg" width="480" height="360" />
+			<description>
+				Most of the time, Grafana is considered as a superb system monitoring and observability tool. However, Grafana has much more to offer. In addition to beautiful and informative dashboards, Grafana is capable of process control. Two simple words hide the whole application universe behind them. Technically, process control means sending data back from the dashboard into a data source. Strategically, that could mean converting your dashboard into a full-scale web application. Blog post: https://volkovlabs.io/blog/form-panel-device-management-20240424/ Become a member of our fan club https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g/join and earn loyalty badges! DISCOVER 👉 Documentation: https://docs.volkovlabs.io 👉 Blog: https://blog.volkovlabs.io 👉 GitHub: https://github.com/VolkovLabs GET IN TOUCH 👉 Issues and questions: https://github.com/VolkovLabs 👉 GitHub Sponsor: https://github.com/sponsors/VolkovLabs 👉 LinkedIn: https://www.linkedin.com/company/volkovlabs #Grafana #GrafanaPlugins #Visualization #visualización Song: Elektronomia - Heaven [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://ncs.io/Reloaded Watch: http://youtu.be/uDmgZlkOQ5w
+			</description>
+			<community>
+				<starRating count="13" average="5.00" min="1" max="5" />
+				<statistics views="333" />
+			</community>
+		</group>
+	</entry>
+	<entry>
+		<id>
+			yt:video:hLMtsCWPOg8
+		</id>
+		<videoId>
+			hLMtsCWPOg8
+		</videoId>
+		<channelId>
+			UCQadniwbukI6ZmTN2oTTb-g
+		</channelId>
+		<title>
+			Display images and PDF on Grafana using Base64 Image/Video/Audio/PDF panel | Plugin Tutorial
+		</title>
+		<link rel="alternate" href="https://www.youtube.com/watch?v=hLMtsCWPOg8" />
+		<author>
+			<name>
+				Volkov Labs
+			</name>
+			<uri>
+				https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g
+			</uri>
+		</author>
+		<published>
+			2024-04-03T17:00:08+00:00
+		</published>
+		<updated>
+			2024-05-08T15:58:03+00:00
+		</updated>
+		<group>
+			<title>
+				Display images and PDF on Grafana using Base64 Image/Video/Audio/PDF panel | Plugin Tutorial
+			</title>
+			<content url="https://www.youtube.com/v/hLMtsCWPOg8?version=3" type="application/x-shockwave-flash" width="640" height="390" />
+			<thumbnail url="https://i1.ytimg.com/vi/hLMtsCWPOg8/hqdefault.jpg" width="480" height="360" />
+			<description>
+				In this video, Daria goes over all available Base64 Image/Video/Audio/PDF 5.0.0 plugin options. 👉Base64 plugin documentation https://volkovlabs.io/plugins/volkovlabs-image-panel/ Become a member of our fan club https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g/join and earn loyalty badges! CHAPTERS 0:00 Intro 0:30 Base64 plugin basics 1:28 How to display an image using the Base64 plugin 1:56 Base64 Image/Video/Audio/PDF section 2:49 Toolbar section 4:33 URL section 4:55 Width and Height sections 5:19 Image section 5:49 Video/Audio section DISCOVER 👉 Documentation: https://docs.volkovlabs.io 👉 Blog: https://blog.volkovlabs.io 👉 GitHub: https://github.com/VolkovLabs GET IN TOUCH 👉 Issues and questions: https://github.com/VolkovLabs 👉 GitHub Sponsor: https://github.com/sponsors/VolkovLabs 👉 LinkedIn: https://www.linkedin.com/company/volkovlabs #Grafana #GrafanaPlugins #Visualization #visualización
+			</description>
+			<community>
+				<starRating count="16" average="5.00" min="1" max="5" />
+				<statistics views="1089" />
+			</community>
+		</group>
+	</entry>
+	<entry>
+		<id>
+			yt:video:0jqJPxRN3QU
+		</id>
+		<videoId>
+			0jqJPxRN3QU
+		</videoId>
+		<channelId>
+			UCQadniwbukI6ZmTN2oTTb-g
+		</channelId>
+		<title>
+			Base64 Image/Media panel 5.0.0 for Grafana #grafana #image #plugins #opensource #community
+		</title>
+		<link rel="alternate" href="https://www.youtube.com/watch?v=0jqJPxRN3QU" />
+		<author>
+			<name>
+				Volkov Labs
+			</name>
+			<uri>
+				https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g
+			</uri>
+		</author>
+		<published>
+			2024-03-27T23:22:43+00:00
+		</published>
+		<updated>
+			2024-05-13T03:44:36+00:00
+		</updated>
+		<group>
+			<title>
+				Base64 Image/Media panel 5.0.0 for Grafana #grafana #image #plugins #opensource #community
+			</title>
+			<content url="https://www.youtube.com/v/0jqJPxRN3QU?version=3" type="application/x-shockwave-flash" width="640" height="390" />
+			<thumbnail url="https://i1.ytimg.com/vi/0jqJPxRN3QU/hqdefault.jpg" width="480" height="360" />
+			<description>
+				Base64 Image/Video/Audio/PDF panel 5.0.0 is here! Check out the blog post for details: https://volkovlabs.io/blog/image-panel-5.0.0-20240326/ The Base64 Image/Video/Audio/PDF visualization panel is a plugin for Grafana that displays Base64 encoded files in PNG, JPG, GIF, MP4, WEBM, MP3, OGG, and PDF formats. Become a member of our fan club https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g/join and earn loyalty badges! DISCOVER 👉 Documentation: https://docs.volkovlabs.io 👉 Blog: https://blog.volkovlabs.io 👉 GitHub: https://github.com/VolkovLabs GET IN TOUCH 👉 Issues and questions: https://github.com/VolkovLabs 👉 GitHub Sponsor: https://github.com/sponsors/VolkovLabs 👉 LinkedIn: https://www.linkedin.com/company/volkovlabs #Grafana #GrafanaPlugins #Visualization #visualización Song: Elektronomia - Heaven [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://ncs.io/Reloaded Watch: http://youtu.be/uDmgZlkOQ5w
+			</description>
+			<community>
+				<starRating count="15" average="5.00" min="1" max="5" />
+				<statistics views="370" />
+			</community>
+		</group>
+	</entry>
+	<entry>
+		<id>
+			yt:video:DW-yuSopejY
+		</id>
+		<videoId>
+			DW-yuSopejY
+		</videoId>
+		<channelId>
+			UCQadniwbukI6ZmTN2oTTb-g
+		</channelId>
+		<title>
+			Synchronize dashboard variables with Data Manipulation in Grafana | Tutorial
+		</title>
+		<link rel="alternate" href="https://www.youtube.com/watch?v=DW-yuSopejY" />
+		<author>
+			<name>
+				Volkov Labs
+			</name>
+			<uri>
+				https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g
+			</uri>
+		</author>
+		<published>
+			2024-03-25T22:54:22+00:00
+		</published>
+		<updated>
+			2024-05-14T02:16:48+00:00
+		</updated>
+		<group>
+			<title>
+				Synchronize dashboard variables with Data Manipulation in Grafana | Tutorial
+			</title>
+			<content url="https://www.youtube.com/v/DW-yuSopejY?version=3" type="application/x-shockwave-flash" width="640" height="390" />
+			<thumbnail url="https://i1.ytimg.com/vi/DW-yuSopejY/hqdefault.jpg" width="480" height="360" />
+			<description>
+				This video demonstrates how to synchronize dashboard variables with the Data Manipulation plugin. Learn how to better combine different Grafana parts to solve your unique use cases! We love to share helpful solutions with the world! If you have anything worthy, we will be glad to post a video or blog post about your use case! Become a member of our fan club https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g/join and earn loyalty badges! LINKS FROM THE VIDEO 👉 The Data Manipulation Plugin documentation https://volkovlabs.io/plugins/volkovlabs-form-panel/ 👉 Documentation: https://docs.volkovlabs.io 👉 Blog: https://blog.volkovlabs.io 👉 GitHub: https://github.com/VolkovLabs GET IN TOUCH 👉 Issues and questions: https://github.com/VolkovLabs 👉 GitHub Sponsor: https://github.com/sponsors/VolkovLabs 👉 LinkedIn: https://www.linkedin.com/company/volkovlabs #Grafana #GrafanaPlugins #Visualization #visualización
+			</description>
+			<community>
+				<starRating count="21" average="5.00" min="1" max="5" />
+				<statistics views="967" />
+			</community>
+		</group>
+	</entry>
+	<entry>
+		<id>
+			yt:video:V4Sza0uDQNs
+		</id>
+		<videoId>
+			V4Sza0uDQNs
+		</videoId>
+		<channelId>
+			UCQadniwbukI6ZmTN2oTTb-g
+		</channelId>
+		<title>
+			File Upload using Grafana dashboard | Data Manipulation | Base64 | Variable panel | Tutorial
+		</title>
+		<link rel="alternate" href="https://www.youtube.com/watch?v=V4Sza0uDQNs" />
+		<author>
+			<name>
+				Volkov Labs
+			</name>
+			<uri>
+				https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g
+			</uri>
+		</author>
+		<published>
+			2024-03-20T20:00:06+00:00
+		</published>
+		<updated>
+			2024-05-16T01:23:19+00:00
+		</updated>
+		<group>
+			<title>
+				File Upload using Grafana dashboard | Data Manipulation | Base64 | Variable panel | Tutorial
+			</title>
+			<content url="https://www.youtube.com/v/V4Sza0uDQNs?version=3" type="application/x-shockwave-flash" width="640" height="390" />
+			<thumbnail url="https://i3.ytimg.com/vi/V4Sza0uDQNs/hqdefault.jpg" width="480" height="360" />
+			<description>
+				How to upload a file using the Grafana dashboard. This video is a great tutorial demonstrating how three open-source plugins can provide an elegant solution for a long-standing problem. Become a member of our fan club https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g/join and earn loyalty badges! LINKS FRON THE VIDEO 👉The Data Manipulation plugin overview https://youtu.be/hVy9NfFiI5U?si=UlYityIy5jBDCQpF 👉The Variable panel overview https://youtu.be/1ogv2jstrlI?si=OPwkBHgz37JtV7DW 👉The Base64 plugin https://youtu.be/1_bgLSehjhg?si=NMlL4bGnqN_kG3rc 👉Why we use PostgreSQL https://volkovlabs.io/blog/grafana-postgresql-20230123/ 👉 The Data Manipulation plugin Data Flow schema https://volkovlabs.io/plugins/volkovlabs-form-panel/data-flow/ 👉The blog post version of this video https://volkovlabs.io/blog/form-panel-file-upload-20240310/ CHAPTERS 0:00 Intro 0:37 Disclaimer 1:00 Project Overview 1:32 Create a table in the PostgreSQL database 1:48 PostgreSQL data source configuration 2:21 Add and duplicate a Data Manipulation plugin 3:24 Data Manipulation plugin configured with a Data Source 5:05 Data Manipulation plugin configured with an HTTP API server 6:24 Variable panel configuration 7:21 Base64 panel configuration DISCOVER 👉 Documentation: https://docs.volkovlabs.io 👉 Blog: https://blog.volkovlabs.io 👉 GitHub: https://github.com/VolkovLabs GET IN TOUCH 👉 Issues and questions: https://github.com/VolkovLabs 👉 GitHub Sponsor: https://github.com/sponsors/VolkovLabs 👉 LinkedIn: https://www.linkedin.com/company/volkovlabs #Grafana #GrafanaPlugins #Visualization #visualización
+			</description>
+			<community>
+				<starRating count="34" average="5.00" min="1" max="5" />
+				<statistics views="1183" />
+			</community>
+		</group>
+	</entry>
+	<entry>
+		<id>
+			yt:video:FMSEGGFbJy0
+		</id>
+		<videoId>
+			FMSEGGFbJy0
+		</videoId>
+		<channelId>
+			UCQadniwbukI6ZmTN2oTTb-g
+		</channelId>
+		<title>
+			Grafana Anonymizer | Convert dashboard values on the fly for demo purposes
+		</title>
+		<link rel="alternate" href="https://www.youtube.com/watch?v=FMSEGGFbJy0" />
+		<author>
+			<name>
+				Volkov Labs
+			</name>
+			<uri>
+				https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g
+			</uri>
+		</author>
+		<published>
+			2024-03-12T01:47:30+00:00
+		</published>
+		<updated>
+			2024-05-22T01:43:25+00:00
+		</updated>
+		<group>
+			<title>
+				Grafana Anonymizer | Convert dashboard values on the fly for demo purposes
+			</title>
+			<content url="https://www.youtube.com/v/FMSEGGFbJy0?version=3" type="application/x-shockwave-flash" width="640" height="390" />
+			<thumbnail url="https://i3.ytimg.com/vi/FMSEGGFbJy0/hqdefault.jpg" width="480" height="360" />
+			<description>
+				Anonymizer is a simple yet elegant solution to make any dashboard demo-ready fast. Watch this video to learn more about it. Become a member of our fan club https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g/join and earn loyalty badges! CHAPTERS 0:00 Intro 0:38 Shoutout to Alex 1:03 Three components of our Anonymizer 1:19 Configure an Anonymizer panel in Grafana 3:39 How to apply the Anonymizer to your dashboard 3:44 Method 1 4:08 Method 2 4:56 Methods comparison LINKS FROM THE VIDEO 👉 The Anonymizer blog post https://volkovlabs.io/blog/anonymizer-20240302/ 👉 The Dynamic Text panel documentation https://volkovlabs.io/plugins/volkovlabs-dynamictext-panel/ DISCOVER 👉 Documentation: https://docs.volkovlabs.io 👉 Blog: https://blog.volkovlabs.io 👉 GitHub: https://github.com/VolkovLabs GET IN TOUCH 👉 Issues and questions: https://github.com/VolkovLabs 👉 GitHub Sponsor: https://github.com/sponsors/VolkovLabs 👉 LinkedIn: https://www.linkedin.com/company/volkovlabs #Grafana #GrafanaPlugins #Visualization #visualización
+			</description>
+			<community>
+				<starRating count="14" average="5.00" min="1" max="5" />
+				<statistics views="558" />
+			</community>
+		</group>
+	</entry>
+	<entry>
+		<id>
+			yt:video:FY1W0B3Pxog
+		</id>
+		<videoId>
+			FY1W0B3Pxog
+		</videoId>
+		<channelId>
+			UCQadniwbukI6ZmTN2oTTb-g
+		</channelId>
+		<title>
+			Business Intelligence App 1.7.0 for Grafana #Grafana #BusinessIntelligence #alerting
+		</title>
+		<link rel="alternate" href="https://www.youtube.com/watch?v=FY1W0B3Pxog" />
+		<author>
+			<name>
+				Volkov Labs
+			</name>
+			<uri>
+				https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g
+			</uri>
+		</author>
+		<published>
+			2024-02-09T01:56:12+00:00
+		</published>
+		<updated>
+			2024-05-08T19:08:46+00:00
+		</updated>
+		<group>
+			<title>
+				Business Intelligence App 1.7.0 for Grafana #Grafana #BusinessIntelligence #alerting
+			</title>
+			<content url="https://www.youtube.com/v/FY1W0B3Pxog?version=3" type="application/x-shockwave-flash" width="640" height="390" />
+			<thumbnail url="https://i3.ytimg.com/vi/FY1W0B3Pxog/hqdefault.jpg" width="480" height="360" />
+			<description>
+				Business Intelligence App 1.7.0 is here! Check out the blog post for details: https://volkovlabs.io/blog/big-1.7.0-20240204/ Become a member of our fan club https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g/join and earn loyalty badges! DISCOVER 👉 Documentation: https://docs.volkovlabs.io 👉 Blog: https://blog.volkovlabs.io 👉 GitHub: https://github.com/VolkovLabs GET IN TOUCH 👉 Issues and questions: https://github.com/VolkovLabs 👉 GitHub Sponsor: https://github.com/sponsors/VolkovLabs 👉 LinkedIn: https://www.linkedin.com/company/volkovlabs #Grafana #GrafanaPlugins #Visualization #visualización Song: Elektronomia - Heaven [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://ncs.io/Reloaded Watch: http://youtu.be/uDmgZlkOQ5w
+			</description>
+			<community>
+				<starRating count="9" average="5.00" min="1" max="5" />
+				<statistics views="369" />
+			</community>
+		</group>
+	</entry>
+	<entry>
+		<id>
+			yt:video:NG8eg1F5nX4
+		</id>
+		<videoId>
+			NG8eg1F5nX4
+		</videoId>
+		<channelId>
+			UCQadniwbukI6ZmTN2oTTb-g
+		</channelId>
+		<title>
+			Business Intelligence App 1.6.0 for Grafana #Grafana #BusinessIntelligence #alerting
+		</title>
+		<link rel="alternate" href="https://www.youtube.com/watch?v=NG8eg1F5nX4" />
+		<author>
+			<name>
+				Volkov Labs
+			</name>
+			<uri>
+				https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g
+			</uri>
+		</author>
+		<published>
+			2024-01-24T22:27:16+00:00
+		</published>
+		<updated>
+			2024-05-08T20:32:29+00:00
+		</updated>
+		<group>
+			<title>
+				Business Intelligence App 1.6.0 for Grafana #Grafana #BusinessIntelligence #alerting
+			</title>
+			<content url="https://www.youtube.com/v/NG8eg1F5nX4?version=3" type="application/x-shockwave-flash" width="640" height="390" />
+			<thumbnail url="https://i3.ytimg.com/vi/NG8eg1F5nX4/hqdefault.jpg" width="480" height="360" />
+			<description>
+				Business Intelligence App 1.6.0 is here! Check out the blog post for details: https://volkovlabs.io/blog/big-1.6.0-20240117/ Become a member of our fan club https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g/join and earn loyalty badges! DISCOVER 👉 Documentation: https://docs.volkovlabs.io 👉 Blog: https://blog.volkovlabs.io 👉 GitHub: https://github.com/VolkovLabs GET IN TOUCH 👉 Issues and questions: https://github.com/VolkovLabs 👉 GitHub Sponsor: https://github.com/sponsors/VolkovLabs 👉 LinkedIn: https://www.linkedin.com/company/volkovlabs #Grafana #GrafanaPlugins #Visualization #visualización Song: Elektronomia - Heaven [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://ncs.io/Reloaded Watch: http://youtu.be/uDmgZlkOQ5w
+			</description>
+			<community>
+				<starRating count="18" average="5.00" min="1" max="5" />
+				<statistics views="590" />
+			</community>
+		</group>
+	</entry>
+	<entry>
+		<id>
+			yt:video:8UaY916PPXc
+		</id>
+		<videoId>
+			8UaY916PPXc
+		</videoId>
+		<channelId>
+			UCQadniwbukI6ZmTN2oTTb-g
+		</channelId>
+		<title>
+			Metrics, Logs, CPU Usage with BIG Alerting in Grafana | Unscripted and Hands-On
+		</title>
+		<link rel="alternate" href="https://www.youtube.com/watch?v=8UaY916PPXc" />
+		<author>
+			<name>
+				Volkov Labs
+			</name>
+			<uri>
+				https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g
+			</uri>
+		</author>
+		<published>
+			2024-01-18T21:15:07+00:00
+		</published>
+		<updated>
+			2024-05-13T01:24:59+00:00
+		</updated>
+		<group>
+			<title>
+				Metrics, Logs, CPU Usage with BIG Alerting in Grafana | Unscripted and Hands-On
+			</title>
+			<content url="https://www.youtube.com/v/8UaY916PPXc?version=3" type="application/x-shockwave-flash" width="640" height="390" />
+			<thumbnail url="https://i1.ytimg.com/vi/8UaY916PPXc/hqdefault.jpg" width="480" height="360" />
+			<description>
+				The idea of the BI(G) was born from a bare necessity to simplify everyday work for data analysts and project managers with profound expertise in their subject area but not in the LGTM stack. How to monitor metrics, logs, and CPU usage with Prometheus using the Business Intelligence App 1.6.0. 👉 GitHub repository: https://github.com/VolkovLabs/volkovlabs-bi-grafana Become a member of our fan club https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g/join and earn loyalty badges! CHAPTERS 0:00 Intro 0:20 Download the BIG from GitHub. The BIG folder structure 1:40 The BIG look in Grafana 2:03 Business Intelligence Demo dashboard 3:03 Create an alert action 5:08 Alert statuses 5:34 More alert details 6:22 Create an alert rule 8:42 Create a service account and use the token 10:33 Engine Monitoring dashboard (using alerts plus variables) 15:51 Important comments on annotations 16:28 Alert History panel DISCOVER 👉 Documentation: https://docs.volkovlabs.io 👉 Blog: https://blog.volkovlabs.io 👉 GitHub: https://github.com/VolkovLabs GET IN TOUCH 👉 Issues and questions: https://github.com/VolkovLabs 👉 GitHub Sponsor: https://github.com/sponsors/VolkovLabs 👉 LinkedIn: https://www.linkedin.com/company/volkovlabs #Grafana #GrafanaPlugins #Visualization #visualización
+			</description>
+			<community>
+				<starRating count="23" average="5.00" min="1" max="5" />
+				<statistics views="1702" />
+			</community>
+		</group>
+	</entry>
+	<entry>
+		<id>
+			yt:video:wZMJ6XJ4XYM
+		</id>
+		<videoId>
+			wZMJ6XJ4XYM
+		</videoId>
+		<channelId>
+			UCQadniwbukI6ZmTN2oTTb-g
+		</channelId>
+		<title>
+			Dynamic Text 4.3.0 for Grafana #grafana #text #plugins #opensource #community
+		</title>
+		<link rel="alternate" href="https://www.youtube.com/watch?v=wZMJ6XJ4XYM" />
+		<author>
+			<name>
+				Volkov Labs
+			</name>
+			<uri>
+				https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g
+			</uri>
+		</author>
+		<published>
+			2024-01-16T13:36:47+00:00
+		</published>
+		<updated>
+			2024-05-12T01:02:30+00:00
+		</updated>
+		<group>
+			<title>
+				Dynamic Text 4.3.0 for Grafana #grafana #text #plugins #opensource #community
+			</title>
+			<content url="https://www.youtube.com/v/wZMJ6XJ4XYM?version=3" type="application/x-shockwave-flash" width="640" height="390" />
+			<thumbnail url="https://i4.ytimg.com/vi/wZMJ6XJ4XYM/hqdefault.jpg" width="480" height="360" />
+			<description>
+				Dynamic Text 4.3.0 is here! Check out the blog post for details: https://volkovlabs.io/blog/dynamictext-panel-4.3.0-20240108/ Become a member of our fan club https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g/join and earn loyalty badges! DISCOVER 👉 Documentation: https://docs.volkovlabs.io 👉 Blog: https://blog.volkovlabs.io 👉 GitHub: https://github.com/VolkovLabs GET IN TOUCH 👉 Issues and questions: https://github.com/VolkovLabs 👉 GitHub Sponsor: https://github.com/sponsors/VolkovLabs 👉 LinkedIn: https://www.linkedin.com/company/volkovlabs #Grafana #GrafanaPlugins #Visualization #visualización Song: Jim Yosef - Lights [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://ncs.io/lights Watch: http://youtu.be/vb3ks4WllXA
+			</description>
+			<community>
+				<starRating count="15" average="5.00" min="1" max="5" />
+				<statistics views="598" />
+			</community>
+		</group>
+	</entry>
+	<entry>
+		<id>
+			yt:video:wZMJ6XJ4XYM
+		</id>
+		<tag>
+			Dynamic Test Tag
+		</tag>
+		<videoId>
+			wZMJ6XJ4XYM
+		</videoId>
+		<channelId>
+			UCQadniwbukI6ZmTN2oTTb-g
+		</channelId>
+		<title>
+			Dynamic Text 4.3.0 for Grafana #grafana #text #plugins #opensource #community
+		</title>
+		<link rel="alternate" href="https://www.youtube.com/watch?v=wZMJ6XJ4XYM" />
+		<author>
+			<name>
+				Volkov Labs
+			</name>
+			<uri>
+				https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g
+			</uri>
+		</author>
+		<published>
+			2024-01-16T13:36:47+00:00
+		</published>
+		<updated>
+			2024-05-12T01:02:30+00:00
+		</updated>
+		<group>
+			<title>
+				Dynamic Text 4.3.0 for Grafana #grafana #text #plugins #opensource #community
+			</title>
+			<content url="https://www.youtube.com/v/wZMJ6XJ4XYM?version=3" type="application/x-shockwave-flash" width="640" height="390" />
+			<thumbnail url="https://i4.ytimg.com/vi/wZMJ6XJ4XYM/hqdefault.jpg" width="480" height="360" />
+			<description>
+				Dynamic Text 4.3.0 is here! Check out the blog post for details: https://volkovlabs.io/blog/dynamictext-panel-4.3.0-20240108/ Become a member of our fan club https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g/join and earn loyalty badges! DISCOVER 👉 Documentation: https://docs.volkovlabs.io 👉 Blog: https://blog.volkovlabs.io 👉 GitHub: https://github.com/VolkovLabs GET IN TOUCH 👉 Issues and questions: https://github.com/VolkovLabs 👉 GitHub Sponsor: https://github.com/sponsors/VolkovLabs 👉 LinkedIn: https://www.linkedin.com/company/volkovlabs #Grafana #GrafanaPlugins #Visualization #visualización Song: Jim Yosef - Lights [NCS Release] Music provided by NoCopyrightSounds Free Download/Stream: http://ncs.io/lights Watch: http://youtu.be/vb3ks4WllXA
+			</description>
+			<community>
+				<starRating count="15" average="5.00" min="1" max="5" />
+				<statistics views="598" />
+			</community>
+		</group>
+	</entry>
+</feed>
