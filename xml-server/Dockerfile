@@ -14,14 +14,3 @@ EXPOSE 8001
 
 # Start the application
 CMD node index.js --port 8001
-
-
-
-
-
-
-
-
-
-
-
