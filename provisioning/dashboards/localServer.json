@@ -1,0 +1,360 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 2,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "volkovlabs-rss-datasource",
+        "uid": "xmlsRv1"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "afterRender": "",
+        "content": "<div class=\"row\">\n  <p class=\"text\">{{title}}</p>\n  <p class=\"text\">{{description}}</p>\n  <a class=\"link\" href=\"{{link}}\"\">Link to documentation</a>\n<div>",
+        "defaultContent": "The query didn't return any results.",
+        "editor": {
+          "format": "auto",
+          "language": "html"
+        },
+        "editors": ["styles"],
+        "externalScripts": [],
+        "externalStyles": [],
+        "helpers": "",
+        "renderMode": "everyRow",
+        "styles": ".row {\n  display: flex;\n  flex-direction: column;\n  padding: 10px 15px;\n}\n\n.text {\nmargin: 3px 0px;\n}\n\n.link {\n  color:coral;\n  font-weight: 600;\n  margin: 0;\n}",
+        "wrap": true
+      },
+      "pluginVersion": "4.5.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "volkovlabs-rss-datasource",
+            "uid": "xmlsRv1"
+          },
+          "feedType": "items",
+          "refId": "A"
+        }
+      ],
+      "title": "Server RSS",
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "volkovlabs-rss-datasource",
+        "uid": "xmlsRv1"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 5,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": ["sum"],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "volkovlabs-rss-datasource",
+            "uid": "xmlsRv1"
+          },
+          "feedType": "items",
+          "refId": "A"
+        }
+      ],
+      "title": "Server RSS Table",
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "volkovlabs-rss-datasource",
+        "uid": "xmlsRv2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "id": 1,
+      "options": {
+        "afterRender": "",
+        "content": "<table width=100% style='border:0'>\n  <tr>\n    <td width=\"*\" style='border:0'>\n      <h3><a target=\"_blank\" style=\"color: blue\" href=\"{{link}}\">{{title}}</a></h3>\n      {{{content:h4}}}\n  </tr>\n  <tr>\n    <td style='border:0'><b>{{date updated 'MMM, DD YYYY'}} by {{author}}</b></td>\n</table>",
+        "defaultContent": "The query didn't return any results.",
+        "editor": {
+          "format": "auto",
+          "language": "html"
+        },
+        "editors": [],
+        "externalScripts": [],
+        "externalStyles": [],
+        "helpers": "",
+        "renderMode": "everyRow",
+        "styles": "",
+        "wrap": true
+      },
+      "pluginVersion": "4.5.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "volkovlabs-rss-datasource",
+            "uid": "xmlsRv2"
+          },
+          "feedType": "items",
+          "refId": "A"
+        }
+      ],
+      "title": "Server Feed",
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "volkovlabs-rss-datasource",
+        "uid": "xmlsRv2"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "id": 4,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": ["sum"],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "volkovlabs-rss-datasource",
+            "uid": "xmlsRv2"
+          },
+          "feedType": "items",
+          "refId": "A"
+        }
+      ],
+      "title": "Server Feed Table",
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "volkovlabs-rss-datasource",
+        "uid": "xmlsRv3"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "id": 3,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": ["sum"],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "volkovlabs-rss-datasource",
+            "uid": "xmlsRv3"
+          },
+          "feedType": "items",
+          "refId": "A"
+        }
+      ],
+      "title": "Server Random",
+      "type": "table"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Local Feeds",
+  "uid": "fe91dd52-a33a-4c1b-bdb8-10e4ede99a25",
+  "version": 9,
+  "weekStart": ""
+}
