@@ -90,3 +90,30 @@ datasources:
     jsonData:
       url: https://grafana.com/docs/grafana-cloud/whats-new/index.xml
       feedType: rss
+  - name: XML Server RSS
+    type: volkovlabs-rss-datasource
+    access: proxy
+    orgId: 1
+    uid: xmlsRv1
+    version: 1
+    editable: true
+    jsonData:
+      feed: http://host.docker.internal:8001/rss
+  - name: XML Server Feed
+    type: volkovlabs-rss-datasource
+    access: proxy
+    orgId: 1
+    uid: xmlsRv2
+    version: 1
+    editable: true
+    jsonData:
+      feed: http://host.docker.internal:8001/feed
+  - name: XML Server Random List
+    type: volkovlabs-rss-datasource
+    access: proxy
+    orgId: 1
+    uid: xmlsRv3
+    version: 1
+    editable: true
+    jsonData:
+      feed: http://host.docker.internal:8001/random
