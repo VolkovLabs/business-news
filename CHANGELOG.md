@@ -5,6 +5,7 @@
 ### Features / Enhancements
 
 - Added tooltip to Feed URL (#73)
+- Added XML Server (#75)
 
 ## 4.0.0 (2024-05-09)
 
