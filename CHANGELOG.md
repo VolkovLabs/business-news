@@ -6,6 +6,7 @@
 
 - Added tooltip to Feed URL (#73)
 - Added XML Server (#75)
+- Updated to Grafana 11.0 and dependencies (#72)
 
 ## 4.0.0 (2024-05-09)
 
