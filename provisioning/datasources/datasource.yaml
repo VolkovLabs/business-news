@@ -79,6 +79,15 @@ datasources:
     editable: true
     jsonData:
       feed: https://grafana.com/docs/grafana-cloud/whats-new/index.xml
+  - name: Volkov Labs YouTube
+    type: volkovlabs-rss-datasource
+    access: proxy
+    orgId: 1
+    uid: rZAdZdf82
+    version: 1
+    editable: true
+    jsonData:
+      feed: https://www.youtube.com/feeds/videos.xml?channel_id=UCQadniwbukI6ZmTN2oTTb-g
   - name: Grafana Cloud Infinity
     type: yesoreyeram-infinity-datasource
     access: proxy
