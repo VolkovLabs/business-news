@@ -449,5 +449,160 @@ describe('Api', () => {
       expect(result?.length).toEqual(1);
       expect(tagField?.values).toEqual([null, 'RSS Tag 2']);
     });
+
+    /**
+     * Source with meta
+     */
+    it('Should not return empty meta', async () => {
+      xmlResponse.data = `<rss version="2.0"
+      xmlns:atom="http://www.w3.org/2005/Atom">
+      <channel>
+          <item>
+              <meta property="og:image" content="content"/>
+              <title>
+				        RSS Tutorial
+			        </title>
+              <content:encoded><![CDATA[<h4>Test.</h4><figure><img alt="" src="" /></figure>]]></content:encoded>
+          </item>
+          <item>
+              <meta property="og:image" content="content"/>
+              <content:encoded><![CDATA[<h4 /><figure />]]></content:encoded>
+              <title>
+				        RSS Tutorial 2
+			        </title>
+              <tag>
+                RSS Tag 2
+              </tag>
+          </item>
+      </channel>
+      </rss>`;
+
+      const result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ITEMS }, range);
+
+      const metaField = result[0].fields.find((elem) => elem.name === 'meta');
+
+      expect(result?.length).toEqual(1);
+      expect(metaField?.values.length).toEqual(2);
+      expect(metaField?.values).toEqual([null, null]);
+    });
+
+    /**
+     * Source with meta
+     */
+    it('Should not repeat a property in meta', async () => {
+      xmlResponse.data = `<rss version="2.0"
+      xmlns:atom="http://www.w3.org/2005/Atom">
+      <channel>
+          <item>
+              <meta property="og:image" content="content"/>
+              <title>
+				        RSS Tutorial
+			        </title>
+              <content:encoded><![CDATA[<h4>Test.</h4><figure><img alt="" src="" /></figure>]]></content:encoded>
+          </item>
+          <item>
+              <meta property="og:image" content="content"/>
+              <content:encoded><![CDATA[<h4 /><figure />]]></content:encoded>
+              <title>
+				        RSS Tutorial 2
+			        </title>
+              <tag>
+                RSS Tag 2
+              </tag>
+          </item>
+      </channel>
+      </rss>`;
+
+      const result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ITEMS }, range);
+      const ogImageField = result[0].fields.find((elem) => elem.name === 'og:image');
+
+      expect(result?.length).toEqual(1);
+      expect(ogImageField?.values.length).toEqual(2);
+      expect(ogImageField?.values).toEqual(['content', 'content']);
+    });
+
+    /**
+     * YouTube
+     */
+    it('Should not repeat a property in media:group', async () => {
+      xmlResponse.data = `<feed xmlns:yt="http://www.youtube.com/xml/schemas/2015"
+  xmlns:media="http://search.yahoo.com/mrss/"
+  xmlns="http://www.w3.org/2005/Atom">
+  <link rel="self" href="http://www.youtube.com/feeds/videos.xml?channel_id=UCQadniwbukI6ZmTN2oTTb-g"/>
+  <id>yt:channel:UCQadniwbukI6ZmTN2oTTb-g</id>
+  <yt:channelId>UCQadniwbukI6ZmTN2oTTb-g</yt:channelId>
+  <title>Volkov Labs</title>
+  <link rel="alternate" href="https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g"/>
+  <author>
+    <name>Volkov Labs</name>
+    <uri>https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g</uri>
+  </author>
+  <published>2022-01-18T15:17:13+00:00</published>
+  <entry>
+    <id>yt:video:PaiGygHI-dA</id>
+    <yt:videoId>PaiGygHI-dA</yt:videoId>
+    <yt:channelId>UCQadniwbukI6ZmTN2oTTb-g</yt:channelId>
+    <title>Favorite sessions of Grafana Conference 2022 | GrafanaCONline 2022 | Grafana 9</title>
+    <link rel="alternate" href="https://www.youtube.com/watch?v=PaiGygHI-dA"/>
+    <author>
+      <name>Volkov Labs</name>
+      <uri>https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g</uri>
+    </author>
+    <published>2022-06-20T18:10:53+00:00</published>
+    <updated>2022-06-20T19:26:02+00:00</updated>
+    <media:group>
+      <media:title>Favorite sessions of Grafana Conference 2022 | GrafanaCONline 2022 | Grafana 9</media:title>
+      <media:content url="https://www.youtube.com/v/PaiGygHI-dA?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+      <media:thumbnail url="https://i1.ytimg.com/vi/PaiGygHI-dA/hqdefault.jpg" width="480" height="360"/>
+      <media:description>ABOUT THIS VIDEO Grafa</media:description>
+      <media:community>
+        <media:starRating count="0" average="0.00" min="1" max="5"/>
+        <media:statistics views="42"/>
+      </media:community>
+    </media:group>
+  </entry>
+  <entry>
+    <id>yt:video:RAxqS2hpWkg</id>
+    <yt:videoId>RAxqS2hpWkg</yt:videoId>
+    <yt:channelId>UCQadniwbukI6ZmTN2oTTb-g</yt:channelId>
+    <title>RSS/Atom Data Source for Grafana | News feed tutorial for Grafana Dashboard</title>
+    <link rel="alternate" href="https://www.youtube.com/watch?v=RAxqS2hpWkg"/>
+    <author>
+      <name>Volkov Labs</name>
+      <uri>https://www.youtube.com/channel/UCQadniwbukI6ZmTN2oTTb-g</uri>
+    </author>
+    <published>2022-06-08T22:26:34+00:00</published>
+    <updated>2022-06-09T00:10:05+00:00</updated>
+    <media:group>
+      <media:title>RSS/Atom Data Source for Grafana | News feed tutorial for Grafana Dashboard</media:title>
+      <media:content url="https://www.youtube.com/v/RAxqS2hpWkg?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+      <media:thumbnail url="https://i3.ytimg.com/vi/RAxqS2hpWkg/hqdefault.jpg" width="480" height="360"/>
+      <media:description>ABOUT THIS VIDEO In the m</media:description>
+      <media:community>
+        <media:starRating count="0" average="0.00" min="1" max="5"/>
+        <media:statistics views="65"/>
+      </media:community>
+    </media:group>
+  </entry>
+</feed>`;
+
+      const result = await api.getFeed({ refId: 'A', feedType: FeedTypeValue.ITEMS }, range);
+      const thumbnail = result[0].fields.find((elem) => elem.name === 'media:group:media:thumbnail:url');
+      const description = result[0].fields.find((elem) => elem.name === 'media:group:media:description');
+      const content = result[0].fields.find((elem) => elem.name === 'media:group:media:content:url');
+
+      expect(thumbnail?.values.length).toEqual(2);
+      expect(description?.values.length).toEqual(2);
+      expect(content?.values.length).toEqual(2);
+      expect(thumbnail?.values).toEqual([
+        'https://i1.ytimg.com/vi/PaiGygHI-dA/hqdefault.jpg',
+        'https://i3.ytimg.com/vi/RAxqS2hpWkg/hqdefault.jpg',
+      ]);
+      expect(description?.values).toEqual(['ABOUT THIS VIDEO Grafa', 'ABOUT THIS VIDEO Grafa In the m']);
+      expect(content?.values).toEqual([
+        'https://www.youtube.com/v/PaiGygHI-dA?version=3',
+        'https://www.youtube.com/v/RAxqS2hpWkg?version=3',
+      ]);
+    });
   });
 });

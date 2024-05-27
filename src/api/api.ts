@@ -120,11 +120,15 @@ export class Api {
       }
 
       /**
-       * Configure Items
+       * Configure Keys
        * Take all the unique keys in all items
        */
-      const items: FeedItems = createUniqueKeyObject(channel.item);
+      const keys: FeedItems = createUniqueKeyObject(channel.item);
 
+      /**
+       * Configure Items
+       */
+      const items: FeedItems = {};
       /**
        * Find all items
        */
@@ -136,7 +140,7 @@ export class Api {
           return;
         }
 
-        Object.keys(items).forEach((key: string) => {
+        Object.keys(keys).forEach((key: string) => {
           let currentKey = key;
           let value = item[key];
 
@@ -152,8 +156,8 @@ export class Api {
             if (key === ItemKey.META && (value as Record<string, string>)['@_property'] === MetaProperties.OG_IMAGE) {
               currentKey = MetaProperties.OG_IMAGE;
               value = (value as Record<string, string>)['@_content'];
+              setItem(items, key, null);
             }
-
             /**
              * Parse Guid
              */
@@ -241,10 +245,15 @@ export class Api {
     }
 
     /**
-     * Configure entries
+     * Configure entries Keys
      * Take all the unique keys in all entries
      */
-    const entries: FeedItems = createUniqueKeyObject(feed.entry);
+    const entriesKeys: FeedItems = createUniqueKeyObject(feed.entry);
+
+    /**
+     * Configure entries
+     */
+    const entries: FeedItems = {};
 
     /**
      * Find all entries
@@ -257,7 +266,7 @@ export class Api {
         return;
       }
 
-      Object.keys(entries).forEach((key: string) => {
+      Object.keys(entriesKeys).forEach((key: string) => {
         let value = entry[key];
 
         /**
