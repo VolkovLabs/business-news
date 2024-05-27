@@ -598,7 +598,7 @@ describe('Api', () => {
         'https://i1.ytimg.com/vi/PaiGygHI-dA/hqdefault.jpg',
         'https://i3.ytimg.com/vi/RAxqS2hpWkg/hqdefault.jpg',
       ]);
-      expect(description?.values).toEqual(['ABOUT THIS VIDEO Grafa', 'ABOUT THIS VIDEO Grafa In the m']);
+      expect(description?.values).toEqual(['ABOUT THIS VIDEO Grafa', 'ABOUT THIS VIDEO In the m']);
       expect(content?.values).toEqual([
         'https://www.youtube.com/v/PaiGygHI-dA?version=3',
         'https://www.youtube.com/v/RAxqS2hpWkg?version=3',
