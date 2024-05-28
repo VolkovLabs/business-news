@@ -58,7 +58,26 @@ export interface DataItem {
   /**
    * Data Item
    *
-   * @type {[key: string]: string | Record<string, string>}
+   * @type {[key: string]: string | Record<string, string> }
    */
-  [key: string]: string | Record<string, string>;
+  [key: string]: string | Record<string, string> | Record<string, object>;
+}
+
+/**
+ * Unique Key Info
+ */
+export interface UniqueKeyInfo {
+  /**
+   * key Accessor
+   *
+   * @type {string}
+   */
+  keyAccessor?: string;
+
+  /**
+   * value Accessor
+   *
+   * @type {string}
+   */
+  valueAccessor: string;
 }

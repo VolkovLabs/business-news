@@ -1,11 +1,11 @@
-import { createUniqueKeyObject } from './utils';
+import { getUniqueAtomKeys, getUniqueChannelKeys } from './utils';
 
 /**
- * createUniqueKeyObject
+ * getUniqueAtomKeys
  */
-describe('createUniqueKeyObject', () => {
+describe('getUniqueAtomKeys', () => {
   it('Should return an empty object for an empty input array', () => {
-    const result = createUniqueKeyObject([]);
+    const result = getUniqueAtomKeys([]);
     expect(result).toEqual({});
   });
 
@@ -16,7 +16,7 @@ describe('createUniqueKeyObject', () => {
       { name: 'Bob', age: 25, email: 'bob@example.com' },
     ];
 
-    const result = createUniqueKeyObject(items as any);
+    const result = getUniqueAtomKeys(items as any);
     expect(result).toEqual({
       name: [],
       age: [],
@@ -31,11 +31,83 @@ describe('createUniqueKeyObject', () => {
       { name: 'John', email: 'john@example.com' },
     ];
 
-    const result = createUniqueKeyObject(items as any);
+    const result = getUniqueAtomKeys(items as any);
     expect(result).toEqual({
       name: [],
       age: [],
       email: [],
     });
+  });
+});
+
+/**
+ * getUniqueChannelKeys
+ */
+describe('getUniqueChannelKeys', () => {
+  it('Should return an empty object for an empty input array', () => {
+    const result = getUniqueChannelKeys([]);
+    expect(result).toEqual({});
+  });
+
+  it('should return the correct unique channel keys', () => {
+    const items = [
+      {
+        title: 'Item 1',
+        description: 'Description 1',
+        guid: {
+          '#text': 'guid-1',
+        },
+        meta: {
+          '@_property': 'og:title',
+          '@_content': 'Title',
+        },
+      },
+      {
+        title: 'Item 2',
+        description: 'Description 2',
+        'content:encoded': '<h4>Content 1</h4>',
+        guid: {
+          '#text': 'guid-2',
+        },
+        meta: {
+          '@_property': 'og:image',
+          '@_content': 'src image',
+        },
+      },
+    ] as any;
+
+    const expectedResult = {
+      title: {
+        valueAccessor: 'title',
+      },
+      description: {
+        valueAccessor: 'description',
+      },
+      guid: {
+        valueAccessor: 'guid.#text',
+      },
+      'og:image': {
+        keyAccessor: 'meta.@_property',
+        valueAccessor: 'meta.@_content',
+      },
+      'og:title': {
+        keyAccessor: 'meta.@_property',
+        valueAccessor: 'meta.@_content',
+      },
+      'content:encoded': {
+        valueAccessor: 'content:encoded',
+      },
+      'content:h4': {
+        valueAccessor: 'content:encoded',
+      },
+      'content:img': {
+        valueAccessor: 'content:encoded',
+      },
+      'content:img-src': {
+        valueAccessor: 'content:encoded',
+      },
+    };
+
+    expect(getUniqueChannelKeys(items)).toEqual(expectedResult);
   });
 });
