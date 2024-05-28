@@ -1,11 +1,12 @@
 import { createDataFrame, DataFrame, DataSourceInstanceSettings, FieldType, TimeRange } from '@grafana/data';
 import { getBackendSrv } from '@grafana/runtime';
 import { XMLParser } from 'fast-xml-parser';
+import { get } from 'lodash';
 import { lastValueFrom } from 'rxjs';
 
-import { ALWAYS_ARRAY, FeedTypeValue, ItemKey, MetaProperties } from '../constants';
+import { ALWAYS_ARRAY, FeedTypeValue, ItemKey } from '../constants';
 import { DataItem, DataSourceOptions, FeedItems, Query } from '../types';
-import { createUniqueKeyObject, isDateBetweenRange, setItem } from '../utils';
+import { getUniqueAtomKeys, getUniqueChannelKeys, isDateBetweenRange, setItem } from '../utils';
 
 /**
  * API
@@ -123,7 +124,7 @@ export class Api {
        * Configure Keys
        * Take all the unique keys in all items
        */
-      const keys: FeedItems = createUniqueKeyObject(channel.item);
+      const channelKeys = getUniqueChannelKeys(channel.item);
 
       /**
        * Configure Items
@@ -140,50 +141,52 @@ export class Api {
           return;
         }
 
-        Object.keys(keys).forEach((key: string) => {
-          let currentKey = key;
-          let value = item[key];
+        Object.keys(channelKeys).forEach((key) => {
+          const keyObject = channelKeys[key];
 
           /**
-           * If Item doesn`t contain key set key with null value to avoid mixed up
+           * Check key with Accessor (keys for meta tag)
            */
-          if (!value) {
-            setItem(items, currentKey, null);
-          } else {
-            /**
-             * Parse Meta
-             */
-            if (key === ItemKey.META && (value as Record<string, string>)['@_property'] === MetaProperties.OG_IMAGE) {
-              currentKey = MetaProperties.OG_IMAGE;
-              value = (value as Record<string, string>)['@_content'];
-              setItem(items, key, null);
-            }
-            /**
-             * Parse Guid
-             */
-            if (key === ItemKey.GUID && (value as Record<string, string>)['#text']) {
-              value = (value as Record<string, string>)['#text'];
-            }
+          if (!keyObject.keyAccessor) {
+            let value = get(item, keyObject.valueAccessor);
 
             /**
              * Parse Encoded content for H4 and first Image
              */
-            if (key === ItemKey.CONTENT_ENCODED) {
+            if (key === ItemKey.CONTENT_H4 && value) {
               const h4 = value.toString().match(/<h4>(.*?)<\/h4>/);
-              const figure = value.toString().match(/<figure>(.*?)<\/figure>/);
-
-              setItem(items, ItemKey.CONTENT_H4, h4?.length ? h4[1] : '');
-
-              /**
-               * Extract image and source
-               */
-              if (figure?.length) {
-                setItem(items, ItemKey.CONTENT_IMG, figure[1]);
-                const img = figure[1].match(/<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/);
-                setItem(items, ItemKey.CONTENT_IMG_SRC, img?.length ? img[1] : '');
-              }
+              value = h4?.length ? h4[1] : '';
             }
-            setItem(items, currentKey, value as string);
+
+            if (key === ItemKey.CONTENT_IMG && value) {
+              const figure = value.toString().match(/<figure>(.*?)<\/figure>/);
+              value = figure?.length ? figure[1] : '';
+            }
+
+            if (key === ItemKey.CONTENT_IMG_SRC && value) {
+              const figure = value.toString().match(/<figure>(.*?)<\/figure>/);
+              const img = figure?.length ? figure[1].match(/<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/) : null;
+              value = img?.length ? img[1] : '';
+            }
+
+            setItem(items, key, value as string);
+          } else {
+            /**
+             * Get key for item
+             */
+
+            const fieldKey = get(item, keyObject.keyAccessor);
+            if (key === fieldKey) {
+              /**
+               * Set value for key
+               */
+              setItem(items, key, get(item, keyObject.valueAccessor) as string);
+            } else {
+              /**
+               * Set null
+               */
+              setItem(items, key, null);
+            }
           }
         });
       });
@@ -248,7 +251,7 @@ export class Api {
      * Configure entries Keys
      * Take all the unique keys in all entries
      */
-    const entriesKeys: FeedItems = createUniqueKeyObject(feed.entry);
+    const entriesKeys: FeedItems = getUniqueAtomKeys(feed.entry);
 
     /**
      * Configure entries
