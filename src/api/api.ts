@@ -6,7 +6,7 @@ import { lastValueFrom } from 'rxjs';
 
 import { ALWAYS_ARRAY, FeedTypeValue, ItemKey } from '../constants';
 import { DataItem, DataSourceOptions, FeedItems, Query } from '../types';
-import { getUniqueAtomKeys, getAllItemKeyConfigs, isDateBetweenRange, setItem } from '../utils';
+import { getAllItemKeyConfigs, getUniqueAtomKeys, isDateBetweenRange, setItem } from '../utils';
 
 /**
  * API

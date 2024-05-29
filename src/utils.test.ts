@@ -1,4 +1,4 @@
-import { getUniqueAtomKeys, getAllItemKeyConfigs } from './utils';
+import { getAllItemKeyConfigs, getUniqueAtomKeys } from './utils';
 
 describe('utils', () => {
   describe('getUniqueAtomKeys', () => {
