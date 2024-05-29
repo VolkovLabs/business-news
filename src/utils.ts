@@ -1,6 +1,6 @@
 import { TimeRange } from '@grafana/data';
 import { get } from 'lodash';
-import { DataItem, FeedItems, UniqueKeyInfo } from 'types';
+import { DataItem, FeedItems, KeyConfig } from 'types';
 
 import { ItemKey } from './constants';
 /**
@@ -32,7 +32,7 @@ export const isDateBetweenRange = (value: string, range: TimeRange): boolean => 
 };
 
 /**
- * Сreate Unique Key Object
+ * Create Unique Key Object
  * Linear pass of items and forming an object with unique keys based on an array of objects
  */
 export const getUniqueAtomKeys = (items: DataItem[]) => {
@@ -46,8 +46,12 @@ export const getUniqueAtomKeys = (items: DataItem[]) => {
   }, {});
 };
 
-export const getUniqueChannelKeys = (items: DataItem[]) => {
-  const result: Record<string, UniqueKeyInfo> = {};
+/**
+ * Get all item key configs
+ * @param items
+ */
+export const getAllItemKeyConfigs = (items: DataItem[]): Record<string, KeyConfig> => {
+  const result: Record<string, KeyConfig> = {};
 
   /**
    * Go through all the objects in the array
@@ -68,7 +72,7 @@ export const getUniqueChannelKeys = (items: DataItem[]) => {
        */
       if (key === ItemKey.GUID) {
         result[key] = {
-          valueAccessor: `guid.#text`,
+          valueAccessor: 'guid.#text',
         };
       }
 
@@ -98,8 +102,8 @@ export const getUniqueChannelKeys = (items: DataItem[]) => {
          */
         if (property && !result[property]) {
           result[property] = {
-            keyAccessor: `meta.@_property`,
-            valueAccessor: `meta.@_content`,
+            keyAccessor: 'meta.@_property',
+            valueAccessor: 'meta.@_content',
           };
         }
       }

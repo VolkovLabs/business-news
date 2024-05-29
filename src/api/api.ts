@@ -6,7 +6,7 @@ import { lastValueFrom } from 'rxjs';
 
 import { ALWAYS_ARRAY, FeedTypeValue, ItemKey } from '../constants';
 import { DataItem, DataSourceOptions, FeedItems, Query } from '../types';
-import { getUniqueAtomKeys, getUniqueChannelKeys, isDateBetweenRange, setItem } from '../utils';
+import { getUniqueAtomKeys, getAllItemKeyConfigs, isDateBetweenRange, setItem } from '../utils';
 
 /**
  * API
@@ -124,12 +124,13 @@ export class Api {
        * Configure Keys
        * Take all the unique keys in all items
        */
-      const channelKeys = getUniqueChannelKeys(channel.item);
+      const channelKeys = getAllItemKeyConfigs(channel.item);
 
       /**
        * Configure Items
        */
       const items: FeedItems = {};
+
       /**
        * Find all items
        */
@@ -142,13 +143,13 @@ export class Api {
         }
 
         Object.keys(channelKeys).forEach((key) => {
-          const keyObject = channelKeys[key];
+          const keyConfig = channelKeys[key];
 
           /**
            * Check key with Accessor (keys for meta tag)
            */
-          if (!keyObject.keyAccessor) {
-            let value = get(item, keyObject.valueAccessor);
+          if (!keyConfig.keyAccessor) {
+            let value = get(item, keyConfig.valueAccessor);
 
             /**
              * Parse Encoded content for H4 and first Image
@@ -170,23 +171,24 @@ export class Api {
             }
 
             setItem(items, key, value as string);
+            return;
+          }
+
+          /**
+           * Get key for item
+           */
+          const itemKey = get(item, keyConfig.keyAccessor);
+
+          if (key === itemKey) {
+            /**
+             * Set value for key
+             */
+            setItem(items, key, get(item, keyConfig.valueAccessor) as string);
           } else {
             /**
-             * Get key for item
+             * Set null
              */
-
-            const fieldKey = get(item, keyObject.keyAccessor);
-            if (key === fieldKey) {
-              /**
-               * Set value for key
-               */
-              setItem(items, key, get(item, keyObject.valueAccessor) as string);
-            } else {
-              /**
-               * Set null
-               */
-              setItem(items, key, null);
-            }
+            setItem(items, key, null);
           }
         });
       });

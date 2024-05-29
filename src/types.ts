@@ -64,18 +64,18 @@ export interface DataItem {
 }
 
 /**
- * Unique Key Info
+ * Key Config
  */
-export interface UniqueKeyInfo {
+export interface KeyConfig {
   /**
-   * key Accessor
+   * Key Accessor
    *
    * @type {string}
    */
   keyAccessor?: string;
 
   /**
-   * value Accessor
+   * Value Accessor
    *
    * @type {string}
    */
