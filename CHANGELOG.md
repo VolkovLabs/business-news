@@ -8,12 +8,13 @@
 - Added XML Server (#75)
 - Updated to Grafana 11.0 and dependencies (#72)
 - Update fields in items getting mixed up (#76)
+- Remove Alerting support in Plugin configuration (#77)
 
 ## 4.0.0 (2024-05-09)
 
 ### Breaking changes
 
-- Requires Grafana 10 and Grafana 11
+- Requires Grafana 10.1 and Grafana 11
 
 ### Features / Enhancements
 
