@@ -44,11 +44,11 @@ export interface DataSourceOptions extends DataSourceJsonData {
  */
 export interface FeedItems {
   /**
-   * Mapping of ID to an array of strings representing the items
+   * Mapping of ID to an array of strings or strings and null
    *
-   * @type {Record<string, string[]>}
+   * @type {Record<string, (string | null)[]>}
    */
-  [id: string]: string[];
+  [id: string]: Array<string | null>;
 }
 
 /**
@@ -58,7 +58,26 @@ export interface DataItem {
   /**
    * Data Item
    *
-   * @type {[key: string]: string | Record<string, string>}
+   * @type {[key: string]: string | Record<string, string> }
    */
-  [key: string]: string | Record<string, string>;
+  [key: string]: string | Record<string, string> | Record<string, object>;
+}
+
+/**
+ * Key Config
+ */
+export interface KeyConfig {
+  /**
+   * Key Accessor
+   *
+   * @type {string}
+   */
+  keyAccessor?: string;
+
+  /**
+   * Value Accessor
+   *
+   * @type {string}
+   */
+  valueAccessor: string;
 }
