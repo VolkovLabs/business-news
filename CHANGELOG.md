@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.2.0 (IN PROGRESS)
+
+### Features / Enhancements
+
+- Updated E2E tests to use Docker (#80)
+
 ## 4.1.0 (2024-06-07)
 
 ### Features / Enhancements
