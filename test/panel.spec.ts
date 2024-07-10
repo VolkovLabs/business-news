@@ -1,6 +1,11 @@
 import { test, expect } from '@grafana/plugin-e2e';
 
 test.describe('RSS datasource', () => {
+  test('Check grafana version', async ({ grafanaVersion }) => {
+    console.log('Grafana version: ', grafanaVersion);
+    expect(grafanaVersion).toEqual(grafanaVersion);
+  });
+
   test('Should display a Dynamic Text with Data Source', async ({ gotoDashboardPage, dashboardPage, page }) => {
     /**
      * Go To panels dashboard panels.json
