@@ -2,7 +2,6 @@ version: '3.4'
 
 services:
   grafana:
-    container_name: grafana
     image: ghcr.io/volkovlabs/app:latest
     entrypoint: /run.sh
     ports:
@@ -18,7 +17,6 @@ services:
       - dev
 
   server:
-    container_name: xml-server
     build:
       context: ./xml-server
     ports:
@@ -28,7 +26,6 @@ services:
       - main
 
   grafana-main:
-    container_name: grafana-main
     image: grafana/grafana:main
     ports:
       - 3000:3000/tcp
@@ -43,7 +40,6 @@ services:
       - main
 
   test:
-    container_name: test-e2e
     build:
       context: .
       dockerfile: test/Dockerfile

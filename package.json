@@ -11,7 +11,7 @@
     "react-dom": "^18.3.1",
     "tslib": "^2.6.2"
   },
-  "description": "RSS/Atom data source plugin for Grafana",
+  "description": "Visualize RSS/Atom feeds",
   "devDependencies": {
     "@babel/core": "^7.24.6",
     "@grafana/eslint-config": "^7.0.0",
@@ -54,7 +54,7 @@
   "engines": {
     "node": ">=20"
   },
-  "name": "volkovlabs-rss-datasource",
+  "name": "business-news",
   "scripts": {
     "build": "webpack -c ./.config/webpack/webpack.config.ts --env production",
     "dev": "webpack -w -c ./.config/webpack/webpack.config.ts --env development",

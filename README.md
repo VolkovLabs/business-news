@@ -1,25 +1,25 @@
-# Business News Data Source for Grafana
+# Business News for Grafana
 
-![Dashboard](https://raw.githubusercontent.com/VolkovLabs/volkovlabs-rss-datasource/main/src/img/dashboard.png)
+![Dashboard](https://raw.githubusercontent.com/VolkovLabs/business-news/main/src/img/dashboard.png)
 
 ![Grafana](https://img.shields.io/badge/Grafana-11.0-orange)
-![CI](https://github.com/volkovlabs/volkovlabs-rss-datasource/workflows/CI/badge.svg)
-![E2E](https://github.com/volkovlabs/volkovlabs-rss-datasource/workflows/E2E/badge.svg)
-[![codecov](https://codecov.io/gh/VolkovLabs/volkovlabs-rss-datasource/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/volkovlabs-rss-datasource)
-[![CodeQL](https://github.com/VolkovLabs/volkovlabs-rss-datasource/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/volkovlabs-rss-datasource/actions/workflows/codeql-analysis.yml)
+![CI](https://github.com/volkovlabs/business-news/workflows/CI/badge.svg)
+![E2E](https://github.com/volkovlabs/business-news/workflows/E2E/badge.svg)
+[![codecov](https://codecov.io/gh/VolkovLabs/business-news/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/business-news)
+[![CodeQL](https://github.com/VolkovLabs/business-news/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/business-news/actions/workflows/codeql-analysis.yml)
 
 ## Introduction
 
 The Business News data source is a plugin for Grafana that retrieves RSS/Atom feeds and allows visualizing them using Dynamic Text and other panels.
 
-[![Business News Data Source for Grafana | News feed tutorial for Grafana Dashboard](https://raw.githubusercontent.com/volkovlabs/volkovlabs-rss-datasource/main/img/video.png)](https://youtu.be/RAxqS2hpWkg)
+[![Business News data source for Grafana | News feed tutorial for Grafana Dashboard](https://raw.githubusercontent.com/volkovlabs/business-news/main/img/video.png)](https://youtu.be/RAxqS2hpWkg)
 
 ## Requirements
 
-- Business News Data Source 4.X requires **Grafana 10.1** or **Grafana 11**.
-- RSS/Atom Data Source 3.X requires **Grafana 9** or **Grafana 10**.
-- RSS/Atom Data Source 2.X requires **Grafana 8.5** or **Grafana 9**.
-- RSS/Atom Data Source 1.X requires **Grafana 8**.
+- Business News data source 4.X requires **Grafana 10.1** or **Grafana 11**.
+- RSS/Atom data source 3.X requires **Grafana 9** or **Grafana 10**.
+- RSS/Atom data source 2.X requires **Grafana 8.5** or **Grafana 9**.
+- RSS/Atom data source 1.X requires **Grafana 8**.
 
 ## Getting Started
 
@@ -48,18 +48,26 @@ grafana-cli plugins install volkovlabs-rss-datasource
 | Section                                                                               | Description                                                  |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
 | [Dynamic Text](https://volkovlabs.io/plugins/volkovlabs-rss-datasource/text/)         | Demonstrates how to display feed using Dynamic Text panel.   |
-| [Provisioning](https://volkovlabs.io/plugins/volkovlabs-rss-datasource/provisioning/) | Demonstrates how to automatically provision the Data Source. |
+| [Provisioning](https://volkovlabs.io/plugins/volkovlabs-rss-datasource/provisioning/) | Demonstrates how to automatically provision the data source. |
 | [Release Notes](https://volkovlabs.io/plugins/volkovlabs-rss-datasource/release/)     | Stay up to date with the latest features and updates.        |
+
+## Business Suite for Grafana
+
+The Business Suite is a collection of open source plugins created and actively maintained by Volkov Labs.
+
+The collection aims to solve the most frequent business tasks by providing an intuitive interface with detailed written documentation, examples, and video tutorials.
+
+[![Business Suite for Grafana](https://raw.githubusercontent.com/VolkovLabs/.github/main/business.png)](https://volkovlabs.io/plugins/)
 
 ## Feedback
 
 We're looking forward to hearing from you. You can use different ways to get in touch with us.
 
-- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/volkovlabs-rss-datasource/issues).
+- Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/business-news/issues).
 - Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
 - Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
 - Support our project by starring the repository.
 
 ## License
 
-Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/volkovlabs-rss-datasource/blob/main/LICENSE).
+Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/business-news/blob/main/LICENSE).
