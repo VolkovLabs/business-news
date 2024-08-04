@@ -1,4 +1,4 @@
-# Business News Data Source for Grafana
+# Business News for Grafana
 
 ![Dashboard](https://raw.githubusercontent.com/VolkovLabs/business-news/main/src/img/dashboard.png)
 
@@ -50,6 +50,14 @@ grafana-cli plugins install volkovlabs-rss-datasource
 | [Dynamic Text](https://volkovlabs.io/plugins/volkovlabs-rss-datasource/text/)         | Demonstrates how to display feed using Dynamic Text panel.   |
 | [Provisioning](https://volkovlabs.io/plugins/volkovlabs-rss-datasource/provisioning/) | Demonstrates how to automatically provision the data source. |
 | [Release Notes](https://volkovlabs.io/plugins/volkovlabs-rss-datasource/release/)     | Stay up to date with the latest features and updates.        |
+
+## Business Suite for Grafana
+
+The Business Suite is a collection of open source plugins created and actively maintained by Volkov Labs.
+
+The collection aims to solve the most frequent business tasks by providing an intuitive interface with detailed written documentation, examples, and video tutorials.
+
+[![Business Suite for Grafana](https://raw.githubusercontent.com/VolkovLabs/.github/main/business.png)](https://volkovlabs.io/plugins/)
 
 ## Feedback
 
