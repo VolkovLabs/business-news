@@ -6,6 +6,7 @@ webpack.config.ts
 # Development folders
 coverage/
 dist/
+playwright-report/
 
 # Servers
 xml-server/

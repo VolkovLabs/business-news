@@ -2,7 +2,7 @@
 
 ![Dashboard](https://raw.githubusercontent.com/VolkovLabs/business-news/main/src/img/dashboard.png)
 
-![Grafana](https://img.shields.io/badge/Grafana-11.0-orange)
+![Grafana](https://img.shields.io/badge/Grafana-11.2-orange)
 ![CI](https://github.com/volkovlabs/business-news/workflows/CI/badge.svg)
 ![E2E](https://github.com/volkovlabs/business-news/workflows/E2E/badge.svg)
 [![codecov](https://codecov.io/gh/VolkovLabs/business-news/branch/main/graph/badge.svg?token=2W9VR0PG5N)](https://codecov.io/gh/VolkovLabs/business-news)
@@ -45,11 +45,11 @@ grafana-cli plugins install volkovlabs-rss-datasource
 
 ## Documentation
 
-| Section                                                                               | Description                                                  |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
-| [Dynamic Text](https://volkovlabs.io/plugins/volkovlabs-rss-datasource/text/)         | Demonstrates how to display feed using Dynamic Text panel.   |
-| [Provisioning](https://volkovlabs.io/plugins/volkovlabs-rss-datasource/provisioning/) | Demonstrates how to automatically provision the data source. |
-| [Release Notes](https://volkovlabs.io/plugins/volkovlabs-rss-datasource/release/)     | Stay up to date with the latest features and updates.        |
+| Section                                                                   | Description                                                  |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| [Dynamic Text](https://volkovlabs.io/plugins/business-news/text/)         | Demonstrates how to display feed using Dynamic Text panel.   |
+| [Provisioning](https://volkovlabs.io/plugins/business-news/provisioning/) | Demonstrates how to automatically provision the data source. |
+| [Release Notes](https://volkovlabs.io/plugins/business-news/release/)     | Stay up to date with the latest features and updates.        |
 
 ## Business Suite for Grafana
 

@@ -1,10 +1,11 @@
 # Change Log
 
-## 4.2.0 (IN PROGRESS)
+## 4.2.0 (2024-09-17)
 
 ### Features / Enhancements
 
 - Updated E2E tests to use Docker (#80)
+- Updated to Grafana 11.2 and dependencies (#81)
 
 ## 4.1.0 (2024-06-07)
 
