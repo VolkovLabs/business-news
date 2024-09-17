@@ -100,8 +100,8 @@ export const getAllItemKeyConfigs = (items: DataItem[]): Record<string, KeyConfi
         /**
          * If the “meta” key has not yet been added to the resulting object
          */
-        if (property && !result[property]) {
-          result[property] = {
+        if (property && !result[property as string]) {
+          result[property as string] = {
             keyAccessor: 'meta.@_property',
             valueAccessor: 'meta.@_content',
           };
