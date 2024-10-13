@@ -10,7 +10,7 @@
 
 ## Introduction
 
-The Business News data source is a plugin for Grafana that retrieves RSS/Atom feeds and allows visualizing them using Dynamic Text and other panels.
+The Business News data source is a plugin for Grafana that retrieves RSS and Atom feeds and allows visualizing them using Business Text and other panels.
 
 [![Business News data source for Grafana | News feed tutorial for Grafana Dashboard](https://raw.githubusercontent.com/volkovlabs/business-news/main/img/video.png)](https://youtu.be/RAxqS2hpWkg)
 
@@ -23,7 +23,7 @@ The Business News data source is a plugin for Grafana that retrieves RSS/Atom fe
 
 ## Getting Started
 
-The Business News data source can be installed from the [Grafana Catalog](https://grafana.com/grafana/plugins/volkovlabs-rss-datasource/) or utilizing the Grafana command line tool.
+The Business News data source can be installed from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/volkovlabs-rss-datasource/) or utilizing the Grafana command line tool.
 
 For the latter, please use the following command.
 
@@ -47,7 +47,7 @@ grafana-cli plugins install volkovlabs-rss-datasource
 
 | Section                                                                   | Description                                                  |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------ |
-| [Dynamic Text](https://volkovlabs.io/plugins/business-news/text/)         | Demonstrates how to display feed using Dynamic Text panel.   |
+| [Business Text](https://volkovlabs.io/plugins/business-news/text/)        | Demonstrates how to display feed using Dynamic Text panel.   |
 | [Provisioning](https://volkovlabs.io/plugins/business-news/provisioning/) | Demonstrates how to automatically provision the data source. |
 | [Release Notes](https://volkovlabs.io/plugins/business-news/release/)     | Stay up to date with the latest features and updates.        |
 
@@ -59,14 +59,17 @@ The collection aims to solve the most frequent business tasks by providing an in
 
 [![Business Suite for Grafana](https://raw.githubusercontent.com/VolkovLabs/.github/main/business.png)](https://volkovlabs.io/plugins/)
 
-## Feedback
+### Enterprise Support
 
-We're looking forward to hearing from you. You can use different ways to get in touch with us.
+With the [Business Suite Enterprise](https://volkovlabs.io/pricing/), you're not just getting a product, you're getting a complete support system. You'll have a designated support team ready to tackle any issues.
+
+You can contact us via Zendesk, receive priority in feature requests and bug fixes, meet with us for in-person consultation, and get access to the Business Intelligence. It's a package that's designed to make your life easier.
+
+## Always happy to hear from you
 
 - Ask a question, request a new feature, and file a bug with [GitHub issues](https://github.com/volkovlabs/business-news/issues).
-- Subscribe to our [YouTube Channel](https://www.youtube.com/@volkovlabs) and leave your comments.
-- Sponsor our open-source plugins for Grafana with [GitHub Sponsor](https://github.com/sponsors/VolkovLabs).
-- Support our project by starring the repository.
+- Subscribe to our [YouTube Channel](https://youtube.com/@volkovlabs) and leave your comments.
+- Become a [Business Suite sponsor](https://github.com/sponsors/VolkovLabs).
 
 ## License
 
